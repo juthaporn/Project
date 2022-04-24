@@ -5683,6 +5683,10 @@ button.bg-dark:focus {
   -webkit-box-align: stretch !important;
   -ms-flex-align: stretch !important;
   align-items: stretch !important; }
+   
+  .align-items-stretch-bg {
+    width: 80px;
+    background-image: url(../images/bg_3.jpg); }
 
 .align-content-start {
   -ms-flex-line-pack: start !important;

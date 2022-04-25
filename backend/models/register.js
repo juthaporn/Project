@@ -10,9 +10,9 @@ class register{
         this.phone = phone;
     }
 
-    static findAll(){
-        return db.execute("select * from member");
-    }
+    // static findAll(){
+    //     return db.execute("select * from member");
+    // }
 
     save(){
         if(this.memberID){
@@ -27,13 +27,6 @@ class register{
                 [this.username, this.password, this.name, this.phone]
             )
         }
-    }
-
-    static findById(memberID){
-        return db.execute(
-            'select * from member where memberID = ?',
-            [memberID]
-        );
     }
 
 }

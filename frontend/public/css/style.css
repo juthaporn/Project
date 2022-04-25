@@ -5685,7 +5685,7 @@ button.bg-dark:focus {
   align-items: stretch !important; }
    
   .align-items-stretch-bg {
-    width: 80px;
+    /* width: 80px; */
     background-image: url(../images/bg_3.jpg); }
 
 .align-content-start {

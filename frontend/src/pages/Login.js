@@ -2,6 +2,22 @@ import React from 'react';
 
 class Login extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+      }
+  
+      handleChange = (e) => {
+        console.log(e.target.name, e.target.value);
+        let name = e.target.name;
+        let value = e.target.value;
+        this.setState({
+          [name]: value
+        });
+      }
 
     render(){
         return(
@@ -23,7 +39,7 @@ class Login extends React.Component{
                             </form>
                         </div>
                         <div class="col-md-6 d-flex align-items-stretch-bg">
-                            <div id="map"></div>
+                            {/* <div id="map"></div> */}
                         </div>
                     </div>
                 </div>

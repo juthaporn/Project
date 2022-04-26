@@ -21,7 +21,7 @@ class Login extends React.Component{
 
     render(){
         return(
-            <main>
+             <main>
                 <div class="container">
                     <div class="row d-flex align-items-stretch no-gutters">
                         <div class="col-md-6 p-5 order-md-last">

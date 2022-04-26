@@ -36,7 +36,7 @@ class Register extends React.Component{
             <main>
                 <div class="container">
                     <div class="row d-flex align-items-stretch no-gutters">
-                        <div class="col-md-6 p-5 order-md-last">
+                        <div class="col-md-6 p-6 order-md-last"><br/>
                             <h2 class="h4 mb-5 font-weight-bold">ลงทะเบียน</h2>
                             <form action="#">
                                 <div class="form-group">

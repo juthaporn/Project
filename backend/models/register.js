@@ -2,12 +2,13 @@ const db = require('../util/database');
 
 class register{
 
-    constructor(memberID, username, password, name, phone){
+    constructor(memberID, username, password, name, phone, roleID){
         this.memberID = memberID;
         this.username = username;
         this.password = password;
         this.name = name;
         this.phone = phone;
+        this.roleID = roleID;
     }
 
     // static findAll(){
@@ -17,8 +18,8 @@ class register{
     save(){
         if(this.memberID){
             return db.execute(
-                'update member set username=?, password=?, name=?, phone=? where memberID = ?',
-                [this.username, this.password, this.name, this.phone, this.memberID]
+                'update member set username=?, password=?, name=?, phone=?, roleID=? where memberID = ?',
+                [this.username, this.password, this.name, this.phone, this.roleID, this.memberID]
             );
         }else{
             console.log("else", this)

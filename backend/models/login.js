@@ -28,8 +28,8 @@ class login{
 
     static findById(username){
         return db.execute(
-            'select * from member where username = ?',
-            [username]
+            'select * from member where username = ? and password = ?',
+            [username,password]
         );
     }
 

@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class role{
+class Role{
 
     constructor(roleID, roleName, status){
         this.roleID = roleID;
@@ -43,4 +43,4 @@ class role{
 
 }
 
-module.exports = role
+module.exports = Role

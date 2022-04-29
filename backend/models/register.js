@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class register{
+class Register{
 
     constructor(memberID, username, password, name, phone, roleID){
         this.memberID = memberID;
@@ -32,4 +32,4 @@ class register{
 
 }
 
-module.exports = register
+module.exports = Register

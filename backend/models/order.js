@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class order{
+class Order{
 
     constructor(orderID, orderName, orderStatus, memberID, shopID){
         this.orderID = orderID;
@@ -44,4 +44,4 @@ class order{
 
 }
 
-module.exports = order
+module.exports = Order

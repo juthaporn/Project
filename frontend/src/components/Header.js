@@ -18,8 +18,8 @@ class Header extends React.Component{
                         <li className="nav-item"><a href="about.html" className="nav-link">ร้านค้า</a></li>
                         <li className="nav-item"><a href="menu.html" className="nav-link">Specialties</a></li>
                         <li className="nav-item"><a href="reservation.html" className="nav-link">Reservation</a></li>
-                        <li className="nav-item"><a href="/Register" className="nav-link">ลงทะเบียน</a></li>
-                        <li className="nav-item"><a href="/Login" className="nav-link">เข้าสู่ระบบ</a></li>
+                        <li className="nav-item"><Link to="/Register" class="nav-link">ลงทะเบียน</Link></li>
+                        <li className="nav-item"><Link to="/Login" class="nav-link">เข้าสู่ระบบ</Link></li>
                     </ul>
                 </div>
                 </div>

@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class login{
+class Login{
 
     constructor(username, password){
         this.username = username;
@@ -26,13 +26,13 @@ class login{
     //     }
     // }
 
-    static findById(username){
+    static findById(username, password){
         return db.execute(
             'select * from member where username = ? and password = ?',
-            [username,password]
+            [username, password]
         );
     }
 
 }
 
-module.exports = login
+module.exports = Login

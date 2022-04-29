@@ -1,7 +1,7 @@
 // const res = require('express/lib/response');
 const db = require('../util/database');
 
-class shop{
+class Shop{
 
     constructor(shopID, shopName, shopPhone, shopDetail, openingTime, shopType, shopRentalContract, memberID, shopTypeID){
         this.shopID =shopID;
@@ -48,4 +48,4 @@ class shop{
     }
 }
 
-module.exports = shop
+module.exports = Shop

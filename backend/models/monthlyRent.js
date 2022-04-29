@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class monthlyRent{
+class MonthlyRent{
 
     constructor(rentalID, rentalDetail, month, year, waterBill, electricityBill, cleaningFee, wasteDisposalFee, shopID){
         this.rentalID = rentalID;
@@ -41,4 +41,4 @@ class monthlyRent{
 
 }
 
-module.exports = monthlyRentnbh
+module.exports = MonthlyRentnbh

@@ -1,6 +1,6 @@
 const db = require('../util/database');
 
-class shopType{
+class ShopType{
 
     constructor(shopTypeID , typeName){
         this.shopTypeID  = shopTypeID ;
@@ -40,4 +40,4 @@ class shopType{
     }
 }
 
-module.exports = shopType
+module.exports = ShopType

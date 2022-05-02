@@ -15,9 +15,9 @@ class Header extends React.Component{
                 <div className="collapse navbar-collapse" id="ftco-nav">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active"><a href="/" className="nav-link">หน้าหลัก</a></li>
-                        <li className="nav-item"><a href="about.html" className="nav-link">ร้านค้า</a></li>
-                        <li className="nav-item"><a href="menu.html" className="nav-link">Specialties</a></li>
-                        <li className="nav-item"><a href="reservation.html" className="nav-link">Reservation</a></li>
+                        <li className="nav-item"><a href="/Shop" className="nav-link">ร้านค้า</a></li>
+                        <li className="nav-item"><a href="/Menu" className="nav-link">เมนู</a></li>
+                        {/* <li className="nav-item"><a href="reservation.html" className="nav-link">Reservation</a></li> */}
                         <li className="nav-item"><Link to="/Register" class="nav-link">ลงทะเบียน</Link></li>
                         <li className="nav-item"><Link to="/Login" class="nav-link">เข้าสู่ระบบ</Link></li>
                     </ul>

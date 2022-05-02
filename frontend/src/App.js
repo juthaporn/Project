@@ -12,6 +12,11 @@ import Banner from './components/Banner';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Shop from './pages/Shop';
+import Shopdetail from './pages/Shopdetail';
+import Menu from './pages/Menu';
+import Typefood from './pages/Typefood';
+import Order from './pages/Order';
 
 
 class App extends React.Component {
@@ -21,8 +26,23 @@ class App extends React.Component {
       <Router>
         <Header />
         <Banner />
-
+        
         <Switch>
+        <Route path="/Typefood">
+            <Typefood />
+          </Route>
+        <Route path="/Menu">
+            <Menu />
+          </Route>
+        <Route path="/Shop">
+            <Shop />
+          </Route>
+          <Route path="/Order">
+            <Order />
+          </Route>
+          <Route path="/Shopdetail">
+            <Shopdetail />
+          </Route>
           <Route path="/register">
             <Register />
           </Route>

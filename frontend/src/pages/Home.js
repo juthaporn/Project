@@ -1,42 +1,62 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 class Home extends React.Component{
     render(){
-        return(    
-            <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
-		    	<div class="container">
-                    <div class="row no-gutters">
-                        <div class="col-sm-5 img img-2 d-flex align-items-center justify-content-center justify-content-md-end">
+        return(  
+            <div class = "Container">
+            <div class="slider_area">
+                <div class="single_slider  d-flex align-items-center slider_bg_1">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-8 ">
+                                <div class="slider_text text-center">
+                                    <div class="text">
+                                        <h3>
+                                        Chopradu Food Center Walailak University
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-7 wrap-about py-5 ftco-animate fadeInUp ftco-animated">
-                            <div class="heading-section mt-5 mb-4">
-                                <div class="pl-lg-5 ml-md-5">
-                                    <span class="subheading">ศูนย์อาหาร </span>
-                                    <h2 class="mb-4">ช่อประดู่ มหาวิทยาลัยวลัยลักษณ์</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="recepie_videoes_area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="recepie_info">
+                                    <h3>Chopradu Food Center 
+                                    Walailak University</h3>
+                                <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
+                                <div class="video_watch d-flex align-items-center">
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=lr6AMBsjxrY"> <i class="ti-control-play"></i> </a>
+                                    <div class="watch_text">
+                                        <h4>Watch Video</h4>
+                                        <p>You will love our execution</p>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
-                    <div class="pl-lg-5 ml-md-5">
-							<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-							<h3 class="mt-5">เมนูแนะนำ</h3>
-							<div class="thumb my-4 d-flex">
-                                <div class="thumb-menu pr-md-4 text-center">
-                                    <div class="img1"></div>
-                                    <h4>Australian Organic Beef</h4>
-                                </div>
-                                <div class="thumb-menu pr-md-4 text-center">
-                                    <div class="img1"></div>
-                                    <h4>Australian Organic Beef</h4>
-                                </div>
-                                 <div class="thumb-menu pr-md-4 text-center">
-                                    <div class="img1"></div>
-                                    <h4>Australian Organic Beef</h4>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="videos_thumb">
+                                    <div class="big_img">
+                                        {/* <img src="img/video/big.png" alt=""> */}
+                                    </div>
+                                    <div class="small_thumb">
+                                        {/* <img src="img/video/small_1.png" alt=""> */}
+                                    </div>
+                                    <div class="small_thumb_2">
+                                        {/* <img src="img/video/2.png" alt=""> */}
+                                    </div>
                                 </div>
                             </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         )
     }
 }

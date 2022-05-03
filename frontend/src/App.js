@@ -18,6 +18,7 @@ import Menu from './pages/Menu';
 import Typefood from './pages/Typefood';
 import Order from './pages/Order';
 import AddTypeFood from './pages/AddTypeFood';
+import Admin from './pages/Admin';
 
 class App extends React.Component {
 
@@ -36,6 +37,9 @@ class App extends React.Component {
           </Route>
         <Route path="/Shop">
             <Shop />
+          </Route>
+          <Route path="/Admin">
+            <Admin />
           </Route>
           <Route path="/Order">
             <Order />

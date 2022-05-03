@@ -17,7 +17,7 @@ import Shopdetail from './pages/Shopdetail';
 import Menu from './pages/Menu';
 import Typefood from './pages/Typefood';
 import Order from './pages/Order';
-
+import AddTypeFood from './pages/AddTypeFood';
 
 class App extends React.Component {
 
@@ -42,6 +42,9 @@ class App extends React.Component {
           </Route>
           <Route path="/Shopdetail">
             <Shopdetail />
+          </Route>
+          <Route path="/AddTypeFood">
+            <AddTypeFood />
           </Route>
           <Route path="/register">
             <Register />

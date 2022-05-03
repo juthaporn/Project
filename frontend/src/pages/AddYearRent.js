@@ -37,27 +37,25 @@ class AddYearRent extends React.Component {
           <main>
             <div class="container">
               <div className="row justify-content-center">
-                <div class="col-md-7 col-lg-5">
-                  <h3 class="mb-4">เพิ่มค่าเช่าร้าน</h3>
-                  <form onSubmit={this.handleSubmit}>
+                  <h2 class="contact-title">เพิ่มค่าเช่าร้าน</h2>
+                  <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>รหัสร้านค้า</label>
-                      <input type="text" name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required />
+                      <input name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายเพิ่มเติม</label>
-                      <input type="text" name="rentDetail" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required />
+                      <input name="rentDetail" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>ค่าเช่าร้าน</label>
-                      <input type="text" name="rentalFee" class="form-control" onChange={this.handleChange} required />
+                      <input name="rentalFee" class="form-control" onChange={this.handleChange} required />
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                    <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
                   </form>
                 </div>
               </div>
-            </div>
           </main>
         )
     }

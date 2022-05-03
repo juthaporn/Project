@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Shopowner extends React.Component{
+class ShopOwner extends React.Component{
     render(){
         return( 
             <div class="recepie_details_area">
@@ -67,4 +67,4 @@ class Shopowner extends React.Component{
     }
 }
 
-export default Shopowner;
+export default ShopOwner;

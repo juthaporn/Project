@@ -13,13 +13,13 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Shop from './pages/Shop';
-import Shopdetail from './pages/Shopdetail';
+import Shopdetail from './pages/ShopDetail';
 import Menu from './pages/Menu';
 import Typefood from './pages/Typefood';
 import Order from './pages/Order';
 import AddTypeFood from './pages/AddTypeFood';
 import Admin from './pages/Admin';
-import Shopowner from './pages/Shopowner';
+import ShopOwner from './pages/ShopOwner';
 
 class App extends React.Component {
 
@@ -30,8 +30,8 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
-        <Route path="/Shopowner">
-            <Shopowner />
+        <Route path="/ShopOwner">
+            <ShopOwner />
           </Route>
         <Route path="/Typefood">
             <Typefood />

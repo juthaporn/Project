@@ -19,6 +19,7 @@ import Typefood from './pages/Typefood';
 import Order from './pages/Order';
 import AddTypeFood from './pages/AddTypeFood';
 import Admin from './pages/Admin';
+import Shopowner from './pages/Shopowner';
 
 class App extends React.Component {
 
@@ -29,6 +30,9 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
+        <Route path="/Shopowner">
+            <Shopowner />
+          </Route>
         <Route path="/Typefood">
             <Typefood />
           </Route>

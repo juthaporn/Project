@@ -16,7 +16,16 @@ import Shop from './pages/Shop';
 import Shopdetail from './pages/ShopDetail';
 import Menu from './pages/Menu';
 import Typefood from './pages/Typefood';
+import AddOwner from './pages/AddOwner';
+import AddProduct from './pages/AddProduct';
+import AddRent from './pages/AddRent';
+import AddShop from './pages/AddShop';
+import AddShopType from './pages/AddShopType';
 import AddTypeFood from './pages/AddTypeFood';
+import AddYearRent from './pages/AddYearRent';
+import EditProduct from './pages/EditProduct';
+import EditShop from './pages/EditShop';
+import EditTypeFood from './pages/EditTypeFood';
 import Admin from './pages/Admin';
 import ShopOwner from './pages/ShopOwner';
 import AdminShopDetail from './pages/AdminShopDetail';
@@ -70,8 +79,35 @@ class App extends React.Component {
           <Route path="/Shopdetail">
             <Shopdetail />
           </Route>
+          <Route path="/AddOwner">
+            <AddOwner />
+          </Route>
+          <Route path="/AddProduct">
+            <AddProduct />
+          </Route>
+          <Route path="/AddRent">
+            <AddRent />
+          </Route>
+          <Route path="/AddShop">
+            <AddShop />
+          </Route>
+          <Route path="/AddShopType">
+            <AddShopType />
+          </Route>
           <Route path="/AddTypeFood">
             <AddTypeFood />
+          </Route>
+          <Route path="/AddYearRent">
+            <AddYearRent />
+          </Route>
+          <Route path="/EditProduct">
+            <EditProduct />
+          </Route>
+          <Route path="/EditShop">
+            <EditShop />
+          </Route>
+          <Route path="/EditTypeFood">
+            <EditTypeFood />
           </Route>
           <Route path="/register">
             <Register />

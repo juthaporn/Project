@@ -103,7 +103,7 @@ class Login extends React.Component{
                     <div class="col-lg-6">
                         <h2 class="contact-title">เข้าสู่ระบบ</h2>
                         <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
-                            <div class="row">
+                            {/* <div class="row"> */}
                                     <div class="form-group">
                                         <input class="form-control" name="username" placeholder="ชื่อผู้ใช้งาน" onChange={this.handleChange} />
                                         {errors.username.length > 0 && <span className='error'>{errors.username}</span>}
@@ -112,7 +112,7 @@ class Login extends React.Component{
                                         <input class="form-control" name="password" type="password" placeholder='รหัสผ่าน' onChange={this.handleChange} />
                                         {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
                                     </div>
-                            </div>
+                            {/* </div> */}
                             <div class="form-group mt-3 text-center">
                                 <button type="submit" class="button button-contactForm btn_4 boxed-btn">เข้าสู่ระบบ</button>
                             </div>

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AdminHeader from '../components/AdminHeader';
 
 class AddYearRent extends React.Component {
     constructor(props){
@@ -9,7 +8,8 @@ class AddYearRent extends React.Component {
       this.state = {
         rentDetail: '',
         rentalFee: '',
-        shopID: ''
+        year:'',
+        shopName: ''
       }
     }
 
@@ -36,24 +36,46 @@ class AddYearRent extends React.Component {
         return(
           <main>
             <div class="container">
-              <div className="row justify-content-center">
+              <div className="row">
+                <div class="col-lg-6">
+                  <br />
+                  <img class="card-img" src="img/video/big.png" alt="" />
+                </div>
+                <div class="col-lg-6">
                   <h2 class="contact-title">เพิ่มค่าเช่าร้าน</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
-                      <label>รหัสร้านค้า</label>
-                      <input name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required />
+                      <label>ชื่อร้านค้า</label>
+                      {/* <input name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required /> */}
+                      <select id='shopName'>
+                        <option value={this.shopName}></option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายเพิ่มเติม</label>
-                      <input name="rentDetail" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required />
+                      <input name="rentDetail" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} />
+                    </div>
+                    <div class="form-group">
+                      <label>ปี</label>&nbsp;&nbsp;&nbsp;
+                      {/* <input name="year" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required /> */}
+                      <select id='year'>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>ค่าเช่าร้าน</label>
                       <input name="rentalFee" class="form-control" onChange={this.handleChange} required />
                     </div>
-                    <br />
-                    <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                    <div class="form-group text-center">
+                      <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                    </div>
                   </form>
+                </div>
                 </div>
               </div>
           </main>

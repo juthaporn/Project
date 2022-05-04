@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component{
 
@@ -37,12 +38,13 @@ class Register extends React.Component{
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
+                        <br />
                         <img class="card-img" src="img/video/big.png" alt="" />
                     </div>
                     <div class="col-lg-6">
                         <h2 class="contact-title">ลงทะเบียน</h2>
                         <form class="form-contact contact_form">
-                            <div class="row">
+                            {/* <div class="row"> */}
                                 <div class="form-group">
                                     <input class="form-control" name="name" placeholder = 'ชื่อ-นามสกุล' />
                                 </div>
@@ -55,12 +57,12 @@ class Register extends React.Component{
                                 <div class="form-group">
                                     <input class="form-control" name="password" placeholder = 'รหัสผ่าน' />
                                 </div>
-                            </div>
-                            <div class="form-group mt-3 text-center">
-                                <button type="submit" class="button button-contactForm btn_4 boxed-btn">ลงทะเบียน</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                มีบัญชีผู้ใช้อยู่แล้วใช่หรือไม่&nbsp;&nbsp;&nbsp; 
-                                <a href="/Login" class="button button-contactForm btn_4 boxed-btn">เข้าสู่ระบบ</a>
-                            </div>
+                            {/* </div> */}
+                            {/* <div class="form-group mt-3 text-center"> */}
+                                <button type="submit" class="button button-contactForm btn_4 boxed-btn">ลงทะเบียน</button>&nbsp;
+                                มีบัญชีผู้ใช้อยู่แล้วใช่หรือไม่&nbsp; 
+                                <Link to="/Login" class="button button-contactForm btn_4 boxed-btn">เข้าสู่ระบบ</Link>
+                            {/* </div> */}
                         </form>
                     </div>
                     

@@ -1,8 +1,8 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class EditTypeFood extends React.Component {
+class AddShopType extends React.Component {
     constructor(props){
       super(props);
       this.state = {
@@ -39,11 +39,11 @@ class EditTypeFood extends React.Component {
                   <img class="card-img" src="img/video/big.png" alt="" />
                 </div>
                 <div class="col-lg-6">
-                  <h2 class="contact-title">เพิ่มประเภทอาหาร</h2>
+                  <h2 class="contact-title">เพิ่มประเภทร้านค้า</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
-                      <label>ชื่อประเภทอาหาร</label>
-                      <input name="typeName" class="form-control" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
+                      <label>ชื่อประเภทร้านค้า</label>
+                      <input name="typeName" class="form-control" placeholder="เช่น อาหารตามสั่ง ก๋วยเตี๋ยว" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
@@ -57,4 +57,4 @@ class EditTypeFood extends React.Component {
     }
 }
 
-export default EditTypeFood;
+export default AddShopType;

@@ -35,8 +35,12 @@ class AddOwner extends React.Component {
     render(){
         return(
           <div class="container">
-            <div className="row justify-content-center">
-              {/* <div class="col-md-7 col-lg-5"> */}
+            <div className="row">
+              <div class="col-lg-6">
+                <br />
+                <img class="card-img" src="img/video/big.png" alt="" />
+              </div>
+              <div class="col-lg-6">
                 <h2 class="contact-title">เพิ่มผู้ประกอบการ</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
@@ -54,12 +58,14 @@ class AddOwner extends React.Component {
                     <div class="form-group">
                       <label>รหัสผ่าน</label>
                       <input name="password" class="form-control" placeholder="รหัสผ่าน" onChange={this.handleChange} required />
-                    </div><br />
-                    <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                    </div>
+                    <div class="form-group text-center">
+                      <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                    </div>
                   </form>
                 </div>
               </div>
-            // </div>
+            </div>
 
         )
     }

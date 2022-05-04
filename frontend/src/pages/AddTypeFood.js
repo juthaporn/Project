@@ -33,15 +33,23 @@ class AddTypeFood extends React.Component {
         return(
           <main>
                 <div class="container">
-                  <div className="row justify-content-center">
+                  <div className="row">
+                    <div class="col-lg-6">
+                      <br />
+                      <img class="card-img" src="img/video/big.png" alt="" />
+                    </div>
+                    <div class="col-lg-6">
                       <h2 class="contact-title">เพิ่มประเภทอาหาร</h2>
-                        <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
-                          <div class="form-group">
-                            <label>ชื่อประเภทอาหาร</label>
-                            <input name="typeName" class="form-control" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
-                          </div><br />
+                      <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
+                        <div class="form-group">
+                          <label>ชื่อประเภทอาหาร</label>
+                          <input name="typeName" class="form-control" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
+                        </div>
+                        <div class="form-group text-center">
                           <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
-                        </form>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
           </main>

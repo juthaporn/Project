@@ -9,7 +9,7 @@ class AddProduct extends React.Component {
         productName: '',
         productDetail: '',
         productPrice: '',
-        typeID: ''
+        typeName: ''
       }
     }
 
@@ -36,12 +36,24 @@ class AddProduct extends React.Component {
         return(
           <main>
                 <div class="container">
-                  <div className="row justify-content-center">
+                  <div className="row">
+                    <div class="col-lg-6">
+                      <br />
+                      <img class="card-img" src="img/video/big.png" alt="" />
+                    </div>
+                    <div class="col-lg-6">
                       <h2 class="contact-title">เพิ่มรายการอาหาร</h2>
-                        <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
+                      <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
+                        <div class="form-group">
+                          <label>ชื่ออาหาร</label>
+                          <input name="productName" class="form-control" placeholder="เช่น ข้าวผัดไข่" onChange={this.handleChange} required />
+                        </div>
                           <div class="form-group">
-                            <label>ชื่ออาหาร</label>
-                            <input name="productName" class="form-control" placeholder="เช่น ข้าวผัดไข่" onChange={this.handleChange} required />
+                            <label>ประเภทอาหาร</label><br />
+                            {/* <input name="typeName" class="form-control" onChange={this.handleChange} required /> */}
+                            <select id='typeName'>
+                              <option value={this.typeName}></option>
+                            </select>
                           </div>
                           <div class="form-group">
                             <label>คำอธิบายรายการอาหาร</label>
@@ -50,9 +62,12 @@ class AddProduct extends React.Component {
                           <div class="form-group">
                             <label>ราคา</label>
                             <input name="productPrice" class="form-control" placeholder="เช่น 30" onChange={this.handleChange} required />
-                          </div><br />
-                          <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                          </div>
+                          <div class="form-group text-center">
+                            <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
+                          </div>
                         </form>
+                      </div>
                   </div>
                 </div>
           </main>

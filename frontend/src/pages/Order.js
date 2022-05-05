@@ -1,13 +1,17 @@
 import React from 'react';
 
-class OrderStatus extends React.Component{
+class Order extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            orderStatus: ''
+            productName: '',
+            productPrice: '',
+            orderDetail: '',
+            quantity: '',
+            orderDate:'',
+            subtotal:''
         }
 }
-
 
     render(){
         return(   
@@ -26,12 +30,15 @@ class OrderStatus extends React.Component{
             </div>
             <br/>
             <div class="card">
-                <h5 class="card-header">สถานะคำสังซื้อ</h5>
+                <h6 class="card-header">คำสังซื้อ</h6>
                 <div class="card-body">
-                    <h5 class="card-title">สถานะคำสังซื้อ id</h5>
-                    <h6 class="card-title">สถานะ </h6>
-                    {/* <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
-                    {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                    <h6 class="card-title">Product name :</h6>
+                    <h6 class="card-title">orderDetail :</h6>
+                    <h6 class="card-title">productPrice : </h6>
+                    <h6 class="card-title">orderDate :</h6>
+                    <h6 class="card-title">subtotal :</h6>
+                    <h6 class="card-title">orderDate: </h6>
+                   
                 </div>
             </div>
             </div>
@@ -41,4 +48,4 @@ class OrderStatus extends React.Component{
     }
 }
 
-export default OrderStatus;
+export default Order;

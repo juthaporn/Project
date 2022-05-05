@@ -1,14 +1,17 @@
 import React from 'react';
 
-class Menu extends React.Component{
+class ShopMember extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            shopName : '',
-            productName : '',
-            productPrice: ''
+            shopName: '',
+            productName: '',
+            producPrice: ''
+           
         }
 }
+
+
     render(){
         return(    
             <div class ="container">    
@@ -29,34 +32,11 @@ class Menu extends React.Component{
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single_recepie text-center">
                             <div class="recepie_thumb">
-                                
                                 <img class="card-img" src="img/recepie/recpie_1.png" alt="" />
                             </div>
                             <h3>shopName</h3>
                             <span>productName</span>
-                            <p>productPrice</p>
-                            <a href="#" class="line_btn">View Full Recipe</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                            <img class="card-img" src="img/recepie/recpie_5.png" alt="" />
-                            </div>
-                            <h3>Pure Vegetable Bowl</h3>
-                            <span>Appetizer</span>
-                            <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                            <img class="card-img" src="img/recepie/recpie_6.png" alt="" />
-                            </div>
-                            <h3>Egg Masala Ramen</h3>
-                            <span>Appetizer</span>
-                            <p>Time Needs: 30 Mins</p>
+                            <p>producPrice</p>
                             <a href="#" class="line_btn">View Full Recipe</a>
                         </div>
                     </div>
@@ -65,7 +45,7 @@ class Menu extends React.Component{
                             <div class="recepie_thumb">
                             <img class="card-img" src="img/recepie/recpie_2.png" alt="" />
                             </div>
-                            <h3>Egg Masala Ramen</h3>
+                            <h3>Pure Vegetable Bowl</h3>
                             <span>Appetizer</span>
                             <p>Time Needs: 30 Mins</p>
                             <a href="#" class="line_btn">View Full Recipe</a>
@@ -93,6 +73,28 @@ class Menu extends React.Component{
                             <a href="#" class="line_btn">View Full Recipe</a>
                         </div>
                     </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_recepie text-center">
+                            <div class="recepie_thumb">
+                            <img class="card-img" src="img/recepie/recpie_5.png" alt="" />
+                            </div>
+                            <h3>Egg Masala Ramen</h3>
+                            <span>Appetizer</span>
+                            <p>Time Needs: 30 Mins</p>
+                            <a href="#" class="line_btn">View Full Recipe</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_recepie text-center">
+                            <div class="recepie_thumb">
+                            <img class="card-img" src="img/recepie/recpie_6.png" alt="" />
+                            </div>
+                            <h3>Egg Masala Ramen</h3>
+                            <span>Appetizer</span>
+                            <p>Time Needs: 30 Mins</p>
+                            <a href="#" class="line_btn">View Full Recipe</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,4 +104,4 @@ class Menu extends React.Component{
     }
 }
 
-export default Menu;
+export default ShopMember;

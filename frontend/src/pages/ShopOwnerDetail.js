@@ -1,21 +1,32 @@
 import React from 'react';
 
 class ShopOwnerDetail extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            shopName: '',
+            shopPhone: '',
+            shopDetail: '',
+            openingTime: '',
+            typeName: ''
+        }
+}
+
+
     render(){
         return( 
-            
-            <div class="recepie_details_area">
             <div class="container">
+                <br/>
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-6">
                         <div class="recepies_thumb1">
-                            {/* <img src="img/recepie/recepie_details.png" alt=""> */}
+                            <img class="card-img" src="img/recepie/recepie_details.png" alt="" />
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6">
                         <div class="recepies_info">
-                            <h3>Dragon tiger phoenix</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                            <h3>shopName</h3>
+                            <p>shopDetail</p>
     
                             <div class="resepies_details">
                                 <ul>
@@ -29,7 +40,6 @@ class ShopOwnerDetail extends React.Component{
                     </div>
                 </div>
                 </div>
-            </div>
             
         )
     }

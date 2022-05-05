@@ -15,7 +15,7 @@ import Register from './pages/Register';
 import Shop from './pages/Shop';
 import Shopdetail from './pages/ShopDetail';
 import Menu from './pages/Menu';
-import Typefood from './pages/Typefood';
+import TypeFood from './pages/TypeFood';
 import AddOwner from './pages/AddOwner';
 import AddProduct from './pages/AddProduct';
 import AddRent from './pages/AddRent';
@@ -33,6 +33,9 @@ import MonthlyRentalfee from './pages/MonthlyRentalfee';
 import OrderOwner from './pages/OrderOwner';
 import OrderStatus from './pages/OrderStatus';
 import ShopOwnerDetail from './pages/ShopOwnerDetail';
+import Order from './pages/Order';
+import MenuSelect from './pages/MenuSelect';
+import ShopMember from './pages/ShopMember';
 
 class App extends React.Component {
 
@@ -43,8 +46,14 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
-        <Route path="/ShopOwnerDetail">
-            <ShopOwnerDetail />
+        <Route path="/ShopMember">
+            <ShopMember />
+            </Route>
+        <Route path="/MenuSelect">
+            <MenuSelect />
+            </Route>
+        <Route path="/Order">
+            <Order />
             </Route>
         <Route path="/ShopOwnerDetail">
             <ShopOwnerDetail />
@@ -64,8 +73,8 @@ class App extends React.Component {
         <Route path="/ShopOwner">
             <ShopOwner />
           </Route>
-        <Route path="/Typefood">
-            <Typefood />
+        <Route path="/TypeFood">
+            <TypeFood />
           </Route>
         <Route path="/Menu">
             <Menu />

@@ -1,6 +1,15 @@
 import React from 'react';
 
 class Admin extends React.Component{
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         shopName : '',
+    //         shopPhone: '',
+    //         name: ''
+//         }
+// }
+
 
     render(){
         return(

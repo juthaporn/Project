@@ -1,6 +1,29 @@
 import React from 'react';
 
 class AdminShopDetail extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            shopName : '',
+            shopPhone: '',
+            shopDetail: '',
+            openingTime: '',
+            typeName : '',
+            rentDetail: '',
+            rentalFee: '',
+            year: '',
+            shopID : '',
+            rentalDetail: '',
+            month: '',
+            waterUnit: '',
+            powerUnit : '',
+            electricityBill: '',
+            cleaningFee: '',
+            wasteDisposalFee: '',
+           
+        }
+}
+
 
     render(){
         return(   

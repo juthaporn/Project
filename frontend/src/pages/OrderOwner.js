@@ -1,6 +1,18 @@
 import React from 'react';
 
 class OrderOwner extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            orderDate: '',
+            orderStatus: '',
+            subtotal: '',
+            orderDetail: '',
+            quantity: '',
+            price: '',
+            productName : '',
+        }
+}
 
     render(){
         return(   

@@ -416,6 +416,7 @@ h3 {
   border-radius: 10px;
   padding-left: 35px;
   padding-right: 35px;
+  margin-bottom: 27px;
 }
 
 box-title{
@@ -2679,10 +2680,10 @@ box-title{
 /* line 193, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right {
   font-size: 15px;
-  color: #919191;
+  color: #ffffff;
   margin-bottom: 0;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -2694,7 +2695,7 @@ box-title{
 
 /* line 202, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right a {
-  color: #FFC000;
+  color: #7a6011;
 }
 
 /* line 207, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
@@ -8007,6 +8008,7 @@ h6 {
 /* line 40, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_blog_part.scss */
 .blog_part .single-home-blog .card-img-top {
   border-radius: 0px;
+  margin-bottom: 27px;
 }
 
 /* line 43, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_blog_part.scss */

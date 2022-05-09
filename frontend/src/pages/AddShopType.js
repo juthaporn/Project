@@ -37,6 +37,7 @@ class AddShopType extends React.Component {
                 <div class="col-lg-6">
                   <br />
                   <img class="card-img" src="img/video/big.png" alt="" />
+                  
                 </div>
                 <div class="col-lg-6 box">
                   <h2 class="contact-title">เพิ่มประเภทร้านค้า</h2>
@@ -50,6 +51,7 @@ class AddShopType extends React.Component {
                     </div>
                   </form>
                 </div>
+                {/* <br /> */}
               </div>
             </div>
           </main>

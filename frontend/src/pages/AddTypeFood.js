@@ -50,6 +50,7 @@ class AddTypeFood extends React.Component {
                         </div>
                       </form>
                     </div>
+                    
                   </div>
                 </div>
           </main>

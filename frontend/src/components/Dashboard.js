@@ -13,7 +13,9 @@ class Dashboad extends React.Component{
                                         {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
                                     </div>
                                 </li>
-                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">659</span></li>
+                                <li class="text-right">
+                                    <i class="ti-arrow-up text-success"></i> 
+                                    <span class="counter text-success">59</span></li>
                             </ul>
                         </div>
                     </div>
@@ -24,7 +26,9 @@ class Dashboad extends React.Component{
                                 <li>
                                     <div id="sparklinedash2"></div>
                                 </li>
-                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">869</span></li>
+                                <li class="text-right">
+                                    <i class="ti-arrow-up text-purple"></i> 
+                                    <span class="counter text-purple">69</span></li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +39,9 @@ class Dashboad extends React.Component{
                                 <li>
                                     <div id="sparklinedash3"></div>
                                 </li>
-                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
+                                <li class="text-right">
+                                    <i class="ti-arrow-up text-info"></i> 
+                                    <span class="counter text-info">91</span></li>
                             </ul>
                         </div>
                     </div>

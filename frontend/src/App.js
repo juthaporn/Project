@@ -9,6 +9,7 @@ import {
 
 import Header from './components/Header';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -127,7 +128,8 @@ class App extends React.Component {
           <Route path="/">
             <Home />
           </Route>
-        </Switch>
+          
+        </Switch><Footer />
       </Router>
     )
   }

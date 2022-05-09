@@ -1,11 +1,11 @@
 import React from 'react';
-import Dashboard from '../components/Dashboard';
+
 
 class Shop extends React.Component{
     render(){
         return( 
           <div class ="container">    
-          <Dashboard />
+
           <div class="bradcam_area bradcam_bg_1">
                 <div class="container">
                     <div class="row">

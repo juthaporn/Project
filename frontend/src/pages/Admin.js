@@ -1,4 +1,5 @@
 import React from 'react';
+import Dashboard from '../components/Dashboard';
 
 class Admin extends React.Component{
     // constructor(props){
@@ -13,18 +14,19 @@ class Admin extends React.Component{
 
     render(){
         return(
-            <div class ="container">    
-            <div class="bradcam_area bradcam_bg_1">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-xl-12">
-                              <div class="bradcam_text text-center">
-                              <h3>Shop</h3>    
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-            </div>
+            <div class ="container"> 
+                <Dashboard />   
+                <div class="bradcam_area bradcam_bg_1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="bradcam_text text-center">
+                                <h3>Shop</h3>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             
                         
                     <div class="card-body">

@@ -38,7 +38,7 @@ class AddShopType extends React.Component {
                   <br />
                   <img class="card-img" src="img/video/big.png" alt="" />
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 box">
                   <h2 class="contact-title">เพิ่มประเภทร้านค้า</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">

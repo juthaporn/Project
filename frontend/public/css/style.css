@@ -410,6 +410,14 @@ h3 {
   }
 }
 
+.box{
+  border: 1px solid #bcbcbc;
+  margin-top: 27px;
+  border-radius: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
 box-title{
   margin:0 0 12px;
   font-weight:500;
@@ -2751,7 +2759,9 @@ box-title{
 
 /* line 13, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_bradcam.scss */
 .bradcam_area {
-  background-size: cover;
+  /* background-size: cover; */
+  /* width: 25%; */
+  height: 25%;
   background-position: bottom;
   padding: 258px 0 148px 0;
   background-repeat: no-repeat;

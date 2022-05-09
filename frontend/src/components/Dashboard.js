@@ -6,7 +6,7 @@ class Dashboad extends React.Component{
             <div class="row">
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Visit</h3>
+                            <h3 class="box-title">จำนวนร้านค้าในระบบ</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash">
@@ -19,7 +19,7 @@ class Dashboad extends React.Component{
                     </div>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Page Views</h3>
+                            <h3 class="box-title">จำนวนผู้ประกอบการ</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash2"></div>
@@ -30,7 +30,7 @@ class Dashboad extends React.Component{
                     </div>
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Unique Visitor</h3>
+                            <h3 class="box-title">จำนวนผู้ใช้งาน</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash3"></div>

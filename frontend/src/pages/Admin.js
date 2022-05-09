@@ -15,7 +15,7 @@ class Admin extends React.Component{
     render(){
         return(
             <div class ="container"> 
-                <Dashboard />   
+                 
                 <div class="bradcam_area bradcam_bg_1">
                     <div class="container">
                         <div class="row">
@@ -27,7 +27,7 @@ class Admin extends React.Component{
                         </div>
                     </div>
                 </div>
-            
+            <Dashboard />  
                         
                     <div class="card-body">
                     <table class="table table-bordered">

@@ -16,7 +16,55 @@ class OrderOwner extends React.Component{
 
     render(){
         return(   
-            <div class ="container">
+          
+            <div class ="container"><br/>
+            <div class="row">
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">จำนวนออร์เดอร์ที่รอคิว</h3>
+                    <ul class="list-inline two-part">
+                        <li>
+                            <div id="sparklinedash">
+                            </div>
+                        </li>
+                        <li class="text-right"><i class="ti-arrow-up text-primary"></i> <span class="counter text-primary">9</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">จำนวนออร์เดอร์ที่กำลังปรุง</h3>
+                    <ul class="list-inline two-part">
+                        <li>
+                            <div id="sparklinedash2"></div>
+                        </li>
+                        <li class="text-right"><i class="ti-arrow-up text-warning"></i> <span class="counter text-warning">9</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">จำนวนออร์เดอร์ที่เสร็จสมบูรณ์</h3>
+                    <ul class="list-inline two-part">
+                        <li>
+                            <div id="sparklinedash3"></div>
+                        </li>
+                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">จำนวนออร์เดอร์ที่ยกเลิก</h3>
+                    <ul class="list-inline two-part">
+                        <li>
+                            <div id="sparklinedash3"></div>
+                        </li>
+                        <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">9</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
                 <br/>
             <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
@@ -26,7 +74,7 @@ class OrderOwner extends React.Component{
                   <table class="table table-striped table-borderless">
                     <thead>
                       <tr>
-                        <th>ลำดับ</th>
+                        <th>หมายเลขออร์เดอร์</th>
                         <th>รายการ</th>
                         <th>เวลา</th>
                         <th>สถานะ</th>
@@ -38,9 +86,16 @@ class OrderOwner extends React.Component{
                       <tr>
                       <td class="font-weight-bold">1</td>
                         <td>Search Engine Marketing</td>
-  
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-success">เสร็จสิ้น</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -48,7 +103,15 @@ class OrderOwner extends React.Component{
                         <td>Search Engine Optimization</td>
                        
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-success">เสร็จสิ้น</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -56,7 +119,15 @@ class OrderOwner extends React.Component{
                         <td>Display Advertising</td>
                         
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-warning">กำลังปรุง</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -64,7 +135,15 @@ class OrderOwner extends React.Component{
                         <td>Pay Per Click Advertising</td>
                        
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-warning">กำลังปรุง</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -72,7 +151,15 @@ class OrderOwner extends React.Component{
                         <td>E-Mail Marketing</td>
                         
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-danger">ยกเลิก</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -80,7 +167,15 @@ class OrderOwner extends React.Component{
                         <td>Referral Marketing</td>
                         
                         <td>20:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-primary">รอ</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                       <tr>
@@ -88,7 +183,15 @@ class OrderOwner extends React.Component{
                         <td>Social media marketing</td>
                      
                         <td>10:18</td>
-                        <td class="font-weight-medium"><div class="badge badge-success">เสร็จสิ้น</div></td>
+                        <td>
+                        <select class="selectpicker">
+                          <option class='badge badge-success'>เสร็จสิ้น</option>
+                          <option class='badge badge-primary'>รอ</option>
+                          <option class='badge badge-warning'>กำลังปรุง</option>
+                          <option class='badge badge-danger'>ยกเลิก</option>
+                        </select>
+                        </td>
+
                         <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
                       </tr>
                     </tbody>
@@ -98,7 +201,7 @@ class OrderOwner extends React.Component{
             </div>
           </div>
           <br/>
-          <div class="row">
+          {/* <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
@@ -135,7 +238,7 @@ class OrderOwner extends React.Component{
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
           </div>
         )
     }

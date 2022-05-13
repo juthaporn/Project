@@ -16,6 +16,43 @@ class ShopOwner extends React.Component{
 
             <div class="container">
                 <br/>
+                <div class="row">
+                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="white-box analytics-info">
+                                    <h3 class="box-title">ยอดขายทั้งหมด (บาท)</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash">
+                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
+                                            </div>
+                                        </li>
+                                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1,525</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="white-box analytics-info">
+                                    <h3 class="box-title">จำนวนรายการสั่งซื้อ (ออร์เดอร์)</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash2"></div>
+                                        </li>
+                                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">41</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="white-box analytics-info">
+                                    <h3 class="box-title">ช่วงเวลาที่ขายดี</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash3"></div>
+                                        </li>
+                                        <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">11:32</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                         <div class="col-md-6 grid-margin stretch-card">
                         <div class="col-md-12 stretch-card transparent">
@@ -25,77 +62,47 @@ class ShopOwner extends React.Component{
                             </div>
                             </div>
                             <br/>
-                            <div class="col-md-12 mb-4 stretch-card transparent">
-                            <div class="card card-dark-blue">
-                                <div class="card-body">
-                                <td class="font-weight-medium">จำนวนรายการ</td><br/>
-                                <p class="fs-30 mb-2">จำนวนรายการทั้งหมด 144 รายการ</p>
-                                <p>วันที่ </p>
-                                </div>
-                            </div>
-                            </div>
                         </div>
                         </div>
-                        <div class="col-md-6 grid-margin transparent">
-                        <div class="row">
-                            <div class="col-md-6 mb-4 stretch-card transparent">
-                            <div class="card card-tale">
-                                <div class="card-body">
-                                <td class="font-weight-medium">ยอดขาย </td><br/>
-                                <p class="fs-30 mb-2"> ยอดขายทั้งหมด 2,500 บาท</p>
-                                <p>วันที่ </p>
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <div class="white-box analytics-info">
+                                    <h3 class="box-title">เมนูขายดี</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash">
+                                            <div class="blog__sidebar__recent__item__pic">
+                                                        <img src="img/post/post_5.png" alt=""/>  
+                                                    </div>
+                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <br/>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash">
+                                            <div class="blog__sidebar__recent__item__pic">
+                                                        <img src="img/post/post_5.png" alt=""/>  
+                                                    </div>
+                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <br/>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <div id="sparklinedash">
+                                            <div class="blog__sidebar__recent__item__pic">
+                                                        <img src="img/post/post_5.png" alt=""/>  
+                                                    </div>
+                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <br/>
                                 </div>
                             </div>
-                            </div>
-                            <div class="col-md-6 mb-4 stretch-card transparent">
-                            <div class="card card-dark-blue">
-                                <div class="card-body">
-                                <td class="font-weight-medium">จำนวนรายการสั่งซื้อ </td><br/>
-                                <p class="fs-30 mb-2">จำนวนรายการทั้งหมด 144 รายการ</p>
-                                <p>วันที่ </p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                            <div class="col-md-12 stretch-card transparent">
-                            <div class="card card-light-danger">
-                                <div class="card-body">
-                                        <td class="font-weight-medium">เมนูขายดี </td><br/>
-                                            <div class="blog__sidebar__recent">
-                                                <a class="blog__sidebar__recent__item">
-                                                    <div class="blog__sidebar__recent__item__pic">
-                                                        <img src="img/post/post_5.png" alt=""/>
-                                                    </div>
-                                                    <div class="blog__sidebar__recent__item__text">
-                                                    <p class="mb-4">เมนูขายดี</p>
-                                            
-                                                    </div>
-                                                </a>
-                                                <a class="blog__sidebar__recent__item">
-                                                    <div class="blog__sidebar__recent__item__pic">
-                                                    <img src="img/post/post_5.png" alt=""/>
-
-                                                    </div>
-                                                    <div class="blog__sidebar__recent__item__text">
-                                                    <p class="mb-4">เมนูขายดี</p>
-                                         
-                                                    </div>
-                                                </a>
-                                                <a class="blog__sidebar__recent__item">
-                                                    <div class="blog__sidebar__recent__item__pic">
-                                                    <img src="img/post/post_5.png" alt=""/>
-
-                                                    </div>
-                                                    <div class="blog__sidebar__recent__item__text">
-                                                    <p class="mb-4">เมนูขายดี</p>
-                                       
-                                                    </div>
-                                                </a>
-                                            </div> 
-                                        </div>   
-                                    </div>
-                                </div>
-                        </div>
+                        
                          </div>
                 </div>
            

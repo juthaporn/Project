@@ -15,7 +15,7 @@ class Dashboad extends React.Component{
                                 </li>
                                 <li class="text-right">
                                     <i class="ti-arrow-up text-success"></i> 
-                                    <span class="counter text-success">59</span></li>
+                                    <span class="counter text-success">59 ร้าน</span></li>
                             </ul>
                         </div>
                     </div>
@@ -28,7 +28,7 @@ class Dashboad extends React.Component{
                                 </li>
                                 <li class="text-right">
                                     <i class="ti-arrow-up text-purple"></i> 
-                                    <span class="counter text-purple">69</span></li>
+                                    <span class="counter text-purple">69 คน</span></li>
                             </ul>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ class Dashboad extends React.Component{
                                 </li>
                                 <li class="text-right">
                                     <i class="ti-arrow-up text-info"></i> 
-                                    <span class="counter text-info">91</span></li>
+                                    <span class="counter text-info">91 คน</span></li>
                             </ul>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ class AddShop extends React.Component {
         shopPhone: '',
         shopDetail: '',
         openingTime: '',
-        shopType: '',
+        typeName: '',
         shopRentalContract: '',
         name: ''
       }
@@ -75,7 +75,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ประเภทร้านค้า</label>
-                      <input class="form-control" name="shopType" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
+                      <input class="form-control" name="typeName" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>สัญาเช่าร้าน</label>

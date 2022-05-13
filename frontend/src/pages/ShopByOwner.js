@@ -2,12 +2,18 @@ import axios from 'axios';
 import React from 'react';
 import Dashboard from '../components/Dashboard';
 
-class Admin extends React.Component{
+class ShopByOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             name : '',
-            phone: ''
+            phone: '',
+            shopName: '',
+            shopPhone: '',
+            shopDetail: '',
+            openingTime: '',
+            typeName: '',
+            shopRentalContract: '',
         }
     }
 
@@ -17,9 +23,9 @@ class Admin extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/member/getMemberRole/3").then((res) => {
+        axios.get("http://localhost:3000/shop/getShopByMemberID/").then((res) => {
           this.setState({data: res.data.data[0]});
-          console.log("admin",this.state.data)
+        //   console.log("admin",this.state.data)
           // x.setState({data: res.data.data});
         }).catch((error) => {
           console.log(error);
@@ -81,4 +87,4 @@ class Admin extends React.Component{
     }
 }
 
-export default Admin;
+export default ShopByOwner;

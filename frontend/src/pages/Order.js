@@ -18,6 +18,7 @@ class Order extends React.Component{
                    
        
             <div class ="container"><br/>
+            <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
             <div class="row">
             <div class="col-lg-3 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">

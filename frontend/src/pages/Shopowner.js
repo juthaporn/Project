@@ -16,7 +16,9 @@ class ShopOwner extends React.Component{
 
             <div class="container">
                 <br/>
-                <div class="row">
+                <p class="text-left font-weight-bold">หน้ายอดขาย</p>
+                <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
+                    <div class="row">
                             <div class="col-lg-4 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
                                     <h3 class="box-title">ยอดขายทั้งหมด (บาท)</h3>
@@ -66,50 +68,28 @@ class ShopOwner extends React.Component{
                         </div>
                         <div class="col-lg-6 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">เมนูขายดี</h3>
-                                    <ul class="list-inline two-part">
-                                        <li>
-                                            <div id="sparklinedash">
-                                            <div class="blog__sidebar__recent__item__pic">
-                                                        <img src="img/post/post_5.png" alt=""/>  
-                                                    </div>
-                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <br/>
-                                    <ul class="list-inline two-part">
-                                        <li>
-                                            <div id="sparklinedash">
-                                            <div class="blog__sidebar__recent__item__pic">
-                                                        <img src="img/post/post_5.png" alt=""/>  
-                                                    </div>
-                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <br/>
-                                    <ul class="list-inline two-part">
-                                        <li>
-                                            <div id="sparklinedash">
-                                            <div class="blog__sidebar__recent__item__pic">
-                                                        <img src="img/post/post_5.png" alt=""/>  
-                                                    </div>
-                                                {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <br/>
-                                </div>
+                                   <h3 class="box-title">เมนูขายดี</h3>
+                                        <table class="table ">
+                                        <tbody>
+                                        <tr>                       
+                                        <td><img src="img/post/post_10.png" alt=""/></td>
+                                            <td>Search Engine Marketing</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/post/post_7.png" alt=""/></td>
+                                            <td>Search Engine Marketing</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/post/post_5.png" alt=""/></td>
+                                            <td>Search Engine Marketing</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
                             </div>
                         
                          </div>
                 </div>
-           
-              
-      
-         
-            
         )
     }
 }

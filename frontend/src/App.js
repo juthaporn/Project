@@ -37,6 +37,8 @@ import ShopOwnerDetail from './pages/ShopOwnerDetail';
 import Order from './pages/Order';
 import MenuSelect from './pages/MenuSelect';
 import ShopMember from './pages/ShopMember';
+import OrderOwnerEdit from './pages/OrderOwnerEdit';
+
 
 class App extends React.Component {
 
@@ -47,6 +49,9 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
+        <Route path="/OrderOwnerEdit">
+            <OrderOwnerEdit />
+            </Route>
         <Route path="/ShopMember">
             <ShopMember />
             </Route>

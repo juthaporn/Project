@@ -447,7 +447,35 @@ box-title{
   font-size:16px;
 }
 
+.admin-card{
+  border: 1px solid #5a1010;
+  /* margin-top: 27px;
+  border-radius: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 27px; */
+}
 
+.f-card{
+  color: #808080;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  padding: 20px 0 0 15px;
+  /* margin-bottom: 26px; */
+  /* margin-bottom: 0px; */
+  font-family: "Roboto", sans-serif;
+}
+
+.box-card{
+  border: 1px solid #ffffff;
+  margin-top: 27px;
+  /* border-radius: 10px; */
+  /* padding-left: 25%; */
+  /* padding-right: 25%; */
+  float: center;
+  /* margin-bottom: 27px; */
+}
 
 .boxed-btn-del {
   background: #fff;
@@ -465,6 +493,8 @@ box-title{
   color: #ff0000 !important;
   text-transform: uppercase;
   cursor: pointer;
+  /* text-align: center; */
+  /* float: center; */
 }
 
 .boxed-btn-del:hover {

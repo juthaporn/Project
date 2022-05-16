@@ -53,25 +53,37 @@ class ShopByOwner extends React.Component{
                 <br />
                 {/* <a href="/admin" class="line_btn" style={style1}>ย้อนกลับ</a> */}
                 <div>
-                    <p>ชื่อผู้ประกอบการ {this.state.name}  เบอร์โทร {this.state.phone}</p>
+                
+                    <h5>ผู้ประกอบการ : {this.state.name} &nbsp;&nbsp;&nbsp;&nbsp;  เบอร์โทร : {this.state.phone}</h5>
                     {
                         this.state.data?.map(item => (
                             <div class="col-xl-12 col-md-12 box">
-                                <div class="recepies_info">  
-                                    <div class="resepies_details">
-                                        <ul>
-                                            <li><p><strong>ชื่อร้าน</strong> : {item.shopName}</p></li>
-                                            <li><p><strong>เบอร์โทรศัพท์</strong> : {item.shopPhone}</p></li>
-                                            <li><p><strong>คำอธิบายร้านค้า</strong> : {item.shopDetail}</p></li>
-                                            <li><p><strong>เวลาเปิด-ปิด</strong> : {item.openingTime} </p></li>
-                                            <li><p><strong>ประเภทร้านค้า</strong> : {item.typeName} </p></li>
-                                            <li><p><strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract} </p></li>
-                                        </ul>
-                                        
-                                        <Link to="/admin" class="button button-contactForm btn_4 boxed-btn">ย้อนกลับ</Link>&nbsp; &nbsp; 
-                                        <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
-                                    </div>
+                                <div class="f-card">
+                                    <strong>ชื่อร้าน</strong> : {item.shopName}
                                 </div>
+                                <div class="f-card">
+                                    <strong>เบอร์โทรศัพท์</strong> : {item.shopPhone}
+                                </div>
+                                <div class="f-card">
+                                    <strong>คำอธิบายร้านค้า</strong> : {item.shopDetail}
+                                </div>
+                                <div class="f-card">
+                                    <strong>เวลาเปิด-ปิด</strong> : {item.openingTime}
+                                </div>
+                                <div class="f-card">
+                                    <strong>ประเภทร้านค้า</strong> : {item.typeName}
+                                </div>
+                                <div class="f-card">
+                                    <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
+                                </div>
+                                <div class="box-card">
+                                    <Link to="/admin" class="button button-contactForm btn_4 boxed-btn">ย้อนกลับ</Link>&nbsp; &nbsp; 
+                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                    
+                                </div>
+                                
+                                    
+                                {/* </div> */}
                             </div>
                         ))
                     }

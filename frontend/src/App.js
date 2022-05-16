@@ -29,6 +29,7 @@ import EditShop from './pages/EditShop';
 import EditTypeFood from './pages/EditTypeFood';
 import Admin from './pages/Admin';
 import ShopOwner from './pages/ShopOwner';
+import ShopByOwner from './pages/ShopByOwner';
 import AdminShopDetail from './pages/AdminShopDetail';
 import MonthlyRentalfee from './pages/MonthlyRentalfee';
 import OrderOwner from './pages/OrderOwner';
@@ -82,6 +83,8 @@ class App extends React.Component {
         <Route path="/TypeFood">
             <TypeFood />
           </Route>
+        <Route path="/ShopByOwner/:id" component={ShopByOwner} >
+        </Route>
         <Route path="/Menu">
             <Menu />
           </Route>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Dashboard from '../components/Dashboard';
 
 class Admin extends React.Component{
@@ -7,7 +8,8 @@ class Admin extends React.Component{
         super(props);
         this.state = {
             name : '',
-            phone: ''
+            phone: '',
+            memberID: ''
         }
     }
 
@@ -51,10 +53,11 @@ class Admin extends React.Component{
                                         <th scope="col">ชื่อผู้ประกอบการ</th>
                                         <th scope="col">เบอร์โทร</th>
                                     </tr>
+
                                 {
                                     this.state.data?.map(item => (
                                         <tr>
-                                            <td>{item.name}</td>
+                                            <td><Link to={"/ShopByOwner/"+item.memberID}>{item.name}</Link></td>
                                             <td>{item.phone}</td>
                                         </tr>
                                     ))

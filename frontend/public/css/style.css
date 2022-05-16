@@ -4326,9 +4326,9 @@ box-title{
 
 /* line 53, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
 .recepie_area .single_recepie .recepie_thumb {
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 50%;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 20%;
   overflow: hidden;
   margin: auto;
 }

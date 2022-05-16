@@ -44,12 +44,9 @@ class OrderOwnerEdit extends React.Component{
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Search Engine Marketing</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"placeholder="10"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                  <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                  <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">ยกเลิก</button></td>
                               </tr>
 
                               <tr>
@@ -57,12 +54,9 @@ class OrderOwnerEdit extends React.Component{
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Search Engine Marketing</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               
                               <tr>
@@ -70,72 +64,54 @@ class OrderOwnerEdit extends React.Component{
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Search Engine Optimization</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               <tr>
                               <td class="font-weight-bold">3</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Display Advertising</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               <tr>
                               <td class="font-weight-bold">4</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Pay Per Click Advertising</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               <tr>
                               <td class="font-weight-bold">5</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>E-Mail Marketing</td>
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               <tr>
                               <td class="font-weight-bold">6</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Referral Marketing</td>        
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                               <tr>
                               <td class="font-weight-bold">7</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Social media marketing</td> 
                                 <td>
-                                <div class="center11">
-                                     <input type="text"/>
-                                  <p></p>
-                                </div>
+                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
-                                <a  className="nav-link" class='badge badge-danger'>ยกเลิก</a>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
                               </tr>
                             </tbody>
                           </table>
@@ -144,6 +120,27 @@ class OrderOwnerEdit extends React.Component{
                     </div>
                   </div>
                   <br/>
+                        <modal>          
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">แจ้งเตือน</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          ยกเลิกเรียบร้อยแล้ว
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          {/* <button type="button" class="btn btn-danger"></button> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      </modal>   
           </div>
         )
     }

@@ -131,10 +131,11 @@ class OrderOwnerEdit extends React.Component{
                           </button>
                         </div>
                         <div class="modal-body">
-                          ยกเลิกเรียบร้อยแล้ว
+                          ยืนยันการยกเลิก
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับ</button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
                           {/* <button type="button" class="btn btn-danger"></button> */}
                         </div>
                       </div>

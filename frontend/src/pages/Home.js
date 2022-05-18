@@ -13,7 +13,7 @@ class Home extends React.Component{
     render(){
         return(  
             <div class = "Container">
-            <div class="slider_area">
+            {/* <div class="slider_area">
                 <div class="single_slider  d-flex align-items-center slider_bg_1">
                     <div class="container">
                         <div class="row align-items-center justify-content-center">
@@ -25,6 +25,17 @@ class Home extends React.Component{
                                         </h3>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            <div class="latest_trand_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="trand_info text-center">
+                                <h3>Chopradu Food Center Walailak University</h3>
                             </div>
                         </div>
                     </div>

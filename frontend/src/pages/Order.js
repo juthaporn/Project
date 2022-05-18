@@ -15,195 +15,79 @@ class Order extends React.Component{
 
     render(){
         return(   
-                   
-       
-            <div class ="container"><br/>
-            <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
-            <div class="row">
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">จำนวนออร์เดอร์ที่รอคิว</h3>
-                    <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash">
-                            </div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-primary"></i> <span class="counter text-primary">9</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">จำนวนออร์เดอร์ที่กำลังปรุง</h3>
-                    <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash2"></div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-warning"></i> <span class="counter text-warning">9</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">จำนวนออร์เดอร์ที่เสร็จสมบูรณ์</h3>
-                    <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash3"></div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">จำนวนออร์เดอร์ที่ยกเลิก</h3>
-                    <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash3"></div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">9</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-                <br/>
-            <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-title mb-0">สถานะการสั่งซื้อ</p>
-                <div class="table-responsive">
-                  <table class="table table-striped table-borderless">
-                    <thead>
-                      <tr>
-                        <th>หมายเลขออร์เดอร์</th>
-                        <th>รายการ</th>
-                        <th>เวลา</th>
-                        <th>สถานะ</th>
-                        <th>แก้ไข</th>
-
-                      </tr>  
-                    </thead>
-                    <tbody>
-                      <tr>
-                      <td class="font-weight-bold">1</td>
-                        <td>Search Engine Marketing</td>
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">2</td>
-                        <td>Search Engine Optimization</td>
-                       
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">3</td>
-                        <td>Display Advertising</td>
-                        
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">4</td>
-                        <td>Pay Per Click Advertising</td>
-                       
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">5</td>
-                        <td>E-Mail Marketing</td>
-                        
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">6</td>
-                        <td>Referral Marketing</td>
-                        
-                        <td>20:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                      <tr>
-                      <td class="font-weight-bold">7</td>
-                        <td>Social media marketing</td>
-                     
-                        <td>10:18</td>
-                        <td>
-                        <select class="selectpicker">
-                          <option class='badge badge-success'>เสร็จสิ้น</option>
-                          <option class='badge badge-primary'>รอ</option>
-                          <option class='badge badge-warning'>กำลังปรุง</option>
-                          <option class='badge badge-danger'>ยกเลิก</option>
-                        </select>
-                        </td>
-
-                        <td class="font-weight-medium"><div class="badge badge-danger">แก้ไข</div></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br/>
+         
+          <div class ="container"> 
+          <br/>   
+          <div class="container">
+              <div class="row">
         
+                <div class="col-xs-12">
+                  <div class="grid invoice">
+                    <div class="grid-body">
+                
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h3>รายการสั่งซื้อ</h3>
+                          <table class="table table-striped">
+                            <thead>
+                              <tr class="line">
+                                <td><strong>#</strong></td>
+                                <td class="text-center"><strong>PROJECT</strong></td>
+                                <td class="text-center"><strong>HRS</strong></td>
+                                <td class="text-right"><strong>RATE</strong></td>
+                                <td class="text-right"><strong>SUBTOTAL</strong></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td><strong>Template Design</strong><br/>A website template is a pre-designed webpage, or set of webpages, that anyone can modify with their own content and images to setup a website.</td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">$75</td>
+                                <td class="text-right">$1,125.00</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td><strong>Template Development</strong><br/>Web development is a broad term for the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network).</td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">$75</td>
+                                <td class="text-right">$1,125.00</td>
+                              </tr>
+                              <tr class="line">
+                                <td>3</td>
+                                <td><strong>Testing</strong><br/>Take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">$75</td>
+                                <td class="text-right">$150.00</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3"></td>
+                                <td class="text-right"><strong>Taxes</strong></td>
+                                <td class="text-right"><strong>N/A</strong></td>
+                              </tr>
+                              <tr>
+                                <td colspan="3">
+                                </td><td class="text-right"><strong>Total</strong></td>
+                                <td class="text-right"><strong>$2,400.00</strong></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>									
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 text-right identity">
+                          <p>Designer identity<br/><strong>Jeffrey Williams</strong></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+         </div>
+        </div>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
+          
         )
     }
 }

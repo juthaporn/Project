@@ -43,7 +43,7 @@ class Admin extends React.Component{
                 </div>
                 <br />
                 <Dashboard />  
-            <div class="col-md-12 grid-margin stretch-card">
+                <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">

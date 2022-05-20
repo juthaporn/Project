@@ -40,6 +40,7 @@ class ShopByOwner extends React.Component{
         }
         return(
             <div class="container">
+                {/* container-fluid */}
                 <div class="box-title-head">
                     <div class="row">
                         <div class="col-xl-12">

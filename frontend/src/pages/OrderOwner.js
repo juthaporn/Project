@@ -29,7 +29,7 @@ class OrderOwner extends React.Component{
                                       <div id="sparklinedash">
                                       </div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-primary"></i> <span class="counter text-primary">9</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-primary"></i> <span class="counter text-primary">9 รายการ</span></li>
                               </ul>
                           </div>
                       </div>
@@ -40,7 +40,7 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash2"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-warning"></i> <span class="counter text-warning">9</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-warning"></i> <span class="counter text-warning">9 รายการ</span></li>
                               </ul>
                           </div>
                       </div>
@@ -51,7 +51,7 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash3"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1 รายการ</span></li>
                               </ul>
                           </div>
                       </div>
@@ -62,7 +62,7 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash3"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">9</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">9 รายการ</span></li>
                               </ul>
                           </div>
                       </div>
@@ -80,6 +80,8 @@ class OrderOwner extends React.Component{
                                 <th>รายการ</th>
                                 <th></th>
                                 <th>เวลา</th>
+                                <th>ราคา</th>
+                                <th>จำนวน</th>
                                 <th>สถานะ</th>
                                 <th>แก้ไข</th>
                               </tr>  
@@ -90,15 +92,18 @@ class OrderOwner extends React.Component{
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Search Engine Marketing</td>
                                 <td>20:18</td>
-                                <td>
+                                <td>30</td>
+                                <td>2</td>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
+                                {/* <td>
                                 <select class="selectpicker">
                                   <option class='badge badge-success'>เสร็จสิ้น</option>
                                   <option class='badge badge-primary'>รอ</option>
                                   <option class='badge badge-warning'>กำลังปรุง</option>
                                   <option class='badge badge-danger'>ยกเลิก</option>
                                 </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
+                                </td> */}
+                                <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
                               </tr>
 
                               <tr>
@@ -106,107 +111,21 @@ class OrderOwner extends React.Component{
                               <td><img src="img/post/post_5.png" alt=""/></td>
                                 <td>Search Engine Marketing</td>
                                 <td>20:18</td>
-                                <td>
+                                <td>30</td>
+                                <td>2</td>
+                                <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
+                                {/* <td>
                                 <select class="selectpicker">
                                   <option class='badge badge-success'>เสร็จสิ้น</option>
                                   <option class='badge badge-primary'>รอ</option>
                                   <option class='badge badge-warning'>กำลังปรุง</option>
                                   <option class='badge badge-danger'>ยกเลิก</option>
                                 </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
+                                </td> */}
+                                 <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
                               </tr>
                               
-                              <tr>
-                              <td class="font-weight-bold">2</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Optimization</td>
-                                <td>20:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">3</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Display Advertising</td>
-                                <td>20:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">4</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Pay Per Click Advertising</td>
-                                <td>20:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">5</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>E-Mail Marketing</td>
-                                <td>20:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">6</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Referral Marketing</td>        
-                                <td>20:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">7</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Social media marketing</td> 
-                                <td>10:18</td>
-                                <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td>
-                                <a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a>
-                              </tr>
+                              
                             </tbody>
                           </table>
                         </div>
@@ -214,6 +133,32 @@ class OrderOwner extends React.Component{
                     </div>
                   </div>
                   <br/>
+                  <modal>          
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">แจ้งเตือน</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          ยืนยันการยกเลิก
+                        </div>
+                        {/* <button type="button" class="btn btn-primary">Primary</button>
+                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-success">Success</button>
+                        <button type="button" class="btn btn-danger">Danger</button> */}
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับ</button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">ยืนยัน</button>
+                          {/* <button type="button" class="btn btn-danger"></button> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      </modal>   
           </div>
         )
     }

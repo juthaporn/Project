@@ -16,7 +16,7 @@ class Shop extends React.Component{
                           <h3>Egg Manchurian</h3>
                           <span>Appetizer</span>
                           <p>Time Needs: 30 Mins</p>
-                          <a href="/Shopdetail" class="line_btn">ไปยังร้านค้า</a>
+                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
                       </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-6">
@@ -27,7 +27,7 @@ class Shop extends React.Component{
                           <h3>Pure Vegetable Bowl</h3>
                           <span>Appetizer</span>
                           <p>Time Needs: 30 Mins</p>
-                          <a href="/Shopdetail" class="line_btn">ไปยังร้านค้า</a>
+                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
                       </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-6">
@@ -38,7 +38,7 @@ class Shop extends React.Component{
                           <h3>Egg Masala Ramen</h3>
                           <span>Appetizer</span>
                           <p>Time Needs: 30 Mins</p>
-                          <a href="/Shopdetail" class="line_btn">ไปยังร้านค้า</a>
+                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
                       </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-6">
@@ -49,7 +49,7 @@ class Shop extends React.Component{
                           <h3>Egg Masala Ramen</h3>
                           <span>Appetizer</span>
                           <p>Time Needs: 30 Mins</p>
-                          <a href="/Shopdetail" class="line_btn">ไปยังร้านค้า</a>
+                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
                       </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-6">

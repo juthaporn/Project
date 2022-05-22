@@ -26,10 +26,10 @@ class Menu extends React.Component{
                                     <img class="card-img" src="img/recepie/recpie_1.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-success">เปิด</div>
+                                {/* <div class="badge badge-success">เปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>  
-                                <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>
+                                <a href="/Cart" class="line_btn">เพิ่มไปยังรถเข็น</a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
@@ -38,7 +38,7 @@ class Menu extends React.Component{
                                 <img class="card-img" src="img/recepie/recpie_5.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-success">เปิด</div>
+                                {/* <div class="badge badge-success">เปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>       
                                 <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>
@@ -50,7 +50,7 @@ class Menu extends React.Component{
                                 <img class="card-img" src="img/recepie/recpie_6.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-dark">ปิด</div>
+                                {/* <div class="badge badge-dark">ปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>       
                                 <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>
@@ -62,7 +62,7 @@ class Menu extends React.Component{
                                 <img class="card-img" src="img/recepie/recpie_2.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-success">เปิด</div>
+                                {/* <div class="badge badge-success">เปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>       
                                 <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>
@@ -74,7 +74,7 @@ class Menu extends React.Component{
                                 <img class="card-img" src="img/recepie/recpie_3.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-success">เปิด</div>
+                                {/* <div class="badge badge-success">เปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>       
                                 <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>
@@ -86,7 +86,7 @@ class Menu extends React.Component{
                                 <img class="card-img" src="img/recepie/recpie_4.png" alt="" />
                                 </div>
                                 <h3>shopName</h3>
-                                <div class="badge badge-dark">ปิด</div>
+                                {/* <div class="badge badge-dark">ปิด</div> */}
                                 <span>productName</span>
                                 <p>productPrice</p>    
                                 <a href="#" class="line_btn">เพิ่มไปยังรถเข็น</a>

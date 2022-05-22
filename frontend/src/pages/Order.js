@@ -18,73 +18,65 @@ class Order extends React.Component{
          
           <div class ="container"> 
           <br/>   
-          <div class="container">
-              <div class="row">
-        
-                <div class="col-xs-12">
-                  <div class="grid invoice">
-                    <div class="grid-body">
-                
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h3>รายการสั่งซื้อ</h3>
-                          <table class="table table-striped">
-                            <thead>
-                              <tr class="line">
-                                <td><strong>#</strong></td>
-                                <td class="text-center"><strong>PROJECT</strong></td>
-                                <td class="text-center"><strong>HRS</strong></td>
-                                <td class="text-right"><strong>RATE</strong></td>
-                                <td class="text-right"><strong>SUBTOTAL</strong></td>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td><strong>Template Design</strong><br/>A website template is a pre-designed webpage, or set of webpages, that anyone can modify with their own content and images to setup a website.</td>
-                                <td class="text-center">15</td>
-                                <td class="text-center">$75</td>
-                                <td class="text-right">$1,125.00</td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td><strong>Template Development</strong><br/>Web development is a broad term for the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network).</td>
-                                <td class="text-center">15</td>
-                                <td class="text-center">$75</td>
-                                <td class="text-right">$1,125.00</td>
-                              </tr>
-                              <tr class="line">
-                                <td>3</td>
-                                <td><strong>Testing</strong><br/>Take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.</td>
-                                <td class="text-center">2</td>
-                                <td class="text-center">$75</td>
-                                <td class="text-right">$150.00</td>
-                              </tr>
-                              <tr>
-                                <td colspan="3"></td>
-                                <td class="text-right"><strong>Taxes</strong></td>
-                                <td class="text-right"><strong>N/A</strong></td>
-                              </tr>
-                              <tr>
-                                <td colspan="3">
-                                </td><td class="text-right"><strong>Total</strong></td>
-                                <td class="text-right"><strong>$2,400.00</strong></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>									
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12 text-right identity">
-                          <p>Designer identity<br/><strong>Jeffrey Williams</strong></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-         </div>
-        </div>
+          <div class="row">
+						<div class="col-lg-12">
+						<div class="card mb-4">
+							<div class="card-body">
+							<table class="table table-borderless">
+								<tbody>
+                <a href="/OrderStatus" class="btn btn-primary">สถานะของอาหาร</a>
+								<tr>
+									<td></td>
+									<td>จำนวน</td>
+									<td class="text-end">ราคา</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="d-flex mb-2">
+										<div class="flex-shrink-0">
+										<img src="img/post/post_4.png" alt=""/>
+										</div>
+										<div class="flex-lg-grow-1 ms-3">
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
+										</div>
+									</div>
+									</td>
+									<td>1</td>
+									<td class="text-end">50</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="d-flex mb-2">
+										<div class="flex-shrink-0">
+										<img src="img/post/post_3.png" alt=""/>
+										</div>
+										<div class="flex-lg-grow-1 ms-3">
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
+										</div>
+									</div>
+									</td>
+									<td>1</td>
+									<td class="text-end">45</td>
+								</tr>
+								</tbody>
+								<tfoot>
+								<tr>
+									<td colspan="2" a href="/OrderStatus" >จำนวนรายการทั้งหมด</td>
+									<td class="text-danger text-end">2 รายการ</td>
+								</tr>
+								<tr class="fw-bold">
+									<td colspan="2">รวมทั้งหมด</td>
+									<td class="text-end">95 บาท</td>
+								</tr>
+								</tfoot>
+							</table>
+							</div>
+						</div>
+					</div>
+ 					 </div>
+            
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
           

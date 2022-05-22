@@ -39,6 +39,7 @@ import Order from './pages/Order';
 import MenuSelect from './pages/MenuSelect';
 import ShopMember from './pages/ShopMember';
 import OrderOwnerEdit from './pages/OrderOwnerEdit';
+import Cart from './pages/Cart';
 
 
 class App extends React.Component {
@@ -50,6 +51,9 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
+        <Route path="/Cart">
+            <Cart/>
+            </Route>
         <Route path="/OrderOwnerEdit">
             <OrderOwnerEdit />
             </Route>

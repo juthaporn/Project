@@ -42,7 +42,7 @@ class OrderStatus extends React.Component{
 								<div class="step-icon-wrap">
 								<div class="step-icon"><i class="pe-7s-medal"></i></div>
 								</div>
-								<h4 class="step-title">กำลังปรุงk</h4>
+								<h4 class="step-title">กำลังปรุง</h4>
 							</div>
 							<div class="step">
 								<div class="step-icon-wrap">
@@ -76,49 +76,43 @@ class OrderStatus extends React.Component{
 									<td>
 									<div class="d-flex mb-2">
 										<div class="flex-shrink-0">
-										<img src="https://via.placeholder.com/280x280/87CEFA/000000" alt="" width="35" class="img-fluid"/>
+										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h6 class="small mb-0"><a href="#" class="text-reset">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</a></h6>
-										<span class="small">Color: Black</span>
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
 										</div>
 									</div>
 									</td>
 									<td>1</td>
-									<td class="text-end">$79.99</td>
+									<td class="text-end">50</td>
 								</tr>
 								<tr>
 									<td>
 									<div class="d-flex mb-2">
 										<div class="flex-shrink-0">
-										<img src="https://via.placeholder.com/280x280/FF69B4/000000" alt="" width="35" class="img-fluid"/>
+										<img src="img/post/post_3.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h6 class="small mb-0"><a href="#" class="text-reset">Smartwatch IP68 Waterproof GPS and Bluetooth Support</a></h6>
-										<span class="small">Color: White</span>
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
 										</div>
 									</div>
 									</td>
 									<td>1</td>
-									<td class="text-end">$79.99</td>
+									<td class="text-end">45</td>
 								</tr>
 								</tbody>
 								<tfoot>
 								<tr>
-									<td colspan="2">Subtotal</td>
-									<td class="text-end">$159,98</td>
-								</tr>
-								<tr>
-									<td colspan="2">Shipping</td>
-									<td class="text-end">$20.00</td>
-								</tr>
-								<tr>
-									<td colspan="2">Discount (Code: NEWYEAR)</td>
-									<td class="text-danger text-end">-$10.00</td>
+									<td>
+									<a href="/Order" >จำนวนรายการทั้งหมด</a>
+									</td>
+									<td class="text-danger text-end">2 รายการ</td>
 								</tr>
 								<tr class="fw-bold">
-									<td colspan="2">TOTAL</td>
-									<td class="text-end">$169,98</td>
+									<td colspan="2">รวมทั้งหมด</td>
+									<td class="text-end">95 บาท</td>
 								</tr>
 								</tfoot>
 							</table>

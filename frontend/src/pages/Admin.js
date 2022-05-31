@@ -43,9 +43,10 @@ class Admin extends React.Component{
                 </div>
                 <br />
                 <Dashboard />  
-                <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                    <div class="card-body">
+                <div class="col-md-12 grid-margin box">
+                    {/* <div class="card"> */}
+                    {/* <div class="card-body"> */}
+                    {/* <div class="box" */}
                         <div class="table-responsive">
                             <table class="table table-striped table-borderless" >
 
@@ -62,22 +63,12 @@ class Admin extends React.Component{
                                         </tr>
                                     ))
                                 }
-                                {/* {this.state.data.map(item => (
-                                    <tr>
-
-                                        <td>{item.shopName}</td>
-                                        <td>{item.shopType}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.shopPhone}</td>
-                                    </tr>
-                                ))} */}
-
                             </table>
                         </div>
                     </div>
-                </div>
-                </div>
-                
+                {/* </div>
+                </div> */}
+                <br />
             </div>
 
         )

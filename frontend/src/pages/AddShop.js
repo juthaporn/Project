@@ -17,13 +17,17 @@ class AddShop extends React.Component {
     }
 
     handleChange = (e) => {
-      console.log(e.target.name, e.target.value);
-      let name = e.target.name;
-      let value = e.target.value;
-      this.setState({
-        [name]: value
-      });
     }
+
+    // getData = () => {
+    //   var x = this;
+    //   axios.get("http://localhost:3000/member/getMemberRole/3").then((res) => {
+    //     this.setState({data: res.data.data[0]});
+    //     console.log('admin',this.state.data)
+    //   }).catch((error) => {
+    //     console.log(error);
+    //   });
+    // }
 
     // getData = () => {
     //   var x = this;
@@ -59,7 +63,9 @@ class AddShop extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้าน</label>
-                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={this.handleChange} required />
+                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={(e) => {
+                        this.setState({})
+                      }} required />
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
@@ -84,9 +90,14 @@ class AddShop extends React.Component {
                     <div class="form-group">
                       <label>ชื่อผู้ประกอบการ</label>
                       {/* <input type="text" name="name" class="form-control" onChange={this.handleChange} required />  */}
-                      <select id='name'>
+                      {/* {
+                        this.state.data?.map(item => (
+                          {item.name}
+                          ))
+                      } */}
+                      {/* <select id='name'>
                         <option value={this.name}></option>
-                      </select>
+                      </select> */}
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

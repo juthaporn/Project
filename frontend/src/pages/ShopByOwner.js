@@ -78,7 +78,7 @@ class ShopByOwner extends React.Component{
                                     <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
                                 </div>
                                 <div class="box-card">
-                                    <Link to="/admin" class="button button-contactForm btn_4 boxed-btn">ย้อนกลับ</Link>&nbsp; &nbsp; 
+                                    <Link to="/admin" class="button button-contactForm btn_4 boxed-btn-btn">ย้อนกลับ</Link>&nbsp; &nbsp; 
                                     <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
                                     
                                 </div>

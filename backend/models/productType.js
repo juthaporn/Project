@@ -18,8 +18,9 @@ class ProductType{
                 [this.typeName, this.typeID]
             );
         }else{
+            console.log("model" ,this.typeName)
             return db.execute(
-                'insert into producttype (typeName) values(?)',
+                'insert into producttype (typeName) value(?)',
                 [this.typeName]
             );
         }

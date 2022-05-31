@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,24 +10,21 @@ class AddShopType extends React.Component {
       }
     }
 
-    // handleChange = (e) => {
-    //   console.log(e.target.name, e.target.value);
-    //   let name = e.target.name;
-    //   let value = e.target.value;
-    //   this.setState({
-    //     [name]: value
-    //   });
-    // }
+    handleChange = (e) => {
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-productType', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
-    // }
+      // console.log(e.target.value)
+      this.setState({value: e.target.value})
+    }
+
+    handleSubmit = () => {
+      console.log("handleSubmit", this.state.value)
+      axios.post('http://localhost:3000/shopType/createShopType', {
+        typeName: this.state.value
+      }).then((res) => {  
+        console.log(res.result)
+      })
+    
+    }
     
     render(){
         return(

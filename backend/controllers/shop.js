@@ -45,7 +45,7 @@ exports.getOneShop = (req, res, next) => {
 
 exports.editShop = (req, res, next) => {
     console.log(req.body)
-    const {shopID,shopName, shopPhone, shopDetail, openingTime, shopRentalContract, memberID, shopTypeID} = req.body;
+    const {shopID, shopName, shopPhone, shopDetail, openingTime, shopRentalContract, memberID, shopTypeID} = req.body;
     const shop = new Shop (shopID, shopName, shopPhone, shopDetail, openingTime, shopRentalContract, memberID, shopTypeID);
     shop.save().then(() => {
         res.status(200).json({

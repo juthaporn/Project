@@ -18,8 +18,8 @@ class OrderOwner extends React.Component{
         return(   
           
             <div class ="container"><br/>
-            <p class="text-left font-weight-bold">หน้าออร์เดอร์</p>
-              <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
+            <h5 class="text-left ">หน้าออร์เดอร์</h5>
+              <h5 class="text-right ">วันที่ 10/5/2565</h5>
                       <div class="row">
                       <div class="col-lg-3 col-sm-6 col-xs-12">
                           <div class="white-box analytics-info">
@@ -29,7 +29,7 @@ class OrderOwner extends React.Component{
                                       <div id="sparklinedash">
                                       </div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-primary"></i> <span class="counter text-primary">9 รายการ</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-primary"></i> <h5 class="counter text-primary">9 รายการ</h5></li>
                               </ul>
                           </div>
                       </div>
@@ -40,7 +40,7 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash2"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-warning"></i> <span class="counter text-warning">9 รายการ</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-warning"></i> <h5 class="counter text-warning">9 รายการ</h5></li>
                               </ul>
                           </div>
                       </div>
@@ -51,7 +51,7 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash3"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1 รายการ</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-success"></i> <h5 class="counter text-success">1 รายการ</h5></li>
                               </ul>
                           </div>
                       </div>
@@ -62,38 +62,38 @@ class OrderOwner extends React.Component{
                                   <li>
                                       <div id="sparklinedash3"></div>
                                   </li>
-                                  <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">9 รายการ</span></li>
+                                  <li class="text-right"><i class="ti-arrow-up text-danger"></i> <h5 class="counter text-danger">9 รายการ</h5></li>
                               </ul>
                           </div>
                       </div>
                   </div>
                 <br/>
-                    <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <p class="card-title mb-0">สถานะการสั่งซื้อ</p>
+                <div class="row">
+                      <div class="col-lg-12 col-sm-6 col-xs-12">
+                          <div class="white-box analytics-info">
+                        <h5 class="card-title mb-0">สถานะการสั่งซื้อ</h5>
                         <div class="table-responsive">
                           <table class="table table-striped table-borderless">
                             <thead>
                               <tr>
-                                <th>หมายเลขออร์เดอร์</th>
-                                <th>รายการ</th>
+                                <th><h3 class="box-title">จำนวนออร์เดอร์ที่เสร็จสมบูรณ์</h3></th>
+                                <th><h3 class="box-title">รายการ</h3></th>
                                 <th></th>
-                                <th>เวลา</th>
-                                <th>ราคา</th>
-                                <th>จำนวน</th>
-                                <th>สถานะ</th>
-                                <th>แก้ไข</th>
+                                <th><h3 class="box-title">เวลา</h3></th>
+                                <th><h3 class="box-title">ราคา</h3></th>
+                                <th><h3 class="box-title">จำนวน</h3></th>
+                                <th><h3 class="box-title">สถานะ</h3></th>
+                                <th><h3 class="box-title">แก้ไข</h3></th>
                               </tr>  
                             </thead>
                             <tbody>
                               <tr>
-                              <td class="font-weight-bold ">1</td>
+                              <td ><h3 class="box-title">1</h3></td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
-                                <td>20:18</td>
-                                <td>30</td>
-                                <td>2</td>
+                                <td><h3 class="box-title">ข้าว</h3></td>
+                                <td><h3 class="box-title">20:18</h3></td>
+                                <td><h3 class="box-title">30</h3></td>
+                                <td><h3 class="box-title">2</h3></td>
                                 <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
                                 {/* <td>
                                 <select class="selectpicker">
@@ -109,10 +109,10 @@ class OrderOwner extends React.Component{
                               <tr>
                               <td></td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
-                                <td>20:18</td>
-                                <td>30</td>
-                                <td>2</td>
+                              <td><h3 class="box-title">ข้าว</h3></td>
+                                <td><h3 class="box-title">20:18</h3></td>
+                                <td><h3 class="box-title">45</h3></td>
+                                <td><h3 class="box-title">2</h3></td>
                                 <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
                                 {/* <td>
                                 <select class="selectpicker">

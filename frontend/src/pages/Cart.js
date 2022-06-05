@@ -6,9 +6,8 @@ class Cart extends React.Component{
         return( 
             <div class ="container">
                 <br/>
-                    <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
+                <div class="col-lg-12 col-sm-6 col-xs-12">
+                  <div class="white-box analytics-info">
                         <p class="card-title mb-0">รถเข็น</p>
                         <div class="table-responsive">
                           <table class="table table-striped table-borderless">
@@ -23,7 +22,7 @@ class Cart extends React.Component{
                             <tbody>
                               <tr>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
+                              <td>Search Engine Marketing<br/>type</td>
                                 <td>
                                     <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
@@ -34,7 +33,8 @@ class Cart extends React.Component{
                               </tr>
                               <tr>
                               <td><img src="img/post/post_4.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
+                                <td>Search Engine Marketing<br/>type</td>
+
                                 <td>
                                     <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
@@ -47,11 +47,11 @@ class Cart extends React.Component{
                           </table>
                           <div class="form-group text-center">
                           <a href="/Order" class="btn btn-primary">สั่งซื้อ</a>
+                          
                         </div>
                         </div>
                       </div>
                     </div>
-                  </div>
                   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
         )

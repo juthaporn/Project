@@ -4,7 +4,13 @@ import React from 'react';
 class Shop extends React.Component{
     render(){
         return( 
-          <div class ="container">    
+          <div class ="container"> 
+          <br/>
+           <div class="col-lg-12 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+						<div class=" text-center "><h5><span >ร้านอาหาร</span></h5></div>
+				</div>
+                </div>
            <div class="recepie_area">
           <div class="container">
               <div class="row">

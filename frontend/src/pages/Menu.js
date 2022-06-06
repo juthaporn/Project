@@ -14,9 +14,9 @@ class Menu extends React.Component{
             <div class ="container">
                 <br/>
                 <div class="row">
-				<div class="col-lg-12">
-						<div class="card mb-3">
-						<div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">รายการอาหาร</span></div>
+                <div class="col-lg-12 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+						<div class=" text-center "><h5><span >รายการอาหาร</span></h5></div>
 				</div>
                 <div class="recepie_area">
                     <div class="row">

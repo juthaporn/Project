@@ -18,31 +18,30 @@ class OrderOwnerEdit extends React.Component{
     render(){
         return(   
           
-            <div class ="container"><br/>
-            <p class="text-left font-weight-bold">หน้าแก้ไขรายการสั่งซื้อการสั่งซื้อ</p>
-              <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
-                      
-                <br/>
-                    <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <p class="card-title mb-0">แก้ไขรายการสั่งซื้อการสั่งซื้อ</p>
+            <div class ="container"><br/> 
+            <h5 class="text-left ">หน้าแก้ไขรายการสั่งซื้อการสั่งซื้อ</h5>
+            <h5 class="text-right ">วันที่ 10/5/2565</h5>
+                      <div class="row">
+                      <div class="col-lg-12 col-sm-6 col-xs-12">
+                          <div class="white-box analytics-info">
+                              <h3 class="box-title">จำนวนออร์เดอร์ที่รอคิว</h3>
                         <div class="table-responsive">
                           <table class="table table-striped table-borderless">
                             <thead>
                               <tr>
-                                <th>หมายเลขออร์เดอร์</th>
-                                <th>รายการ</th>
-                                <th></th>
-                                <th >จำนวน</th>
-                                <th>ยกเลิก</th>
+                                <th><h3 class="box-title">หมายเลขออร์เดอร์</h3></th>
+                                <th><h3 class="box-title"></h3></th>
+                                <th><h3 class="box-title">รายการ</h3></th>
+                                <th><h3 class="box-title">จำนวน</h3></th>
+                                <th><h3 class="box-title">ยกเลิก</h3></th>
+                               
                               </tr>  
                             </thead>
                             <tbody>
                               <tr>
                               <td class="font-weight-bold ">1</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
+                              <td><h3 class="box-title">ข้าว</h3></td>
                                 <td>
                                 <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
@@ -52,17 +51,7 @@ class OrderOwnerEdit extends React.Component{
                               <tr>
                               <td></td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Marketing</td>
-                                <td>
-                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-                                </td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
-                              </tr>
-                              
-                              <tr>
-                              <td class="font-weight-bold">2</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Search Engine Optimization</td>
+                              <td><h3 class="box-title">ข้าว</h3></td>
                                 <td>
                                 <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>
@@ -71,43 +60,7 @@ class OrderOwnerEdit extends React.Component{
                               <tr>
                               <td class="font-weight-bold">3</td>
                               <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Display Advertising</td>
-                                <td>
-                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-                                </td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">4</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Pay Per Click Advertising</td>
-                                <td>
-                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-                                </td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">5</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>E-Mail Marketing</td>
-                                <td>
-                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-                                </td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">6</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Referral Marketing</td>        
-                                <td>
-                                <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-                                </td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
-                              </tr>
-                              <tr>
-                              <td class="font-weight-bold">7</td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
-                                <td>Social media marketing</td> 
+                              <td><h3 class="box-title">ข้าว</h3></td>
                                 <td>
                                 <input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
                                 </td>

@@ -15,50 +15,61 @@ class MenuSelect extends React.Component{
 
     render(){
         return(    
-            <div class ="container">    
-            <div class="bradcam_area bradcam_bg_1">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-xl-12">
-                              <div class="bradcam_text text-center">
-                                  <h3>Menu</h3>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-            </div>
-            <div class="recepie_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                              
-                                <img class="card-img" src="img/recepie/recpie_1.png" alt="" />
-                            </div>
-                            <h3>productName </h3>
-                            <span>orderDetail</span>
-                            <span>productPrice</span>
-                            <span>quantity</span>
-                           
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                            <img class="card-img" src="img/recepie/recpie_6.png" alt="" />
-                            </div>
-                            <h3>Pure Vegetable Bowl</h3>
-                            <span>Appetizer</span>
-                            <p>Time Needs: 30 Mins</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-       
+              
+          <div class ="container"> 
+          <br/>   
+          <div class="row">
+		  <div class="col-lg-12 col-sm-6 col-xs-12">
+                  <div class="white-box analytics-info">
+							<div class="card-body">
+							<table class="table table-borderless">
+								<tbody>
+                {/* <a href="/OrderStatus" class="btn btn-primary">สถานะของอาหาร</a> */}
+								<tr>
+									<td></td>
+									<td>จำนวน</td>
+									<td class="text-end">ราคา</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="d-flex mb-2">
+										<div class="flex-shrink-0">
+										<img src="img/post/post_4.png" alt=""/>
+										</div>
+										<div class="flex-lg-grow-1 ms-3">
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
+										</div>
+									</div>
+									</td>
+									<input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
+									<td class="text-end">50</td>
+								</tr>
+								<tr>
+									<td>
+									<div class="d-flex mb-2">
+										<div class="flex-shrink-0">
+										<img src="img/post/post_3.png" alt=""/>
+										</div>
+										<div class="flex-lg-grow-1 ms-3">
+										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
+										<span class="small">ประเภทอาหาร: ข้าว</span>
+										</div>
+									</div>
+									</td>
+									<input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
+									<td class="text-end">45</td>
+								</tr>
+								</tbody>
+							</table>
+							</div>
+						</div>
+					</div>
+ 					 </div>
+            
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          </div>
+          
         )
     }
 }

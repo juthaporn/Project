@@ -16,19 +16,19 @@ class ShopOwner extends React.Component{
 
             <div class="container">
                 <br/>
-                <p class="text-left font-weight-bold">หน้ายอดขาย</p>
-                <p class="text-right font-weight-bold">วันที่ 10/5/2565</p>
+                <h5 class="box-title">หน้ายอดขาย</h5>
+                <h5 class="text-right">วันที่ 10/5/2565</h5>
                     <div class="row">
                             <div class="col-lg-4 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">ยอดขายทั้งหมด (บาท)</h3>
+                                    <h3 class="box-title">ยอดขายทั้งหมด </h3>
                                     <ul class="list-inline two-part">
                                         <li>
                                             <div id="sparklinedash">
                                                 {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
                                             </div>
                                         </li>
-                                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1,525</span></li>
+                                        <h5><li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1,525 บาท</span></li></h5>
                                     </ul>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@ class ShopOwner extends React.Component{
                                         <li>
                                             <div id="sparklinedash2"></div>
                                         </li>
-                                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">41</span></li>
+                                        <h5><li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple " >41 รายการ</span></li></h5>
                                     </ul>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@ class ShopOwner extends React.Component{
                                         <li>
                                             <div id="sparklinedash3"></div>
                                         </li>
-                                        <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">11:32</span></li>
+                                        <h5><li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">11:32 </span></li></h5>
                                     </ul>
                                 </div>
                             </div>
@@ -73,16 +73,15 @@ class ShopOwner extends React.Component{
                                         <tbody>
                                         <tr>                       
                                         <td><img src="img/post/post_10.png" alt=""/></td>
-                                            <td>Search Engine Marketing</td>
+                                        <td> <h3 class="box-title">ข้าวกะเพรา</h3></td>
                                         </tr>
                                         <tr>
                                         <td><img src="img/post/post_7.png" alt=""/></td>
-                                            <td>Search Engine Marketing</td>
+                                        <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td>
                                         </tr>
                                         <tr>
                                         <td><img src="img/post/post_5.png" alt=""/></td>
-                                            <td>Search Engine Marketing</td>
-                                        </tr>
+                                        <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td></tr>
                                         </tbody>
                                     </table>
                                     </div>

@@ -56,6 +56,7 @@ class AddShop extends React.Component {
               <div className="row">
                 <div class="col-lg-6">
                   <br />
+                  <br />
                   <img class="card-img" src="img/video/big.png" alt="" />
                 </div>
                 <div class="col-lg-6">

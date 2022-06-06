@@ -9,7 +9,8 @@ class ShopByOwner extends React.Component{
         this.state = {
             data: [],
             name: "",
-            phone: ""
+            phone: "",
+            memberID: ""
         }
 
     }
@@ -51,45 +52,67 @@ class ShopByOwner extends React.Component{
                     </div>
                 </div>
         
-                <br />
+                {/* <br /> */}
                 {/* <a href="/admin" class="line_btn" style={style1}>ย้อนกลับ</a> */}
                 <div>
-                
-                    <h5>ผู้ประกอบการ : {this.state.name} &nbsp;&nbsp;&nbsp;&nbsp;  เบอร์โทร : {this.state.phone}</h5>
-                    {
-                        this.state.data?.map(item => (
-                            <div class="col-xl-12 col-md-12 box">
-                                <div class="f-card">
-                                    <strong>ชื่อร้าน</strong> : {item.shopName}
-                                </div>
-                                <div class="f-card">
-                                    <strong>เบอร์โทรศัพท์</strong> : {item.shopPhone}
-                                </div>
-                                <div class="f-card">
-                                    <strong>คำอธิบายร้านค้า</strong> : {item.shopDetail}
-                                </div>
-                                <div class="f-card">
-                                    <strong>เวลาเปิด-ปิด</strong> : {item.openingTime}
-                                </div>
-                                <div class="f-card">
-                                    <strong>ประเภทร้านค้า</strong> : {item.typeName}
-                                </div>
-                                <div class="f-card">
-                                    <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
-                                </div>
-                                <div class="box-card">
-                                    <Link to="/admin" class="button button-contactForm btn_4 boxed-btn-btn">ย้อนกลับ</Link>&nbsp; &nbsp; 
-                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
-                                    
+
+                    <table class="table table-borderless">
+                            <td width="30%">
+                                <br />
+                                <h5>ผู้ประกอบการ : {this.state.name}</h5>
+                            </td>
+                            <td>
+                            <br />
+                                <h5>เบอร์โทร : {this.state.phone}</h5>
+                            </td>
+                            <td>
+                                {this.state.data?.map(item => (
+                                    <Link to={"/AddShop/"+item.memberID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มร้านค้า</Link>
+                                    ))
+                                }
+                            </td> 
+                    </table>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <br />
+                            <img class="card-img" src="img/cofe.jpg" alt="" />
+                        </div>
+
+                        {
+                            this.state.data?.map(item => (
+                                <div class="col-lg-8 box">
+                                    <div class="f-card">
+                                        <strong>ชื่อร้าน</strong> : {item.shopName}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>เบอร์โทรศัพท์</strong> : {item.shopPhone}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>คำอธิบายร้านค้า</strong> : {item.shopDetail}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>เวลาเปิด-ปิด</strong> : {item.openingTime}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>ประเภทร้านค้า</strong> : {item.typeName}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
+                                    </div><button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
                                 </div>
                                 
-                                    
-                                {/* </div> */}
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                        </div>
+                        {/* <table>
+                            <td width="40%"></td>
+                            <td><Link to="/admin" class="button button-contactForm btn_4 boxed-btn-btn">ย้อนกลับ</Link>&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td width="30%"></td>
+                        </table> */}
+                   
                 </div>
-                      
+                {/* </div> */}
             </div>
         )
     }

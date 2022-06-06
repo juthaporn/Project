@@ -53,13 +53,15 @@ class Admin extends React.Component{
                                     <tr>
                                         <th scope="col">ชื่อผู้ประกอบการ</th>
                                         <th scope="col">เบอร์โทร</th>
+                                        {/* <th></th> */}
                                     </tr>
 
                                 {
                                     this.state.data?.map(item => (
                                         <tr>
-                                            <td><Link to={"/ShopByOwner/"+item.memberID}>{item.name}</Link></td>
+                                            <td>{item.name}</td>
                                             <td>{item.phone}</td>
+                                            <td width="20%"><Link to={"/ShopByOwner/"+item.memberID} class="button button-contactForm btn_4 boxed-btn-data">ข้อมูลเพิ่มเติม</Link></td>
                                         </tr>
                                     ))
                                 }

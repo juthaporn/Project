@@ -437,7 +437,7 @@ h3 {
 
 .box{
   border: 1px solid #bcbcbc;
-  margin-top: 27px;
+  /* margin-top: 27px; */
   border-radius: 10px;
   padding-left: 35px;
   padding-right: 35px;
@@ -450,6 +450,26 @@ box-title{
   text-transform:uppercase;
   font-size:16px;
   /* font-weight: 600; */
+}
+
+/* tr{
+  /* border: 1px solid #dddddd;
+  text-align: left; */
+  /* background-color: #dddddd;
+  padding: 8px;
+} */
+
+td, th {
+  /* border-top: 1px solid #830c0c; */
+  text-align: left; 
+  
+  /* padding: 8px; */
+}
+
+tr:nth-child(even) {
+  /* background-color: #dddddd; */
+  border-bottom: 0.5px solid #bcbcbc;
+  border-top: 0.5px solid #bcbcbc;
 }
 
 .admin-card{
@@ -467,10 +487,10 @@ box-title{
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
-  padding: 20px 0 0 15px;
+  padding: 15px 0 15px 15px;
   /* margin-bottom: 26px; */
   /* margin-bottom: 0px; */
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
 }
 
 .box-card{
@@ -487,8 +507,9 @@ box-title{
   background: #fff;
   color: #131313;
   display: inline-block;
-  padding: 14px 55px;
+  padding: 14px 62px;
   margin-bottom: 20px;
+  margin-right: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -500,7 +521,7 @@ box-title{
   text-transform: uppercase;
   cursor: pointer;
   /* text-align: center; */
-  /* float: center; */
+  float: right;
 }
 
 .boxed-btn-del:hover {
@@ -534,22 +555,85 @@ box-title{
   cursor: pointer;
 }
 
-/* line 17, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_btn.scss */
 .boxed-btn-btn:hover {
   background: #ffc000;
   color: #fff !important;
   border: 1px solid #ffc000;
 }
 
-/* line 22, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_btn.scss */
 .boxed-btn-btn:focus {
   outline: none;
 }
 
-/* line 25, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_btn.scss */
 .boxed-btn-btn.large-width {
   width: 220px;
 }
+
+.boxed-btn-add {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 34px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #ffc000;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ffc000 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-add:hover {
+  background: #ffc000;
+  color: #fff !important;
+  border: 1px solid #ffc000;
+}
+
+.boxed-btn-add:focus {
+  outline: none;
+}
+
+.boxed-btn-add.large-width {
+  width: 220px;
+}
+
+.boxed-btn-data {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 10px 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #ffc000;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ffc000 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-data:hover {
+  background: #ffc000;
+  color: #fff !important;
+  border: 1px solid #ffc000;
+}
+
+.boxed-btn-data:focus {
+  outline: none;
+}
+
+.boxed-btn-data.large-width {
+  width: 220px;
+}
+
 .white-box{
   /* background:rgba(198, 162, 162, 0.634); */
   padding:25px;

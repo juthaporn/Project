@@ -114,8 +114,8 @@ class App extends React.Component {
           <Route path="/AddRent">
             <AddRent />
           </Route>
-          <Route path="/AddShop">
-            <AddShop />
+          <Route path="/AddShop/:id" component={AddShop}>
+            {/* <AddShop /> */}
           </Route>
           <Route path="/AddShopType">
             <AddShopType />

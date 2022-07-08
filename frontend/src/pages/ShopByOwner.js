@@ -18,12 +18,13 @@ class ShopByOwner extends React.Component{
     componentDidMount(){
         this.getData()
         console.log("MemberID",this.props.match.params.id)
-      }
+    }
   
       getData = () => {
         var x = this;
         axios.get("http://localhost:3000/shop/getShopByMemberID/"+this.props.match.params.id).then((res) => {
           this.setState({data: res.data.data[0]});
+          this.setState({memberID: this.state.data[0].memberID})
           this.setState({name: this.state.data[0].name})
           this.setState({phone: this.state.data[0].phone})
         //   console.log("admin",this.state.data[0].name)
@@ -36,9 +37,9 @@ class ShopByOwner extends React.Component{
 
 
     render(){
-        const style1 = {
-            background: "#F0FFFF"
-        }
+        // const style1 = {
+        //     background: "#F0FFFF"
+        // }
         return(
             <div class="container">
                 {/* container-fluid */}
@@ -66,21 +67,23 @@ class ShopByOwner extends React.Component{
                                 <h5>เบอร์โทร : {this.state.phone}</h5>
                             </td>
                             <td>
-                                {this.state.data?.map(item => (
-                                    <Link to={"/AddShop/"+item.memberID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มร้านค้า</Link>
-                                    ))
-                                }
+                                {/* <Link to={"/AddRent"} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link> */}
+                                {/* {this.state.data?.map(item => ( */}
+                                    {/* <br /> */}
+                                    <Link to={"/AddShop/"+this.state.memberID} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
+                                    {/* )) */}
+                                {/* } */}
                             </td> 
                     </table>
                     <div class="row">
-                        <div class="col-lg-4">
+                        {/* <div class="col-lg-4">
                             <br />
                             <img class="card-img" src="img/cofe.jpg" alt="" />
-                        </div>
+                        </div> */}
 
                         {
                             this.state.data?.map(item => (
-                                <div class="col-lg-8 box">
+                                <div class="col-lg-12 box">
                                     <div class="f-card">
                                         <strong>ชื่อร้าน</strong> : {item.shopName}
                                     </div>
@@ -98,7 +101,9 @@ class ShopByOwner extends React.Component{
                                     </div>
                                     <div class="f-card">
                                         <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
-                                    </div><button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                    </div>
+                                    <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link>
+                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
                                 </div>
                                 
                             ))

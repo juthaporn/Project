@@ -1,54 +1,95 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Select from 'react-select'
 
 class AddShop extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        shopName: '',
-        shopPhone: '',
-        shopDetail: '',
-        openingTime: '',
-        typeName: '',
-        shopRentalContract: '',
-        name: ''
+        data:[],
+        shopType:[]
       }
     }
 
-    handleChange = (e) => {
+    componentDidMount(){
+      this.getData()
+      this.getShopType()
+      console.log("MemberID",this.props.match.params.id)
     }
 
-    // getData = () => {
-    //   var x = this;
-    //   axios.get("http://localhost:3000/member/getMemberRole/3").then((res) => {
-    //     this.setState({data: res.data.data[0]});
-    //     console.log('admin',this.state.data)
-    //   }).catch((error) => {
-    //     console.log(error);
-    //   });
-    // }
+    getData = () => {
+      var x = this;
+      axios.get("http://localhost:3000/member/getOneMember/"+this.props.match.params.id).then((res) => {
+        this.setState({data: res.data.data[0]});
+        // this.setState({name: this.state.data[0].name})
+        console.log(this.state.data.name)
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
 
-    // getData = () => {
-    //   var x = this;
-    //   axios.get("http://localhost:3000/admin/member").then((res) => {
-    //     this.setState({data: res.data.data});
-    //     console.log(this.state.data)
-    //   }).catch((error) => {
-    //     console.log(error);
-    //   });
-    // }
+    getShopType = () => {
+      axios.get('http://localhost:3000/shopType/getShopType')
+      .then(res => {
+        const option = res.data.data.map((d) => ({
+          "value": d.shopTypeID,
+          "label": d.typeName
+        }))
+        this.setState({shopType: option})
+        // console.log('shopType', this.state.shopType[0].typeName)
+      })
+    }
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-shop', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
+    //เพิ่มข้อมูลต่อได้เลย
+    handleChange = (e) => {
+
+      // console.log(e.target.value)
+      // this.setState({value: e.target.value})
+      this.setState({
+        ...this.state,
+        [e.target.name]: e.target.value
+      })
+      
+      // console.log('handlechange addshop', this.state.shopName)
+    }
+
+    handleChangeShopType = (e) => {
+      this.setState({shopTypeID:e.value})
+    
+    }
+
+    // handleSubmit = () => {
+    //   console.log("handleSubmit", this.state.value)
+    //   axios.post('http://localhost:3000/shop/createShop', {
+    //     typeName: this.state.value
+    //   }).then((res) => {  
+    //     console.log(res.result)
+    //   })
+    
     // }
     
+    handleSubmit = (e) => {
+      e.preventDefault()
+      // console.log('handlesubmit addshop', this.state.shopName)
+      // console.log('handlesubmit addshop', this.state.shopPhone)
+      // console.log('handle', this.state.shopTypeID)
+      axios.post('http://localhost:3000/shop/createShop', {
+        shopName: this.state.shopName,
+        shopPhone: this.state.shopPhone,
+        shopDetail: this.state.shopDetail,
+        openingTime: this.state.openingTime,
+        shopRentalContract: this.state.shopRentalContract,
+        memberID: this.props.match.params.id,
+        shopTypeID: this.state.shopTypeID
+      }).then(res => {
+        console.log(res)
+        alert('Add Shop Success!')
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+
     render(){
         return(
           <main>
@@ -64,9 +105,7 @@ class AddShop extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้าน</label>
-                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={(e) => {
-                        this.setState({})
-                      }} required />
+                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
@@ -82,7 +121,13 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ประเภทร้านค้า</label>
-                      <input class="form-control" name="typeName" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
+                       <br></br>
+                      <Select 
+                        options={this.state.shopType}
+                        onChange={this.handleChangeShopType.bind(this)}
+                      />
+                      {/* <input class="form-control" name="typeName" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required /> */}
+                     
                     </div>
                     <div class="form-group">
                       <label>สัญาเช่าร้าน</label>
@@ -90,15 +135,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ชื่อผู้ประกอบการ</label>
-                      {/* <input type="text" name="name" class="form-control" onChange={this.handleChange} required />  */}
-                      {/* {
-                        this.state.data?.map(item => (
-                          {item.name}
-                          ))
-                      } */}
-                      {/* <select id='name'>
-                        <option value={this.name}></option>
-                      </select> */}
+                      <input class="form-control" name="name" onChange={this.handleChange} value={this.state.data.name} required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

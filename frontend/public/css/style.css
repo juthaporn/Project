@@ -607,6 +607,7 @@ tr:nth-child(even) {
   color: #131313;
   display: inline-block;
   padding: 14px 24px;
+  margin-right: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;

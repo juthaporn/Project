@@ -46,10 +46,7 @@ class AddYearRent extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้านค้า</label>
-                      {/* <input name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required /> */}
-                      <select id='shopName'>
-                        <option value={this.shopName}></option>
-                      </select>
+                      
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายเพิ่มเติม</label>
@@ -58,13 +55,9 @@ class AddYearRent extends React.Component {
                     <div class="form-group">
                       <label>ปี</label>&nbsp;&nbsp;&nbsp;
                       {/* <input name="year" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required /> */}
-                      <select id='year'>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
+                      <select>
+                        <option>2019</option>
+                        <option>2020</option>
                       </select>
                     </div>
                     <div class="form-group">

@@ -102,7 +102,8 @@ class ShopByOwner extends React.Component{
                                     <div class="f-card">
                                         <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
                                     </div>
-                                    <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link>
+                                    <Link to={"/AddYearRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link>
+                                    <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าน้ำ-ค่าไฟ</Link>
                                     <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
                                 </div>
                                 

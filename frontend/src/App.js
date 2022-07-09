@@ -123,8 +123,8 @@ class App extends React.Component {
           <Route path="/AddTypeFood">
             <AddTypeFood />
           </Route>
-          <Route path="/AddYearRent">
-            <AddYearRent />
+          <Route path="/AddYearRent/:id" component={AddYearRent}>
+            {/* <AddYearRent /> */}
           </Route>
           <Route path="/EditProduct">
             <EditProduct />

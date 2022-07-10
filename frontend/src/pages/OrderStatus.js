@@ -79,8 +79,8 @@ class OrderStatus extends React.Component{
 										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
-										<span class="small">ประเภทอาหาร: ข้าว</span>
+										<h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5>
+										<h5 ><span class="small">ประเภทอาหาร: ข้าว</span></h5>
 										</div>
 									</div>
 									</td>
@@ -94,8 +94,8 @@ class OrderStatus extends React.Component{
 										<img src="img/post/post_3.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h6 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h6>
-										<span class="small">ประเภทอาหาร: ข้าว</span>
+										<h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5>
+										<h5 ><span class="small">ประเภทอาหาร: ข้าว</span></h5>
 										</div>
 									</div>
 									</td>

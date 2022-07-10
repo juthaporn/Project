@@ -1,7 +1,31 @@
 import React from 'react';
-
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Shop extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+          shopName: '',
+          openingTime:''
+        }
+    }
+
+    componentDidMount(){
+        this.getData()
+      }
+  
+      getData = () => {
+        var x = this;
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+          this.setState({data: res.data.data[0]});
+          console.log("owner",this.state.data)
+          // x.setState({data: res.data.data});
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+
     render(){
         return( 
           <div class ="container"> 
@@ -10,79 +34,31 @@ class Shop extends React.Component{
                         <div class="white-box analytics-info">
 						<div class=" text-center "><h5><span >ร้านอาหาร</span></h5></div>
 				</div>
-                </div>
+            </div>
            <div class="recepie_area">
           <div class="container">
               <div class="row">
+              {
+                                    this.state.data?.map(shop => (
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
                               <img src="img/recepie/recpie_1.png" alt=""/>
                           </div>
-                          <h3>Egg Manchurian</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
+                                            <tr>
+                                              <td>{shop.shopName}</td></tr>
+                                            <tr>
+                                             <td>{shop.openingTime}</td></tr>
                           <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
                       </div>
+                       
                   </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6">
-                      <div class="single_recepie text-center">
-                          <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_2.png" alt=""/>
-                          </div>
-                          <h3>Pure Vegetable Bowl</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
-                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6">
-                      <div class="single_recepie text-center">
-                          <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_3.png" alt=""/>
-                          </div>
-                          <h3>Egg Masala Ramen</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
-                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6">
-                      <div class="single_recepie text-center">
-                          <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_3.png" alt=""/>
-                          </div>
-                          <h3>Egg Masala Ramen</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
-                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6">
-                      <div class="single_recepie text-center">
-                          <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_3.png" alt=""/>
-                          </div>
-                          <h3>Egg Masala Ramen</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
-                          <a href="#" class="line_btn">ไปยังร้านค้า</a>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6">
-                      <div class="single_recepie text-center">
-                          <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_3.png" alt=""/>
-                          </div>
-                          <h3>Egg Masala Ramen</h3>
-                          <span>Appetizer</span>
-                          <p>Time Needs: 30 Mins</p>
-                          <a href="#" class="line_btn">ไปยังร้านค้า</a>
-                      </div>
-                  </div>
+                  ))
+                }
               </div>
           </div>
       </div>
+      <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
       </div>
         )
     }

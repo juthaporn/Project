@@ -1,4 +1,7 @@
+import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Dashboard from '../components/Dashboard';
 
 class Order extends React.Component{
     constructor(props){
@@ -16,17 +19,18 @@ class Order extends React.Component{
     render(){
         return(   
          
-          <div class ="container"> 
-          <br/>   
+          <div class ="container">
+			<br/>  
+		   <h5 class="text-left ">หน้าสถานะของรายการอาหาร</h5><br/>
+		   <td><a href="/Menuselect" class="button button-contactForm btn_4 boxed-btn-data">กลับ</a></td><br/>
           <div class="row">
 		  <div class="col-lg-12 col-sm-6 col-xs-12">
                             <div class="white-box analytics-info">
 							<div class="card-body">
 							<table class="table table-borderless">
 								<tbody>
-               				 <a href="/OrderStatus" class="btn btn-primary">สถานะของอาหาร</a>
 								<tr>
-									<td></td>
+									<td><a href="/OrderStatus" class="button button-contactForm btn_4 boxed-btn-data">สถานะของอาหาร</a></td>
 									<td>จำนวน</td>
 									<td class="text-end">ราคา</td>
 								</tr>
@@ -42,6 +46,7 @@ class Order extends React.Component{
 										</div>
 									</div>
 									</td>
+									<td></td>
 									<td>1</td>
 									<td >50</td>
 								</tr>
@@ -57,17 +62,18 @@ class Order extends React.Component{
 										</div>
 									</div>
 									</td>
+									<td></td>
 									<td>1</td>
 									<td >45</td>
 								</tr>
 								</tbody>
 								<tfoot>
 								<tr>
-									<h5><td colspan="2" a href="/OrderStatus" >จำนวนรายการทั้งหมด</td></h5>
+									<h5><td a href="/OrderStatus" >จำนวนรายการทั้งหมด</td></h5>
 									<td class="text-danger text-end">2 รายการ</td>
 								</tr>
 								<tr class="fw-bold">
-									<h5><td colspan="2">รวมทั้งหมด</td></h5>
+									<h5><td >รวมทั้งหมด</td></h5>
 									<td class="text-end">95 บาท</td>
 								</tr>
 								</tfoot>

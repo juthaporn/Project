@@ -6,37 +6,65 @@ class AddRent extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        rentalDetail: '',
-        month:'',
-        waterBill: '',
-        waterUnit:'',
-        electricityBill: '',
-        powerUnit:'',
-        cleaningFee: '',
-        wasteDisposalFee: '',
-        shopName: ''
+        // rentalDetail: '',
+        // month:'',
+        // waterBill: '',
+        // waterUnit:'',
+        // electricityBill: '',
+        // powerUnit:'',
+        // cleaningFee: '',
+        // wasteDisposalFee: '',
+        // shopName: ''
+        data:[],
+
       }
     }
 
-    // handleChange = (e) => {
-    //   console.log(e.target.name, e.target.value);
-    //   let name = e.target.name;
-    //   let value = e.target.value;
-    //   this.setState({
-    //     [name]: value
-    //   });
-    // }
+    componentDidMount(){
+      this.getData()
+      console.log("shopID",this.props.match.params.id)
+    }
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-rent', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
-    // }
+    getData = () => {
+      var x = this;
+      axios.get("http://localhost:3000/shop/getOneShop/"+this.props.match.params.id).then((res) => {
+        this.setState({data: res.data.data[0]});
+        // this.setState({name: this.state.data[0].name})
+        console.log(this.state.data.shopName)
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
     
+    handleChange = (e) => {
+      console.log(e.target.value)
+      this.setState({
+        ...this.state,
+        [e.target.name]: e.target.value
+      })
+    }
+
+    handleSubmit = (e) => {
+      console.log("handleSubmit", this.state)
+      e.preventDefault()
+      axios.post('http://localhost:3000/monthlyRent/createMonthlyRent', {
+        rentalDetail: this.state.rentalDetail,
+        month: this.state.month,
+        waterBill: this.state.waterBill,
+        waterUnit: this.state.waterUnit,
+        electricityBill: this.state.electricityBill,
+        powerUnit: this.state.powerUnit,
+        cleaningFee: this.state.cleaningFee,
+        wasteDisposalFee: this.state.wasteDisposalFee,
+        shopID: this.props.match.params.id
+      }).then((res) => {  
+        console.log(res.data)
+      }).catch(err => {
+        console.log(err)
+      })
+    
+    }
+
     render(){
         return(
           <main>
@@ -51,10 +79,7 @@ class AddRent extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้านค้า</label>
-                      {/* <input name="shopID" class="form-control" placeholder="รหัสร้านค้า" onChange={this.handleChange} required /> */}
-                      <select id='shopName'>
-                        <option value={this.shopName}></option>
-                      </select>
+                      <input name="shopID" class="form-control" onChange={this.handleChange} value={this.state.data.shopName} required />
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายเพิ่มเติม</label>
@@ -70,7 +95,7 @@ class AddRent extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>จำนวนหน่วยค่าน้ำ</label>
-                      <input name="waterBill" class="form-control" onChange={this.handleChange} required />
+                      <input name="waterUnit" class="form-control" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>ราคาค่าไฟต่อหน่วย</label>
@@ -78,7 +103,7 @@ class AddRent extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>จำนวนหน่วยค่าไฟ</label>
-                      <input name="waterBill" class="form-control" onChange={this.handleChange} required />
+                      <input name="powerUnit" class="form-control" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>ค่ากำจัดขยะ</label>

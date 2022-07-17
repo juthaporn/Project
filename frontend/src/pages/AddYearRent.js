@@ -1,36 +1,70 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Select from 'react-select'
 
 class AddYearRent extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        rentDetail: '',
-        rentalFee: '',
-        year:'',
-        shopName: ''
+        // rentDetail: '',
+        // rentalFee: '',
+        // year:'',
+        // shopName: ''
+        data: [],
+        yearRent: 2019
       }
     }
 
-    // handleChange = (e) => {
-    //   console.log(e.target.name, e.target.value);
-    //   let name = e.target.name;
-    //   let value = e.target.value;
-    //   this.setState({
-    //     [name]: value
-    //   });
-    // }
+    componentDidMount(){
+      this.getData()
+      console.log("shopID",this.props.match.params.id)
+    }
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-yearRent', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
-    // }
+    getData = () => {
+      var x = this;
+      axios.get("http://localhost:3000/shop/getOneShop/"+this.props.match.params.id).then((res) => {
+        this.setState({data: res.data.data[0]});
+        // this.setState({name: this.state.data[0].name})
+        console.log(this.state.data.shopName)
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+
+    handleChange = (e) => {
+      console.log(e.target.value)
+      this.setState({
+        ...this.state,
+        [e.target.name]: e.target.value
+      })
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault()
+      console.log(this.state)
+      axios.post('http://localhost:3000/yearRent/createYearRent', {
+        rentDetail: this.state.rentDetail,
+        year: this.state.yearRent,
+        rentalFee: this.state.rentalFee,
+        shopID: this.state.data.shopID
+      }).then(res => {
+        console.log(res.data)
+      }).catch(err => {
+        console.log(err)
+      })
+      // axios.post('http://localhost:3000/YearRent/createYearRent',{
+      //   rentDetail: this.state.rentDetail,
+      //   year: this.state.year,
+      //   rentalFee: this.state.rentalFee,
+      //   shopID: this.props.match.params.id
+      // }).then(res => {
+      //   console.log(res)
+      //   alert('Success!')
+      // }).catch(err => {
+      //   console.log(err)
+      // })
+    }
     
     render(){
         return(
@@ -46,7 +80,7 @@ class AddYearRent extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้านค้า</label>
-                      
+                      <input class="form-control" name="shopName" onChange={this.handleChange} value={this.state.data.shopName} required />
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายเพิ่มเติม</label>
@@ -55,9 +89,15 @@ class AddYearRent extends React.Component {
                     <div class="form-group">
                       <label>ปี</label>&nbsp;&nbsp;&nbsp;
                       {/* <input name="year" class="form-control" placeholder="เช่น ค่าเช่าร้านประจำปี 2564" onChange={this.handleChange} required /> */}
-                      <select>
+                      {/* <Select 
+                        options="1203"
+                        onChange={this.handleChangeShopType.bind(this)}
+                      /> */}
+                      <select name='yearRent' onChange={this.handleChange}>
                         <option>2019</option>
                         <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
                       </select>
                     </div>
                     <div class="form-group">

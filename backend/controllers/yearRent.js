@@ -16,7 +16,7 @@ exports.getYearRent = (req, res, next) => {
 exports.createYearRent = (req, res, next) => {
     const {rentDetail, year, rentalFee, shopID} = req.body
     console.log(req.body)
-    const yearRent = new YearRent(null, rentDetail, year, rentalFee, shopID);
+    const yearRent = new YearRent(null, rentDetail, year, parseInt(rentalFee), shopID);
     yearRent.save().then(() => {
         res.status(200).json({
             "message": "success",

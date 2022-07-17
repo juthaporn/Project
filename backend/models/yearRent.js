@@ -2,9 +2,10 @@ const db = require('../util/database');
 
 class YearRent{
 
-    constructor(rentID, rentDetail, rentalFee, shopID){
+    constructor(rentID, rentDetail, year, rentalFee, shopID){
         this.rentID = rentID;
         this.rentDetail = rentDetail;
+        this.year = year;
         this.rentalFee = rentalFee;
         this.shopID = shopID;
     }
@@ -16,13 +17,13 @@ class YearRent{
     save(){
         if(this.rentalID){
             return db.execute(
-                'update yearlyrent set rentDetail=?, rentalFee=?, shopID=? where rentID = ?',
-                [this.rentID, this.rentDetail, this.rentalFee, this.shopID, this.rentID]
+                'update yearlyrent set rentDetail=?, year=?, rentalFee=?, shopID=? where rentID = ?',
+                [this.rentID, this.rentDetail, this.year, this.rentalFee, this.shopID, this.rentID]
             );
         }else{
             return db.execute(
-               'insert into yearlyrent (rentDetail, rentalFee,shopID) values(?,?,?)',
-               [this.rentDetail, this.rentalFee, this.shopID]
+               'insert into yearlyrent (rentDetail, year, rentalFee,shopID) values(?,?,?,?)',
+               [this.rentDetail, this.year, this.rentalFee, this.shopID]
             );
         }
     }

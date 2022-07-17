@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const yearRentController = require('../controllers/YearRent')
+const yearRentController = require('../controllers/yearRent')
 
 router.get('/getYearRent',yearRentController.getYearRent);
 

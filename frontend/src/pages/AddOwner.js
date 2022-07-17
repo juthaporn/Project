@@ -6,32 +6,36 @@ class AddOwner extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        username: '',
-        password: '',
-        name: '',
-        phone: ''
+        username:'',
+        password:'',
+        name:'',
+        phone:'',
+
       }
+      this.handleChange = this.handleChange.bind(this)
+      this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // handleChange = (e) => {
-    //   console.log(e.target.name, e.target.value);
-    //   let name = e.target.name;
-    //   let value = e.target.value;
-    //   this.setState({
-    //     [name]: value
-    //   });
-    // }
+    handleChange = (e) => {
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-member', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
-    // }
+      // console.log(e.target.value)
+      this.setState({value: e.target.value})
+    }
+
+    handleSubmit = () => {
+      console.log("handleSubmit", this.state.value)
+      axios.post('http://localhost:3000/member/createMember', {
+        username: this.state.value,
+        password: this.state.value,
+        name: this.state.value,
+        phone: this.state.value,
+        roleID: this.state.value
+      }).then((res) => {  
+        console.log(res.result)
+      })
     
+    }
+
     render(){
         return(
           <div class="container">

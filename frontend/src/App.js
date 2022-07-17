@@ -24,6 +24,7 @@ import AddShop from './pages/AddShop';
 import AddShopType from './pages/AddShopType';
 import AddTypeFood from './pages/AddTypeFood';
 import AddYearRent from './pages/AddYearRent';
+import AddRole from './pages/AddRole';
 import EditProduct from './pages/EditProduct';
 import EditShop from './pages/EditShop';
 import EditTypeFood from './pages/EditTypeFood';
@@ -111,8 +112,8 @@ class App extends React.Component {
           <Route path="/AddProduct">
             <AddProduct />
           </Route>
-          <Route path="/AddRent">
-            <AddRent />
+          <Route path="/AddRent/:id" component={AddRent}>
+            {/* <AddRent /> */}
           </Route>
           <Route path="/AddShop/:id" component={AddShop}>
             {/* <AddShop /> */}
@@ -125,6 +126,9 @@ class App extends React.Component {
           </Route>
           <Route path="/AddYearRent/:id" component={AddYearRent}>
             {/* <AddYearRent /> */}
+          </Route>
+          <Route path="/AddRole">
+            <AddRole />
           </Route>
           <Route path="/EditProduct">
             <EditProduct />

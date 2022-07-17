@@ -7,6 +7,8 @@ const shop = require('./routes/shop')
 const member = require('./routes/member')
 const productType = require('./routes/productType')
 const shopType = require('./routes/shopType')
+const yearRent = require('./routes/yearRent')
+const monthlyRent = require('./routes/monthlyRent')
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -21,6 +23,8 @@ app.use('/shop', shop)
 app.use('/member', member)
 app.use('/productType', productType)
 app.use('/shopType', shopType)
+app.use('/yearRent', yearRent)
+app.use('/monthlyRent', monthlyRent)
 
 app.get("/test", function (req, res) {
     res.json({"message": "hello world"});

@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class ShopDetail extends React.Component{
     constructor(props){
@@ -10,6 +12,22 @@ class ShopDetail extends React.Component{
             openingTime: ''
         }
       }
+      
+    componentDidMount(){
+        this.getData()
+      }
+  
+      getData = () => {
+        var x = this;
+        axios.get("http://localhost:3000/getOneShop/13").then((res) => {
+          this.setState({data: res.data.data[0]});
+          console.log("owner",this.state.data)
+          // x.setState({data: res.data.data});
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+
     render(){
         return(    
 
@@ -21,11 +39,16 @@ class ShopDetail extends React.Component{
                             <img class="card-img" src="img/recepie/recepie_details.png" alt="" />
                         </div>
                     </div>
+                    {
+                                    this.state.data?.map(shop => (
                     <div class="col-xl-6 col-md-6">
                         <div class="recepies_info">
                             <h3>shopName</h3>
                             <p>shopDetail</p>
-    
+                            <tr>
+                                              <td>{shop.shopName}</td></tr>
+                                            <tr>
+                                             <td>{shop.openingTime}</td></tr>
                             <div class="resepies_details">
                                 <ul>
                                     <li><p><strong>shopPhone</strong> :  Main Dish </p></li>
@@ -34,6 +57,8 @@ class ShopDetail extends React.Component{
                             </div>
                         </div>
                     </div>
+                     ))
+                    }
                 </div>
                
             </div>

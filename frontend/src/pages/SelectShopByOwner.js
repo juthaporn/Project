@@ -6,9 +6,7 @@ class SelectShopByOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            name : '',
-            phone: '',
-            memberID: ''
+          shopName: ''
         }
     }
 
@@ -18,7 +16,7 @@ class SelectShopByOwner extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getOneShop/3").then((res) => {
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
           this.setState({data: res.data.data[0]});
           console.log("owner",this.state.data)
           // x.setState({data: res.data.data});
@@ -31,7 +29,8 @@ class SelectShopByOwner extends React.Component{
         return(   
          
             <div class ="container"> 
-            <br/>   
+            <br/>
+            <h5 class="text-left ">หน้าเลือกร้านอาหาร</h5>     
             <div class="row">
               <div class="col-lg-12 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
@@ -39,23 +38,22 @@ class SelectShopByOwner extends React.Component{
                                 </div>
                 </div>
                 <div class="col-lg-12 col-sm-6 col-xs-12">
-                                <div class="white-box analytics-info">
-                                <img src="img/post/post_10.png" alt=""/><br/>
-                                <br/><h3 class="box-title">ชื่อร้าน</h3>
-                                {
+                {
                                     this.state.data?.map(shop => (
-                                        <tr>
-                                            <td>{shop.shopName}</td>
-                                        </tr>
-                                    ))
-                                }
-                                </div>
-                </div>
-                <div class="col-lg-12 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
-                                <img src="img/post/post_8.png" alt=""/><br/>
-                                <br/><h3 class="box-title">ชื่อร้าน</h3>
+                                  <img src="img/post/post_10.png" alt=""/><br/>
+                                          <tr>
+                                              <td>{shop.shopName}</td>
+                                              <br/>
+                                              <td>
+                                              <a href="/Shopowner"  class="button btn_4 boxed-btn-add"><h5>สั่งซื้อ</h5></a>
+                                              </td>
+                                          </tr>
+                                         
                                 </div>
+                                ))
+                              }
+                             
                 </div>
 	        </div>
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

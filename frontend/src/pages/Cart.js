@@ -29,7 +29,7 @@ class Cart extends React.Component{
                                 <td>
                                 <td> 50 บาท</td>
                                 </td>
-                                    <a href="/Menu" className="nav-link" class='badge badge-danger'>ลบ</a>
+                                    
                               </tr>
                               <tr>
                               <td><img src="img/post/post_4.png" alt=""/></td>
@@ -41,7 +41,7 @@ class Cart extends React.Component{
                                 <td>
                                 <td> 45 บาท</td>
                                 </td>
-                                    <a href="/Menu" className="nav-link" class='badge badge-danger'>ลบ</a>
+                                    
                               </tr>
                             </tbody>
                           </table>

@@ -16,7 +16,6 @@ class AddRent extends React.Component {
         // wasteDisposalFee: '',
         // shopName: ''
         data:[],
-
       }
     }
 

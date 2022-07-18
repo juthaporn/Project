@@ -1,33 +1,71 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Dashboard from '../components/Dashboard';
+import Select from 'react-select'
+// import Dashboard from '../components/Dashboard';
 
-class Admin extends React.Component{
+class AddRole extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            name : '',
-            phone: '',
-            memberID: ''
+            // name : '',
+            // phone: '',
+            // memberID: ''
+            data:[]
         }
     }
 
     componentDidMount(){
         this.getData()
+        console.log("roleID",this.props.match.params.id)
       }
   
-      getData = () => {
-        var x = this;
-        axios.get("http://localhost:3000/member/getAllMember").then((res) => {
-          this.setState({data: res.data.data[0]});
-          console.log(this.state.data)
-          // x.setState({data: res.data.data});
-        }).catch((error) => {
-          console.log(error);
-        });
+    //   getData = () => {
+    //     var x = this;
+    //     axios.get("http://localhost:3000/member/getAllMember").then((res) => {
+    //       this.setState({data: res.data.data[0]});
+    //       console.log(this.state.data.roleName)
+    //       // x.setState({data: res.data.data});
+    //     }).catch((error) => {
+    //       console.log(error);
+    //     });
+    //   }
+
+    getAllRole = () => {
+        axios.get('http://localhost:3000/rolegetAllRole')
+        .then(res => {
+            const option = res.data.map((d) => ({
+                "value": d.roleID,
+                "label": d.roleName
+            }))
+            this.setState({role: option})
+        })
+    }
+
+      handleChange = (e) => {
+        // console.log(e.target.value)
+        this.setState({
+          ...this.state,
+          [e.target.roleName]: e.target.value
+        })
       }
 
+      handleChangeRole = (e) => {
+        this.setState({roleID:e.value})
+      }
+
+      handleSubmit = (e) => {
+        console.log("handleSubmit", this.state)
+        e.preventDefault()
+        axios.post('http://localhost:3000/role/getAllRole', {
+            roleName: this.state.roleName,
+            status: this.state.status
+        }).then((res)=>{
+            console.log(res.data)
+        }).catch(err => {
+            console.log(err)
+        })
+      }
 
     render(){
         return(
@@ -53,13 +91,7 @@ class Admin extends React.Component{
                                     <tr>
                                         <th scope="col">ชื่อ</th>
                                         <th scope="col">เบอร์โทร</th>
-                                        <th>
-                                        <select name='role' onChange={this.handleChange}>
-                                            <option>สมาชิก</option>
-                                            <option>ผู้ดูแลระบบ</option>
-                                            <option>ผู้ประกอบการ</option>
-                                        </select>
-                                        </th>
+                                        <th width="20%">บทบาท</th>
                                     </tr>
 
                                 {
@@ -67,7 +99,12 @@ class Admin extends React.Component{
                                         <tr>
                                             <td>{item.name}</td>
                                             <td>{item.phone}</td>
-                                            <td width="20%"></td>
+                                            <td width="20%">
+                                            <Select 
+                                                options={this.state.role}
+                                                onChange={this.handleChangeShopType.bind(this)}
+                                            />
+                                            </td>
                                         </tr>
                                     ))
                                 }
@@ -83,4 +120,4 @@ class Admin extends React.Component{
     }
 }
 
-export default Admin;
+export default AddRole;

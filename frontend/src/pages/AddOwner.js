@@ -1,25 +1,59 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Select from 'react-select'
 
 class AddOwner extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        username:'',
-        password:'',
-        name:'',
-        phone:'',
+        // username:'',
+        // password:'',
+        // name:'',
+        // phone:'',
+        // roleID: ''
+        data:[]
 
       }
-      this.handleChange = this.handleChange.bind(this)
-      this.handleSubmit = this.handleSubmit.bind(this)
+      // this.handleChange = this.handleChange.bind(this)
+      // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleChange = (e) => {
+    componentDidMount(){
+      this.getData()
+      console.log("roleID",this.props.match.params.id)
+    }
 
-      // console.log(e.target.value)
-      this.setState({value: e.target.value})
+    // getData = () => {
+    //   var x = this;
+    //   axios.get("http://localhost:3000/role/getRole/"+this.props.match.params.id).then((res) => {
+    //     this.setState({data: res.data.data[0]});
+    //     // this.setState({name: this.state.data[0].name})
+    //     console.log(this.state.data.roleName)
+    //   }).catch((error) => {
+    //     console.log(error);
+    //   });
+    // }
+
+    getRole = () => {
+      axios.get('http://localhost:3000/role/getRole')
+      .then(res => {
+        const option = res.data.data.map((d) => ({
+          "value": d.roleID,
+          "label": d.roleName
+        }))
+        this.setState({role: option})
+        // console.log('shopType', this.state.shopType[0].typeName)
+      })
+    }
+
+
+    handleChange = (e) => {
+      console.log(e.target.value)
+      this.setState({
+        ...this.state,
+        [e.target.roleName]: e.target.value
+      })
     }
 
     handleSubmit = () => {
@@ -62,6 +96,13 @@ class AddOwner extends React.Component {
                     <div class="form-group">
                       <label>รหัสผ่าน</label>
                       <input name="password" class="form-control" placeholder="รหัสผ่าน" onChange={this.handleChange} required />
+                    </div>
+                    <div class="form-group">
+                      <label>บทบาท</label>
+                        <Select 
+                          options={this.state.roleName}
+                          onChange={this.handleChangeShopType.bind(this)}
+                        />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

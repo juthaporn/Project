@@ -20,8 +20,9 @@ class AddOwner extends React.Component {
     }
 
     componentDidMount(){
-      this.getData()
-      console.log("roleID",this.props.match.params.id)
+      // this.getData()
+      this.getRole()
+      console.log("roleID",this.props.match)
     }
 
     // getData = () => {
@@ -36,34 +37,41 @@ class AddOwner extends React.Component {
     // }
 
     getRole = () => {
-      axios.get('http://localhost:3000/role/getRole')
+      axios.get('http://localhost:3000/role/getAllRole')
       .then(res => {
+        console.log(res.data.data)
         const option = res.data.data.map((d) => ({
           "value": d.roleID,
           "label": d.roleName
         }))
         this.setState({role: option})
+        console.log(this.state.role)
         // console.log('shopType', this.state.shopType[0].typeName)
       })
     }
 
 
     handleChange = (e) => {
-      console.log(e.target.value)
+      console.log(e.target.name, e.target.value)
       this.setState({
         ...this.state,
-        [e.target.roleName]: e.target.value
+        [e.target.name]: e.target.value
       })
     }
 
-    handleSubmit = () => {
-      console.log("handleSubmit", this.state.value)
+    handleChangeShopType = (e) => {
+     this.setState({roleValue: e.value})
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault()
+      console.log("handleSubmit", this.state)
       axios.post('http://localhost:3000/member/createMember', {
-        username: this.state.value,
-        password: this.state.value,
-        name: this.state.value,
-        phone: this.state.value,
-        roleID: this.state.value
+        username: this.state.username,
+        password: this.state.password,
+        name: this.state.name,
+        phone: this.state.phone,
+        roleID: this.state.roleValue
       }).then((res) => {  
         console.log(res.result)
       })
@@ -100,8 +108,8 @@ class AddOwner extends React.Component {
                     <div class="form-group">
                       <label>บทบาท</label>
                         <Select 
-                          options={this.state.roleName}
-                          onChange={this.handleChangeShopType.bind(this)}
+                          options={this.state.role}
+                          onChange={this.handleChangeShopType}
                         />
                     </div>
                     <div class="form-group text-center">

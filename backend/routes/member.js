@@ -14,4 +14,6 @@ router.get('/deleteMember/:memberID', memberController.deleteMember)
 
 router.get('/getMemberRole/:roleID', memberController.getMemberRole)
 
+router.patch('/updateRole', memberController.updateRole)
+
 module.exports = router;

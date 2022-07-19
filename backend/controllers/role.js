@@ -4,7 +4,7 @@ exports.getAllRole = (req, res, next) => {
     Role.findAll().then(role => {
         res.status(200).json({
             "message": "success",
-            "data": role
+            "data": role[0]
         });
     }).catch(err => {
         res.status(500).json({

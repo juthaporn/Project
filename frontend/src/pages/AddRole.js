@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { Switch, Select, Tag, Modal } from 'antd';
 import Select from 'react-select'
 // import Dashboard from '../components/Dashboard';
 
@@ -17,24 +18,26 @@ class AddRole extends React.Component{
 
     componentDidMount(){
         this.getData()
-        console.log("roleID",this.props.match.params.id)
+        this.getAllRole()
+        // console.log("roleID",this.props.match.params.id)
       }
   
-    //   getData = () => {
-    //     var x = this;
-    //     axios.get("http://localhost:3000/member/getAllMember").then((res) => {
-    //       this.setState({data: res.data.data[0]});
-    //       console.log(this.state.data.roleName)
-    //       // x.setState({data: res.data.data});
-    //     }).catch((error) => {
-    //       console.log(error);
-    //     });
-    //   }
+      getData = () => {
+        var x = this;
+        axios.get("http://localhost:3000/member/getAllMember").then((res) => {
+          this.setState({data: res.data.data[0]});
+          console.log(this.state.data)
+          // x.setState({data: res.data.data});
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
 
     getAllRole = () => {
-        axios.get('http://localhost:3000/rolegetAllRole')
+        axios.get('http://localhost:3000/role/getAllRole')
         .then(res => {
-            const option = res.data.map((d) => ({
+            console.log(res.data.data)
+            const option = res.data.data.map((d) => ({
                 "value": d.roleID,
                 "label": d.roleName
             }))
@@ -50,8 +53,20 @@ class AddRole extends React.Component{
         })
       }
 
-      handleChangeRole = (e) => {
-        this.setState({roleID:e.value})
+      handleChangeRole = (e, id) => {
+        // this.setState({roleID:e.value})
+        console.log(e.value)
+        console.log(id)
+        axios.patch('http://localhost:3000/member/updateRole', {
+            memberID: id,
+            roleID: e.value
+        }).then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err.message)
+        })
+        // console.log(this.state.data)
+
       }
 
       handleSubmit = (e) => {
@@ -66,6 +81,8 @@ class AddRole extends React.Component{
             console.log(err)
         })
       }
+
+    roleData = ['Admin', 'Member', 'Owner', 'User']
 
     render(){
         return(
@@ -100,11 +117,29 @@ class AddRole extends React.Component{
                                             <td>{item.name}</td>
                                             <td>{item.phone}</td>
                                             <td width="20%">
+                                                
                                             <Select 
                                                 options={this.state.role}
-                                                onChange={this.handleChangeShopType.bind(this)}
+                                                // onChange={this.handleChangeRole}
+                                                onChange={(e) => this.handleChangeRole(e, item.memberID)}
                                             />
                                             </td>
+                                            {/* <td>
+                                                <Select
+                                                style={{width:'100%'}}
+                                                value={item.role}
+                                                onChange={(e) => this.handleChangeRole(e, item._id)}
+                                                >
+                                                    {this.roleData.map((role, index) =>(
+                                                        <Select.option value={role} key={index}>
+                                                            {role == 'Admin'
+                                                            ? <Tag color="green">{role}</Tag>
+                                                            : <Tag color="black">{role}</Tag>
+                                                            }
+                                                        </Select.option>
+                                                    ))}
+                                                </Select>
+                                            </td> */}
                                         </tr>
                                     ))
                                 }

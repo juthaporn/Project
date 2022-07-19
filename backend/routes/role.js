@@ -12,6 +12,6 @@ router.get('/editRole',roleController.editRole);
 
 router.get('/deleteRole/:roleID',roleController.deleteRole);
 
-router.get('/getRole/:roleID'.roleController.getRole);
+router.get('/getRole/:roleID',roleController.getRole);
 
 module.exports = router;

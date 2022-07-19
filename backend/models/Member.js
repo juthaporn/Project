@@ -49,6 +49,13 @@ class Member{
             [roleId]
         )
     }
+
+    static updateRole(memberID, roleID){
+        return db.execute(
+            'update member set roleID =? where memberID=?',
+            [roleID, memberID]
+        )
+    }
 }
 
 module.exports = Member

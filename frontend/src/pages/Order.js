@@ -22,7 +22,7 @@ class Order extends React.Component{
           <div class ="container">
 			<br/>  
 		   <h5 class="text-left ">หน้าสถานะของรายการอาหาร</h5><br/>
-		   <td><a href="/Menuselect" class="button button-contactForm btn_4 boxed-btn-data">กลับ</a></td><br/>
+		   <td><a href="/OrderStatus" class="button button-contactForm btn_4 boxed-btn-data">สถานะของอาหาร</a></td><br/>
           <div class="row">
 		  <div class="col-lg-12 col-sm-6 col-xs-12">
                             <div class="white-box analytics-info">
@@ -30,7 +30,8 @@ class Order extends React.Component{
 							<table class="table table-borderless">
 								<tbody>
 								<tr>
-									<td><a href="/OrderStatus" class="button button-contactForm btn_4 boxed-btn-data">สถานะของอาหาร</a></td>
+									<td></td>
+									<td></td>
 									<td>จำนวน</td>
 									<td class="text-end">ราคา</td>
 								</tr>

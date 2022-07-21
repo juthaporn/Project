@@ -6,7 +6,9 @@ class SelectShopByOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-          shopName: ''
+          shopName: '',
+          openingTime:''
+
         }
     }
 
@@ -34,21 +36,22 @@ class SelectShopByOwner extends React.Component{
             <div class="row">
               <div class="col-lg-12 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
-                                    <h5 class="box-title">ร้านทั้งหมด</h5>
+                                    <h5>ร้านทั้งหมด</h5>
                                 </div>
                 </div>
                 <div class="col-lg-12 col-sm-6 col-xs-12">
                 {
                                     this.state.data?.map(shop => (
                                 <div class="white-box analytics-info">
-                                  <img src="img/post/post_10.png" alt=""/><br/>
+                                  <img src="img/post/post_10.png" alt=""/><br/><br/>
                                           <tr>
-                                              <td>{shop.shopName}</td>
+                                              <h5>{shop.shopName}</h5>
+                                              {/* <td>{shop.openingTime}</td> */}
                                               <br/>
-                                              <td>
-                                              <a href="/Shopowner"  class="button btn_4 boxed-btn-add"><h5>สั่งซื้อ</h5></a>
-                                              </td>
+                                              <a href="/Shopowner"  class="button btn_4 boxed-btn-add"><h5>ยอดการสั่งซื้อ</h5></a>
+                                              <a href="/Orderowner"  class="button btn_4 boxed-btn-add"><h5>ออร์เดอร์</h5></a>
                                           </tr>
+                                          
                                          
                                 </div>
                                 ))

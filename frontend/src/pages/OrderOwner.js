@@ -144,12 +144,12 @@ class OrderOwner extends React.Component{
                           </button>
                         </div>
                         <div class="modal-body">
-                          ยืนยันการยกเลิก
+                         เลือกสถานะ
                         </div>
-                        {/* <button type="button" class="btn btn-primary">Primary</button>
-                        <button type="button" class="btn btn-secondary">Secondary</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-danger">Danger</button> */}
+                        <button type="button" class="btn btn-primary">รอคิว</button>
+                        <button type="button" class="btn btn-secondary">กำลังปรุง</button>
+                        <button type="button" class="btn btn-success">ปรุงเสร็จ</button>
+                        <button type="button" class="btn btn-danger">ยกเลิก</button>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับ</button>
                           <button type="button" class="btn btn-danger" data-dismiss="modal">ยืนยัน</button>

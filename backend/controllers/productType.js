@@ -4,7 +4,7 @@ exports.getProductType = (req, res, next) => {
     ProductType.findAll().then(productType => {
         res.status(200).json({
             "message": "success",
-            "data": productType[0]
+            "data": productType
         });
     }).catch(error => {
         res.status(500).json({

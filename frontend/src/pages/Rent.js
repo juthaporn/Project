@@ -3,32 +3,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class ShopByOwner extends React.Component{
+class Rent extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             data: [],
-            name: "",
-            phone: "",
-            memberID: ""
+            ShopName: "",
+            shopPhone: "",
+            shopID: ""
         }
 
     }
 
     componentDidMount(){
         this.getData()
-        console.log("MemberID",this.props.match.params.id)
+        console.log("shopID",this.props.match.params.id)
     }
   
-      getData = () => {
+    getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getShopByMemberID/"+this.props.match.params.id).then((res) => {
+        axios.get("http://localhost:3000/shop/getRentByShop/"+this.props.match.params.id).then((res) => {
           this.setState({data: res.data.data[0]});
-          this.setState({memberID: this.state.data[0].memberID})
-          this.setState({name: this.state.data[0].name})
-          this.setState({phone: this.state.data[0].phone})
-        //   console.log("admin",this.state.data[0].name)
-            console.log(this.state.name)
+          this.setState({shopID: this.state.data[0].shopID})
+          this.setState({shopName: this.state.data[0].shopName})
+          this.setState({shopPhone: this.state.data[0].shopPhone})
+        //   console.log("admin",this.state.data[0])
+            console.log(this.state.data)
           // x.setState({data: res.data.data});
         }).catch((error) => {
           console.log(error);
@@ -47,7 +47,7 @@ class ShopByOwner extends React.Component{
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="title-head text-center">
-                                ร้านค้า    
+                                ค่าเช่าร้าน    
                             </div>
                         </div>
                     </div>
@@ -60,20 +60,13 @@ class ShopByOwner extends React.Component{
                     <table class="table table-borderless">
                             <td width="30%">
                                 <br />
-                                <h5>ผู้ประกอบการ : {this.state.name}</h5>
+                                <h5>ร้านค้า : {this.state.shopName}</h5>
                             </td>
                             <td>
                             <br />
-                                <h5>เบอร์โทร : {this.state.phone}</h5>
+                                <h5>เบอร์โทร : {this.state.shopPhone}</h5>
                             </td>
-                            <td>
-                                {/* <Link to={"/AddRent"} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link> */}
-                                {/* {this.state.data?.map(item => ( */}
-                                    {/* <br /> */}
-                                    <Link to={"/AddShop/"+this.state.memberID} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
-                                    {/* )) */}
-                                {/* } */}
-                            </td> 
+                             
                     </table>
                     <div class="row">
                         {/* <div class="col-lg-4">
@@ -85,27 +78,29 @@ class ShopByOwner extends React.Component{
                             this.state.data?.map(item => (
                                 <div class="col-lg-12 box">
                                     <div class="f-card">
-                                        <strong>ชื่อร้าน</strong> : {item.shopName}
+                                        <strong>ประจำเดือน</strong> : {item.month}
                                     </div>
                                     <div class="f-card">
-                                        <strong>เบอร์โทรศัพท์</strong> : {item.shopPhone}
+                                        <strong>จำนวนหน่วยค่าน้ำ</strong> : {item.waterUnit}
                                     </div>
                                     <div class="f-card">
-                                        <strong>คำอธิบายร้านค้า</strong> : {item.shopDetail}
+                                        <strong>ค่าน้ำ</strong> : {item.shopPhone}
                                     </div>
                                     <div class="f-card">
-                                        <strong>เวลาเปิด-ปิด</strong> : {item.openingTime}
+                                        <strong>จำนวนหน่วยค่าไฟ</strong> : {item.powerUnit}
                                     </div>
                                     <div class="f-card">
-                                        <strong>ประเภทร้านค้า</strong> : {item.typeName}
+                                        <strong>ค่าไฟ</strong> : {item.openingTime}
                                     </div>
                                     <div class="f-card">
-                                        <strong>สัญาเช่าร้าน</strong> : {item.shopRentalContract}
+                                        <strong>ค่ากำจัดขยะ</strong> : {item.cleaningFee}
+                                    </div>
+                                    <div class="f-card">
+                                        <strong>ค่าทำความสะอาด</strong> : {item.wasteDisposalFee}
                                     </div>
                                     <Link to={"/AddYearRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link>
                                     <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าน้ำ-ค่าไฟ</Link>
-                                    <Link to={"/Rent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">ดูค่าเช่าร้าน</Link>
-                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                    {/* <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button> */}
                                 </div>
                                 
                             ))
@@ -125,4 +120,4 @@ class ShopByOwner extends React.Component{
     }
 }
 
-export default ShopByOwner;
+export default Rent;

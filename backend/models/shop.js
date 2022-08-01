@@ -54,6 +54,14 @@ class Shop{
             [memberID]
         )
     }
+
+    static getRentByShop(shopID){
+        return db.execute(
+            'SELECT * FROM shop inner JOIN monthlyrentalfee ON shop.shopID = monthlyrentalfee.shopID INNER JOIN yearlyrent ON shop.shopID = yearlyrent.shopID WHERE shop.shopID=?',
+            [shopID]
+        )
+    }
+
 }
 
 module.exports = Shop

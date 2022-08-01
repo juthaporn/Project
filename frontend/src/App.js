@@ -17,6 +17,7 @@ import Shop from './pages/Shop';
 import Shopdetail from './pages/ShopDetail';
 import Menu from './pages/Menu';
 import TypeFood from './pages/TypeFood';
+import Rent from './pages/Rent';
 import AddOwner from './pages/AddOwner';
 import AddProduct from './pages/AddProduct';
 import AddRent from './pages/AddRent';
@@ -91,7 +92,9 @@ class App extends React.Component {
           </Route>
         <Route path="/TypeFood">
             <TypeFood />
-          </Route>
+        </Route>
+        <Route path="/Rent/:id" component={Rent}>
+        </Route>
         <Route path="/ShopByOwner/:id" component={ShopByOwner} >
         </Route>
         <Route path="/Menu">
@@ -136,8 +139,7 @@ class App extends React.Component {
           <Route path="/EditShop">
             <EditShop />
           </Route>
-          <Route path="/EditTypeFood">
-            <EditTypeFood />
+          <Route path="/EditTypeFood/:id" component={EditTypeFood}>
           </Route>
           <Route path="/register">
             <Register />

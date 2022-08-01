@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TypeFood extends React.Component{
   constructor(props){
@@ -6,31 +8,68 @@ class TypeFood extends React.Component{
     this.state = {
         typeID: '',
         typeName: ''
+        // data:[]
     }
 }
 
+  componentDidMount(){
+    this.getData()
+  }
 
+  getData = () => {
+    var x = this;
+    axios.get("http://localhost:3000/productType/getProductType").then((res) => {
+      this.setState({data: res.data.data[0]});
+      console.log(this.state.data)
+      // x.setState({data: res.data.data});
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 
     render(){
         return(   
-          <div class="container">
-          <div className="row">
-            <div class="col-lg-6">
-              <br />
-              <img class="card-img" src="img/video/big.png" alt="" />
+          <div class ="container">      
+                <div class="box-title-head">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="title-head text-center">
+                                ประเภทอาหาร   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="col-md-12 grid-margin box">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-borderless" >
+
+                                    <tr>
+                                        <th scope="col">ชื่อประเภทอาหาร</th>
+                                        <th scope="col"></th>
+                                        <th scope="col" width="30%">
+                                          <Link to={"/AddTypeFood"} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มประเภทอาหาร</Link></th>
+                                    </tr>
+
+                                {
+                                    this.state.data?.map(item => (
+                                        <tr>
+                                            <td>{item.typeName}</td>
+                                            <td>
+                                                <Link to={"/EditTypeFood/"+item.typeID} class="button button-contactForm btn_4 boxed-btn-edit">แก้ไข</Link>
+                                            </td>
+                                            <td width="30%">
+                                              <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </table>
+                        </div>
+                    </div>
+                <br />
             </div>
-            <div class="col-lg-6">
-              <h2 class="contact-title">ประเภทอาหาร</h2>
-              <div class="card" >
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">อาหารตามสั่ง</li>
-                <li class="list-group-item">ข้าวแกง</li>
-                <li class="list-group-item">เครื่องดื่ม</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-          </div>
+
         )
     }
 }

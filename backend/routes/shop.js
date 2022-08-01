@@ -15,4 +15,6 @@ router.get('/deleteShop/:shopID', shopController.deleteShop);
 
 router.get('/getShopByMemberID/:memberID', shopController.getShopByMemberID);
 
+router.get('/getRentByShop/:shopID',shopController.getRentByShop);
+
 module.exports = router;

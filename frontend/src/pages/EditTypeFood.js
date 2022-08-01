@@ -39,7 +39,7 @@ class EditTypeFood extends React.Component {
                   <img class="card-img" src="img/video/big.png" alt="" />
                 </div>
                 <div class="col-lg-6">
-                  <h2 class="contact-title">เพิ่มประเภทอาหาร</h2>
+                  <h2 class="contact-title">แก้ไขประเภทอาหาร</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อประเภทอาหาร</label>

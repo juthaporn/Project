@@ -635,6 +635,39 @@ tr:nth-child(even) {
   width: 220px;
 }
 
+.boxed-btn-edit {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 52px;
+  margin-right: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #ffc000;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ffc000 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-edit:hover {
+  background: #ffc000;
+  color: #fff !important;
+  border: 1px solid #ffc000;
+}
+
+.boxed-btn-edit:focus {
+  outline: none;
+}
+
+.boxed-btn-add.large-width {
+  width: 220px;
+}
+
 .boxed-btn-data {
   background: #fff;
   color: #131313;

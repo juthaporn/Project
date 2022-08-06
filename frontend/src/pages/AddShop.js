@@ -56,7 +56,6 @@ class AddShop extends React.Component {
 
     handleChangeShopType = (e) => {
       this.setState({shopTypeID:e.value})
-    
     }
 
     // handleSubmit = () => {

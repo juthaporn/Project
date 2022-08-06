@@ -57,7 +57,16 @@ class Shop{
 
     static getRentByShop(shopID){
         return db.execute(
-            'SELECT * FROM shop inner JOIN monthlyrentalfee ON shop.shopID = monthlyrentalfee.shopID INNER JOIN yearlyrent ON shop.shopID = yearlyrent.shopID WHERE shop.shopID=?',
+            // 'SELECT * FROM shop inner JOIN monthlyrentalfee ON shop.shopID = monthlyrentalfee.shopID INNER JOIN yearlyrent ON shop.shopID = yearlyrent.shopID WHERE shop.shopID=?',
+            'SELECT * FROM shop inner JOIN monthlyrentalfee ON shop.shopID = monthlyrentalfee.shopID WHERE shop.shopID=?',
+            [shopID]
+        )
+    }
+
+    static getYearRentByShop(shopID){
+        return db.execute(
+            // 'SELECT * FROM shop inner JOIN monthlyrentalfee ON shop.shopID = monthlyrentalfee.shopID INNER JOIN yearlyrent ON shop.shopID = yearlyrent.shopID WHERE shop.shopID=?',
+            'SELECT * FROM shop inner JOIN yearlyrent ON shop.shopID = yearlyrent.shopID WHERE shop.shopID=?',
             [shopID]
         )
     }

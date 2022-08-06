@@ -94,7 +94,7 @@ exports.getRentByShop = (req, res, next) => {
     Shop.getRentByShop(shopID).then((shop) => {
         res.status(200).json({
             "message": "success",
-            "data": shop
+            "data": shop[0]
         });
     }).catch(err => {
         res.status(500).json({
@@ -102,3 +102,18 @@ exports.getRentByShop = (req, res, next) => {
         })
     })
 }
+
+exports.getYearRentByShop = (req, res, next) => {
+    const {shopID} = req.params;
+    Shop.getYearRentByShop(shopID).then((shop) => {
+        res.status(200).json({
+            "message": "success",
+            "data": shop[0]
+        });
+    }).catch(err => {
+        res.status(500).json({
+            "message": err
+        })
+    })
+}
+

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment/min/moment-with-locales';
 
-class Rent extends React.Component{
+class YearRent extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -22,7 +22,7 @@ class Rent extends React.Component{
   
     getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getRentByShop/"+this.props.match.params.id).then((res) => {
+        axios.get("http://localhost:3000/shop/getYearRentByShop/"+this.props.match.params.id).then((res) => {
             // console.log(res.data.data)
           this.setState({data: res.data.data});
           this.setState({shopID: this.state.data[0].shopID})
@@ -48,7 +48,7 @@ class Rent extends React.Component{
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="title-head text-center">
-                                ค่าน้ำ-ค่าไฟ   
+                                ค่าเช่ารายปี   
                             </div>
                         </div>
                     </div>
@@ -79,47 +79,25 @@ class Rent extends React.Component{
                             this.state.data?.map(item => (
                                 <div class="col-lg-12 box">
                                     <div class="f-card">
-                                        <strong>ประจำเดือน</strong> : 
+                                        <strong>ประจำปี</strong> : 
                                         
-                                        {/* {item.month} */}
-                                        {item.month != null
-                                        ? <span>{moment(item.month).locale('th').format('MMMM YYYY')}</span>
+                                        {item.year}
+                                        {/* {item.year != null
+                                        ? <span>{moment(item.year).locale('th').format('YYYY')}</span>
                                         : <span> ไม่มีข้อมูล</span>
-                                        }
+                                        } */}
                                     </div>
                                     <div class="f-card">
-                                        <strong>จำนวนหน่วยค่าน้ำ</strong> : {item.waterUnit}
+                                        <strong>คำอธิบายเพิ่มเติม</strong> : {item.rentDetail}
                                     </div>
                                     <div class="f-card">
-                                        <strong>ค่าน้ำ</strong> : {/*item.shopPhone*/}
+                                        <strong>ค่าเช่าร้าน</strong> : {item.rentalFee}
                                     </div>
-                                    <div class="f-card">
-                                        <strong>จำนวนหน่วยค่าไฟ</strong> : {item.powerUnit}
-                                    </div>
-                                    <div class="f-card">
-                                        <strong>ค่าไฟ</strong> : {/*item.openingTime*/}
-                                    </div>
-                                    <div class="f-card">
-                                        <strong>ค่ากำจัดขยะ</strong> : {item.cleaningFee}
-                                    </div>
-                                    <div class="f-card">
-                                        <strong>ค่าทำความสะอาด</strong> : {item.wasteDisposalFee}
-                                    </div>
-                                    {/* <Link to={"/AddYearRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link> */}
-                                    {/* <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าน้ำ-ค่าไฟ</Link> */}
-                                    {/* <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button> */}
                                 </div>
                                 
                             ))
                         }
                         </div>
-                        {/* <table>
-                            <td width="40%"></td>
-                            <td><Link to="/admin" class="button button-contactForm btn_4 boxed-btn-btn">ย้อนกลับ</Link>&nbsp;&nbsp;</td>
-                            <td></td>
-                            <td width="30%"></td>
-                        </table> */}
-                   
                 </div>
                 {/* </div> */}
             </div>
@@ -127,4 +105,4 @@ class Rent extends React.Component{
     }
 }
 
-export default Rent;
+export default YearRent;

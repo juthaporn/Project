@@ -17,4 +17,6 @@ router.get('/getShopByMemberID/:memberID', shopController.getShopByMemberID);
 
 router.get('/getRentByShop/:shopID',shopController.getRentByShop);
 
+router.get('/getYearRentByShop/:shopID',shopController.getYearRentByShop);
+
 module.exports = router;

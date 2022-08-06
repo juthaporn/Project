@@ -6,29 +6,52 @@ class EditTypeFood extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        typeName: ''
+        typeName: '',
+        data:[]
       }
     }
 
-    // handleChange = (e) => {
-    //   console.log(e.target.name, e.target.value);
-    //   let name = e.target.name;
-    //   let value = e.target.value;
-    //   this.setState({
-    //     [name]: value
-    //   });
-    // }
+    componentDidMount(){
+      this.getData()
+      console.log("typeID",this.props.match.params.id)
+  }
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   axios.post('http://localhost:3000/admin/add-productType', this.state).then(res => {
-    //     console.log(res);
-    //     alert('Susscess');
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
-    // }
-    
+
+  getData = () => {
+    var x = this;
+    axios.get("http://localhost:3000/productType/getEditProductType/"+this.props.match.params.id).then((res) => {
+      // this.setState({data: res.data.data[0]});
+      // this.setState({typeID: this.state.data[0].typeID})
+      this.setState({typeID: res.data.data[0].typeID})
+      // this.setState({typeName: this.state.data[0].typeName})
+      this.setState({typeName: res.data.data[0].typeName})
+      
+      console.log(this.state.typeName)
+    }).catch((error) => {
+      console.log(error);
+    });
+    }
+
+    handleChangeTypeFood = (e) => {
+      // this.setState({typeID:e.value})
+      // console.log(this.state)
+      console.log(e.target.name, e.target.value);
+      this.setState({typeName: e.target.value})
+     
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault();
+      axios.post('http://localhost:3000/shopType/editShopType',this.state).then(res => {
+        console.log(res.data);
+        if(res.data.result){
+          this.setState({typeName: '/typeShop'});
+        }
+        }).catch(error => {
+          console.log(error);
+        });
+      }
+
     render(){
         return(
           <main>
@@ -43,7 +66,7 @@ class EditTypeFood extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อประเภทอาหาร</label>
-                      <input name="typeName" class="form-control" placeholder="เช่น น้ำ ผลไม้" onChange={this.handleChange} required />
+                      <input name="typeName" class="form-control" value={this.state.typeName} onChange={this.handleChangeTypeFood} required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

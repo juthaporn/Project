@@ -16,7 +16,6 @@ class EditTypeFood extends React.Component {
       console.log("typeID",this.props.match.params.id)
   }
 
-
   getData = () => {
     var x = this;
     axios.get("http://localhost:3000/productType/getEditProductType/"+this.props.match.params.id).then((res) => {
@@ -36,16 +35,15 @@ class EditTypeFood extends React.Component {
       // this.setState({typeID:e.value})
       // console.log(this.state)
       console.log(e.target.name, e.target.value);
-      this.setState({typeName: e.target.value})
-     
+      this.setState({typeName: e.target.value}) 
     }
 
     handleSubmit = (e) => {
       e.preventDefault();
-      axios.post('http://localhost:3000/shopType/editShopType',this.state).then(res => {
+      axios.post('http://localhost:3000/productType/editProductType',this.state).then(res => {
         console.log(res.data);
         if(res.data.result){
-          this.setState({typeName: '/typeShop'});
+          this.setState({typeName: '/productType'});
         }
         }).catch(error => {
           console.log(error);

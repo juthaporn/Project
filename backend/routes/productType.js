@@ -8,7 +8,7 @@ router.post('/createProductType',productTypeController.createProductType);
 
 router.get('/getEditProductType/:typeID',productTypeController.getEditProductType);
 
-router.get('/editProductType',productTypeController.editProductType);
+router.post('/editProductType',productTypeController.editProductType);
 
 router.get('/deleteProductType/:typeID',productTypeController.deleteProductType);
 

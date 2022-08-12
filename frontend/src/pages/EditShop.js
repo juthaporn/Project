@@ -64,7 +64,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
-                      <input name="shopPhone" class="form-control" placeholder="+66" onChange={this.handleChange} required />
+                      <input name="shopPhone" class="form-control" placeholder="+66" onChange={this.handleChange} required maxLength={10} />
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายร้านค้า</label>

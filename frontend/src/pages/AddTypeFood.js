@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class AddTypeFood extends React.Component {
+  
     constructor(props){
       super(props);
       this.state = {
-        typeName: ''
+        typeName: '',
+        redirect: false
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,17 +20,24 @@ class AddTypeFood extends React.Component {
       this.setState({value: e.target.value})
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+      event.preventDefault()
       console.log("handleSubmit", this.state.value)
       axios.post('http://localhost:3000/productType/createProductType', {
         typeName: this.state.value
       }).then((res) => {  
-        console.log(res.result)
+        console.log(res.data.message)
+        this.setState({redirect: true})
+      }).catch(err => {
+        console.log(err)
       })
     
     }
     
     render(){
+      if(this.state.redirect){
+        return <Redirect to='/Typefood' />
+      }
         return(
           <main>
                 <div class="container">

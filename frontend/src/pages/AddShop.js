@@ -22,7 +22,6 @@ class AddShop extends React.Component {
       var x = this;
       axios.get("http://localhost:3000/member/getOneMember/"+this.props.match.params.id).then((res) => {
         this.setState({data: res.data.data[0]});
-        // this.setState({name: this.state.data[0].name})
         console.log(this.state.data.name)
       }).catch((error) => {
         console.log(error);
@@ -37,42 +36,23 @@ class AddShop extends React.Component {
           "label": d.typeName
         }))
         this.setState({shopType: option})
-        // console.log('shopType', this.state.shopType[0].typeName)
       })
     }
 
     //เพิ่มข้อมูลต่อได้เลย
     handleChange = (e) => {
-
-      // console.log(e.target.value)
-      // this.setState({value: e.target.value})
       this.setState({
         ...this.state,
         [e.target.name]: e.target.value
       })
-      
-      // console.log('handlechange addshop', this.state.shopName)
     }
 
     handleChangeShopType = (e) => {
       this.setState({shopTypeID:e.value})
     }
 
-    // handleSubmit = () => {
-    //   console.log("handleSubmit", this.state.value)
-    //   axios.post('http://localhost:3000/shop/createShop', {
-    //     typeName: this.state.value
-    //   }).then((res) => {  
-    //     console.log(res.result)
-    //   })
-    
-    // }
-    
     handleSubmit = (e) => {
       e.preventDefault()
-      // console.log('handlesubmit addshop', this.state.shopName)
-      // console.log('handlesubmit addshop', this.state.shopPhone)
-      // console.log('handle', this.state.shopTypeID)
       axios.post('http://localhost:3000/shop/createShop', {
         shopName: this.state.shopName,
         shopPhone: this.state.shopPhone,
@@ -108,7 +88,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
-                      <input  class="form-control" name="shopPhone" placeholder="+66" onChange={this.handleChange} required />
+                      <input  class="form-control" name="shopPhone" placeholder="+66" onChange={this.handleChange} required maxLength={10} />
                     </div>
                     <div class="form-group">
                       <label>คำอธิบายร้านค้า</label>
@@ -116,7 +96,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>เวลาเปิด-ปิด</label>
-                      <input class="form-control" name="openingTime" placeholder="เช่น 10.00 - 12.00 " onChange={this.handleChange} required />
+                      <input class="form-control" name="openingTime" placeholder="เช่น 10.00 - 12.00 " onChange={this.handleChange} required maxLength={10} />
                     </div>
                     <div class="form-group">
                       <label>ประเภทร้านค้า</label>

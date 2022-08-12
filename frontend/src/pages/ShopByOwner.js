@@ -23,26 +23,31 @@ class ShopByOwner extends React.Component{
       getData = () => {
         var x = this;
         axios.get("http://localhost:3000/shop/getShopByMemberID/"+this.props.match.params.id).then((res) => {
+            console.log(res.data.data[0])
           this.setState({data: res.data.data[0]});
           this.setState({memberID: this.state.data[0].memberID})
           this.setState({name: this.state.data[0].name})
           this.setState({phone: this.state.data[0].phone})
-        //   console.log("admin",this.state.data[0].name)
             console.log(this.state.name)
-          // x.setState({data: res.data.data});
         }).catch((error) => {
           console.log(error);
         });
       }
 
+      handleDelete = (shopID) => {
+        console.log(shopID);
+        axios.get('http://localhost:3000/shop/deleteShop/'+ shopID)
+        .then((res) => {
+          console.log(res.data);
+          this.getData()
+        }).catch(error => {
+          console.log(error);
+        });
+      }
 
     render(){
-        // const style1 = {
-        //     background: "#F0FFFF"
-        // }
         return(
             <div class="container">
-                {/* container-fluid */}
                 <div class="box-title-head">
                     <div class="row">
                         <div class="col-xl-12">
@@ -52,35 +57,21 @@ class ShopByOwner extends React.Component{
                         </div>
                     </div>
                 </div>
-        
-                {/* <br /> */}
-                {/* <a href="/admin" class="line_btn" style={style1}>ย้อนกลับ</a> */}
                 <div>
-
                     <table class="table table-borderless">
-                            <td width="30%">
-                                <br />
-                                <h5>ผู้ประกอบการ : {this.state.name}</h5>
-                            </td>
-                            <td>
+                        <td width="30%">
                             <br />
-                                <h5>เบอร์โทร : {this.state.phone}</h5>
-                            </td>
-                            <td>
-                                {/* <Link to={"/AddRent"} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าเช่าร้าน</Link> */}
-                                {/* {this.state.data?.map(item => ( */}
-                                    {/* <br /> */}
-                                    <Link to={"/AddShop/"+this.state.memberID} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
-                                    {/* )) */}
-                                {/* } */}
-                            </td> 
+                            <h5>ผู้ประกอบการ : {this.state.name}</h5>
+                        </td>
+                        <td>
+                            <br />
+                            <h5>เบอร์โทร : {this.state.phone}</h5>
+                        </td>
+                        <td>
+                            <Link to={"/AddShop/"+this.state.memberID} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
+                        </td> 
                     </table>
                     <div class="row">
-                        {/* <div class="col-lg-4">
-                            <br />
-                            <img class="card-img" src="img/cofe.jpg" alt="" />
-                        </div> */}
-
                         {
                             this.state.data?.map(item => (
                                 <div class="col-lg-12 box">
@@ -106,21 +97,12 @@ class ShopByOwner extends React.Component{
                                     <Link to={"/YearRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">ดูค่าเช่าร้าน</Link>
                                     <Link to={"/AddRent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">เพิ่มค่าน้ำ-ค่าไฟ</Link>
                                     <Link to={"/Rent/"+item.shopID} class="button button-contactForm btn_4 boxed-btn-add">ดูค่าน้ำ-ค่าไฟ</Link>
-                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                    <button type="submit" class="button button-contactForm btn_4 boxed-btn-del" onClick={(e) => this.handleDelete(item.shopID)}>ลบ</button>
                                 </div>
-                                
                             ))
                         }
-                        </div>
-                        {/* <table>
-                            <td width="40%"></td>
-                            <td><Link to="/admin" class="button button-contactForm btn_4 boxed-btn-btn">ย้อนกลับ</Link>&nbsp;&nbsp;</td>
-                            <td></td>
-                            <td width="30%"></td>
-                        </table> */}
-                   
+                    </div>   
                 </div>
-                {/* </div> */}
             </div>
         )
     }

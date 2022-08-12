@@ -95,7 +95,7 @@ class AddOwner extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
-                      <input name="phone" class="form-control" placeholder="+66" onChange={this.handleChange} required />
+                      <input name="phone" class="form-control" placeholder="+66" onChange={this.handleChange} required maxLength={10} />
                     </div>
                     <div class="form-group">
                       <label>ชื่อผู้ใช้งาน</label>

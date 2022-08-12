@@ -102,7 +102,7 @@ class AddYearRent extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ค่าเช่าร้าน</label>
-                      <input name="rentalFee" class="form-control" onChange={this.handleChange} required />
+                      <input name="rentalFee" class="form-control" onChange={this.handleChange} required maxLength={5} />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

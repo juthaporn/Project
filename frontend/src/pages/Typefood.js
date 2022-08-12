@@ -27,6 +27,17 @@ class TypeFood extends React.Component{
     });
   }
 
+  handleDelete = async(typeID) => {
+    // console.log(typeID)
+    axios.get('http://localhost:3000/productType/deleteProductType/' + typeID)
+    .then(res => {
+      console.log(res.data.message)
+      this.getData()
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
     render(){
         return(   
           <div class ="container">      
@@ -59,7 +70,8 @@ class TypeFood extends React.Component{
                                                 <Link to={"/EditTypeFood/"+item.typeID} class="button button-contactForm btn_4 boxed-btn-edit">แก้ไข</Link>
                                             </td>
                                             <td width="30%">
-                                              <button type="submit" class="button button-contactForm btn_4 boxed-btn-del">ลบ</button>
+                                              <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() => this.handleDelete(item.typeID)}>ลบ</button>
+                                               {/* onClick={() => {if (window.confirm('Are you sure you wish to delete this item?'))} this.handleDelete(item.typeID)} */}
                                             </td>
                                         </tr>
                                     ))

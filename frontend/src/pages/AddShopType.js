@@ -40,7 +40,7 @@ class AddShopType extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อประเภทร้านค้า</label>
-                      <input name="typeName" class="form-control" placeholder="เช่น อาหารตามสั่ง ก๋วยเตี๋ยว" onChange={this.handleChange} required />
+                      <input name="typeName" class="form-control" placeholder="เช่น อาหารตามสั่ง ก๋วยเตี๋ยว" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อประเภทอาหารเป็นภาษาไทย" required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

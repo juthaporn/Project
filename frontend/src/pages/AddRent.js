@@ -90,27 +90,27 @@ class AddRent extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ราคาค่าน้ำต่อหน่วย</label>
-                      <input name="waterBill" class="form-control" onChange={this.handleChange} required />
+                      <input name="waterBill" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group">
                       <label>จำนวนหน่วยค่าน้ำ</label>
-                      <input name="waterUnit" class="form-control" onChange={this.handleChange} required />
+                      <input name="waterUnit" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group">
                       <label>ราคาค่าไฟต่อหน่วย</label>
-                      <input name="electricityBill" class="form-control" onChange={this.handleChange} required />
+                      <input name="electricityBill" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group">
                       <label>จำนวนหน่วยค่าไฟ</label>
-                      <input name="powerUnit" class="form-control" onChange={this.handleChange} required />
+                      <input name="powerUnit" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group">
                       <label>ค่ากำจัดขยะ</label>
-                      <input name="cleaningFee" class="form-control" onChange={this.handleChange} required />
+                      <input name="cleaningFee" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group">
                       <label>ค่าทำความสะอาด</label>
-                      <input name="wasteDisposalFee" class="form-control" onChange={this.handleChange} required />
+                      <input name="wasteDisposalFee" class="form-control" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

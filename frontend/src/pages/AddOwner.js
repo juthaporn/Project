@@ -91,11 +91,11 @@ class AddOwner extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อผู้ประกอบการ</label>
-                      <input name="name" class="form-control" placeholder="ชื่อผู้ประกอบการ" onChange={this.handleChange} required />
+                      <input name="name" class="form-control" placeholder="ชื่อผู้ประกอบการ" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อผู้ประกอบการเป็นภาษาไทย" required />
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
-                      <input name="phone" class="form-control" placeholder="+66" onChange={this.handleChange} required maxLength={10} />
+                      <input name="phone" class="form-control" placeholder="+66" onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกเบอร์โทรเป็นตัวเลข" required maxLength={10} />
                     </div>
                     <div class="form-group">
                       <label>ชื่อผู้ใช้งาน</label>
@@ -103,7 +103,7 @@ class AddOwner extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>รหัสผ่าน</label>
-                      <input name="password" class="form-control" placeholder="รหัสผ่าน" onChange={this.handleChange} required />
+                      <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" onChange={this.handleChange} required />
                     </div>
                     <div class="form-group">
                       <label>บทบาท</label>

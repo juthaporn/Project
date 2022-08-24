@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class EditTypeFood extends React.Component {
     constructor(props){
@@ -43,7 +44,11 @@ class EditTypeFood extends React.Component {
       axios.post('http://localhost:3000/productType/editProductType',this.state).then(res => {
         console.log(res.data);
         if(res.data.result){
-          this.setState({typeName: '/productType'});
+          // if(){
+            
+          // }else{
+          //   alert('กรุณากรอกเฉพาะตัวเลข')
+          // }
         }
         }).catch(error => {
           console.log(error);
@@ -51,6 +56,9 @@ class EditTypeFood extends React.Component {
       }
 
     render(){
+      // if(this.state.redirect){
+      //   return <Redirect to='/Typefood' />
+      // }
         return(
           <main>
             <div class="container">
@@ -64,7 +72,7 @@ class EditTypeFood extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อประเภทอาหาร</label>
-                      <input name="typeName" class="form-control" value={this.state.typeName} onChange={this.handleChangeTypeFood} required />
+                      <input name="typeName" class="form-control" value={this.state.typeName} onChange={this.handleChangeTypeFood} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อประเภทอาหารเป็นภาษาไทย" required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

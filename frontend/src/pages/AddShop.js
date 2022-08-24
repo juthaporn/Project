@@ -84,7 +84,7 @@ class AddShop extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อร้าน</label>
-                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={this.handleChange} required />
+                      <input  class="form-control"  name="shopName" placeholder="ชื่อร้าน" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อร้านเป็นภาษาไทย" required />
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>

@@ -43,6 +43,13 @@ class Product{
             [productID]
         )
     }
+
+    static getProductByShop(shopID){
+        return db.execute(
+            'select * from product where shopID = ?',
+            [shopID]
+        )
+    }
 }
 
 module.exports = Product

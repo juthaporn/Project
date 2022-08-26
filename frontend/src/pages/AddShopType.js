@@ -22,6 +22,11 @@ class AddShopType extends React.Component {
         typeName: this.state.value
       }).then((res) => {  
         console.log(res.result)
+        // this.setState({redirect: true})
+        // alert('Add Shop Success!')
+      // }).catch(err =>{
+      //   console.log(err)
+      //   alert('Add Shop Unsuccess!')
       })
     
     }

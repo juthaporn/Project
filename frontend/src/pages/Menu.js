@@ -7,20 +7,25 @@ class Menu extends React.Component{
         super(props);
         this.state = {
           productName: '',
-          productPrice:''
+          productPrice:'',
+          data:[]
         }
     }
    
 
     componentDidMount(){
         this.getData()
+        console.log("shopID",this.props.match.params.id)
       }
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/getProduct").then((res) => {  
+        axios.get("http://localhost:3000/product/getProductByShop/"+this.props.match.params.id).then((res) => {  
+          console.log(this.state.data[0])
           this.setState({data: res.data.data[0]});
-          console.log("shop",this.state.data)
+          this.setState({shopID: this.state.data[0].shopID})
+          this.setState({productName: this.state.data[0].productName})
+          this.setState({productPrice: this.state.data[0].productPrice})
           // x.setState({data: res.data.data});
         }).catch((error) => {
           console.log(error);
@@ -40,15 +45,15 @@ class Menu extends React.Component{
           <div class="container">
               <div class="row">
               {
-                                    this.state.data?.map(product => (
+                this.state.data?.map(item => (
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
                               <img src="img/recepie/recpie_1.png" alt=""/>
                           </div>
                       
-                                  <h5>{product.productName}</h5>
-                                  <h5>{product.productPrice}</h5>
+                          <h5>{item.productName}</h5>
+                          <h5>{item.productPrice}</h5>
                           <h5><a href="/MenuSelect" class='badge badge-primary'>เพิ่มไปยังรถเข็น</a></h5>
                       </div>
                        

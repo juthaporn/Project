@@ -100,8 +100,7 @@ class App extends React.Component {
         </Route>
         <Route path="/ShopByOwner/:id" component={ShopByOwner} >
         </Route>
-        <Route path="/Menu">
-            <Menu />
+        <Route path="/Menu/:id" component={Menu}>
           </Route>
         <Route path="/Shop">
             <Shop />

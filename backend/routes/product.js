@@ -12,4 +12,6 @@ router.get('/editProduct',productController.editProduct);
 
 router.get('/deleteProduct/:productID',productController.deleteProduct);
 
+router.get('/getProductByShop/:shopID',productController.getProductByShop);
+
 module.exports = router;

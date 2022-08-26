@@ -45,9 +45,10 @@ class Shop extends React.Component{
                               <img src="img/recepie/recpie_1.png" alt=""/>
                           </div>
                                
-                                    <h5>{shop.shopName}</h5>
-                                    <h5>{shop.openingTime}</h5>
-                                    <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5>
+                          <h5>{shop.shopName}</h5>
+                          <h5>{shop.openingTime}</h5>
+                          {/* <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5> */}
+                          <Link to={"/Menu/"+shop.shopID} class="button button-contactForm btn_4 boxed-btn-add">ไปยังร้านค้า</Link>
                       </div>
                        
                   </div>

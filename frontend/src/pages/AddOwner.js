@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Select from 'react-select'
 
 class AddOwner extends React.Component {
@@ -74,11 +74,15 @@ class AddOwner extends React.Component {
         roleID: this.state.roleValue
       }).then((res) => {  
         console.log(res.result)
+        this.setState({redirect: true})
       })
     
     }
 
     render(){
+      if(this.state.redirect){
+        return <Redirect to='/Admin' />
+      }
         return(
           <div class="container">
             <div className="row">

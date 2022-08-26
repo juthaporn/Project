@@ -6,8 +6,8 @@ class Menu extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            shopName: '',
-            openingTime:''
+          productName: '',
+          productPrice:''
         }
     }
    
@@ -18,9 +18,9 @@ class Menu extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+        axios.get("http://localhost:3000/getProduct").then((res) => {  
           this.setState({data: res.data.data[0]});
-          console.log("owner",this.state.data)
+          console.log("shop",this.state.data)
           // x.setState({data: res.data.data});
         }).catch((error) => {
           console.log(error);
@@ -40,17 +40,16 @@ class Menu extends React.Component{
           <div class="container">
               <div class="row">
               {
-                                    this.state.data?.map(shop => (
+                                    this.state.data?.map(product => (
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
                               <img src="img/recepie/recpie_1.png" alt=""/>
                           </div>
-                          <tr>
-                                              <td>{shop.shopName}</td></tr>
-                                            <tr>
-                                             <td>{shop.openingTime}</td></tr>
-                          <a href="/MenuSelect" class="line_btn">เพิ่มไปยังรถเข็น</a>
+                      
+                                  <h5>{product.productName}</h5>
+                                  <h5>{product.productPrice}</h5>
+                          <h5><a href="/MenuSelect" class='badge badge-primary'>เพิ่มไปยังรถเข็น</a></h5>
                       </div>
                        
                   </div>

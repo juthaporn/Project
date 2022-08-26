@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 class MonthlyRentalfee extends React.Component{
     constructor(props){
         super(props);
@@ -16,6 +16,16 @@ class MonthlyRentalfee extends React.Component{
             shopName :''
         }
 }
+  // getData = () => {
+        //   var x = this;
+        //   axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+        //     this.setState({data: res.data.data[0]});
+        //     console.log("owner",this.state.data)
+        //     // x.setState({data: res.data.data});
+        //   }).catch((error) => {
+        //     console.log(error);
+        //   });
+        // }
     render(){
         return(   
             <div class="container">

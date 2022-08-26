@@ -18,7 +18,7 @@ class SelectShopByOwner extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {     ///
           this.setState({data: res.data.data[0]});
           console.log("owner",this.state.data)
           // x.setState({data: res.data.data});

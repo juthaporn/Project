@@ -1,18 +1,28 @@
 import React from 'react';
-
+import axios from 'axios';
 class OrderOwnerEdit extends React.Component{
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         orderDate: '',
-    //         orderStatus: '',
-    //         subtotal: '',
-    //         orderDetail: '',
-    //         quantity: '',
-    //         price: '',
-    //         productName : '',
-    //     }
-// }
+    constructor(props){
+        super(props);
+        this.state = {
+            orderDate: '',
+            orderStatus: '',
+            subtotal: '',
+            orderDetail: '',
+            quantity: '',
+            price: '',
+            productName : '',
+        }
+}
+        // getData = () => {
+        //   var x = this;
+        //   axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+        //     this.setState({data: res.data.data[0]});
+        //     console.log("owner",this.state.data)
+        //     // x.setState({data: res.data.data});
+        //   }).catch((error) => {
+        //     console.log(error);
+        //   });
+        // }
 
 
     render(){

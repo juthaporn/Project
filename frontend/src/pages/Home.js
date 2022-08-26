@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 // import { Container } from 'react-bootstrap';
 
 class Home extends React.Component{
@@ -10,26 +11,23 @@ class Home extends React.Component{
         
         }
       }
+    componentDidMount(){
+        this.getData()
+      }
+  
+      getData = () => {
+        var x = this;
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
+          this.setState({data: res.data.data[0]});
+          console.log("owner",this.state.data)
+          // x.setState({data: res.data.data});
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
     render(){
         return(  
             <div class = "Container">
-            {/* <div class="slider_area">
-                <div class="single_slider  d-flex align-items-center slider_bg_1">
-                    <div class="container">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-xl-8 ">
-                                <div class="slider_text text-center">
-                                    <div class="text">
-                                        <h3>
-                                        Chopradu Food Center Walailak University
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             <div class="latest_trand_area">
                 <div class="container">
                     <div class="row">
@@ -75,79 +73,30 @@ class Home extends React.Component{
                     </div>
                 </div>
                 <div class="recepie_area">
+           
             <div class="container">
+           
                 <div class="row">
+                { this.state.data?.map(shop => (
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single_recepie text-center">
                             <div class="recepie_thumb">
                             
-                                <img class="card-img" src="img/recepie/recpie_1.png"alt="" />
-                            </div>
-                            <h3>ชื่อร้าน</h3>
-                            <span>เวลาเปิดร้าน</span>
+                                <img class="card-img" src="img/recepie/recpie_1.png"alt="" /></div>
+                           
+                                    <h5>{shop.shopName}</h5>
+                                    <h5>{shop.openingTime}</h5>
+                                    <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5>
                             {/* <p>Time Needs: 30 Mins</p> */}
                             {/* <a href="#" class="line_btn">View Full Recipe</a> */}
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                                <img class="card-img"  src="img/recepie/recpie_2.png" alt=""/>
-                            </div>
-                            <h3>Pure Vegetable Bowl</h3>
-                            <span>Appetizer</span>
-                            {/* <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a> */}
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                                <img class="card-img"  src="img/recepie/recpie_3.png" alt=""/>
-                            </div>
-                            <h3>Egg Masala Ramen</h3>
-                            <span>Appetizer</span>
-                            {/* <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a> */}
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                                <img class="card-img"  src="img/recepie/recpie_2.png" alt=""/>
-                            </div>
-                            <h3>Egg Masala Ramen</h3>
-                            <span>Appetizer</span>
-                            {/* <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a> */}
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                                <img class="card-img"  src="img/recepie/recpie_3.png" alt=""/>
-                            </div>
-                            <h3>Egg Masala Ramen</h3>
-                            <span>Appetizer</span>
-                            {/* <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a> */}
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single_recepie text-center">
-                            <div class="recepie_thumb">
-                                <img class="card-img" g src="img/recepie/recpie_3.png" alt=""/>
-                            </div>
-                            <h3>Egg Masala Ramen</h3>
-                            <span>Appetizer</span>
-                            {/* <p>Time Needs: 30 Mins</p>
-                            <a href="#" class="line_btn">View Full Recipe</a> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    ))
+                }
+                </div>  
+            </div>  
         </div>
-            </div>
+    </div>
             
         )
     }

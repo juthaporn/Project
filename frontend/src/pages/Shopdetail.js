@@ -7,8 +7,6 @@ class ShopDetail extends React.Component{
         super(props);
         this.state = {
             shopName: '',
-            shopPhone: '',
-            shopDetail: '',
             openingTime: ''
         }
       }
@@ -19,7 +17,7 @@ class ShopDetail extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/getOneShop/13").then((res) => {
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
           this.setState({data: res.data.data[0]});
           console.log("owner",this.state.data)
           // x.setState({data: res.data.data});
@@ -43,12 +41,9 @@ class ShopDetail extends React.Component{
                                     this.state.data?.map(shop => (
                     <div class="col-xl-6 col-md-6">
                         <div class="recepies_info">
-                            <h3>shopName</h3>
-                            <p>shopDetail</p>
-                            <tr>
-                                              <td>{shop.shopName}</td></tr>
-                                            <tr>
-                                             <td>{shop.openingTime}</td></tr>
+                           
+                                    <h5>{shop.shopName}</h5>
+                                    <h5>{shop.openingTime}</h5>
                             <div class="resepies_details">
                                 <ul>
                                     <li><p><strong>shopPhone</strong> :  Main Dish </p></li>

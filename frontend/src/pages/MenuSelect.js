@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 class MenuSelect extends React.Component{
     constructor(props){
         super(props);
@@ -10,8 +10,20 @@ class MenuSelect extends React.Component{
             quantity:''
         }
 }
+				// componentDidMount(){
+				// 	this.getData()
+				// }
 
-
+				// getData = () => {
+				// 	var x = this;
+				// 	axios.get("http://localhost:3000/getProduct").then((res) => {
+				// 	this.setState({data: res.data.data[0]});
+				// 	console.log("owner",this.state.data)
+				// 	// x.setState({data: res.data.data});
+				// 	}).catch((error) => {
+				// 	console.log(error);
+				// 	});
+				// }
 
     render(){
         return(    
@@ -26,7 +38,6 @@ class MenuSelect extends React.Component{
 							<div class="card-body">
 							<table class="table table-borderless">
 								<tbody>
-                {/* <a href="/OrderStatus" class="btn btn-primary">สถานะของอาหาร</a> */}
 								<tr>
 									<td></td>
 									<td><h5>จำนวน</h5></td>
@@ -47,24 +58,8 @@ class MenuSelect extends React.Component{
 									</td><br/>
 									<input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
 									<td class="text-end"><h5>50</h5></td>
-									<td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
+									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 
-								</tr>
-								<tr>
-									<td>
-									<div class="d-flex mb-2">
-										<div class="flex-shrink-0">
-										<img src="img/post/post_3.png" alt=""/>
-										</div>
-										<div class="flex-lg-grow-1 ms-3">
-										<h5 ><br/>Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5>
-										<h5><span class="small">ประเภทอาหาร: ข้าว</span></h5>
-										</div>
-									</div>
-									</td><br/>
-									<input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
-									<td class="text-end"><h5>45</h5></td>
-									<td><button type="cancel" className="nav-link" class='badge badge-danger'>ยกเลิก</button></td>
 								</tr>
 								</tbody>
 							</table>

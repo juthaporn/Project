@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 class OrderOwner extends React.Component{
     constructor(props){
         super(props);
@@ -14,6 +14,20 @@ class OrderOwner extends React.Component{
         }
 }
 
+// componentDidMount(){
+//   this.getData()
+// }
+
+//               getData = () => {
+//                 var x = this;
+//                 axios.get("http://localhost:3000/getOneShop/13").then((res) => {
+//                   this.setState({data: res.data.data[0]});
+//                   console.log("owner",this.state.data)
+//                   // x.setState({data: res.data.data});
+//                 }).catch((error) => {
+//                   console.log(error);
+//                 });
+//               }
     render(){
         return(   
           

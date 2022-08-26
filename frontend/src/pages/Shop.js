@@ -38,18 +38,16 @@ class Shop extends React.Component{
            <div class="recepie_area">
           <div class="container">
               <div class="row">
-              {
-                                    this.state.data?.map(shop => (
+              { this.state.data?.map(shop => (
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
                               <img src="img/recepie/recpie_1.png" alt=""/>
                           </div>
-                                            <tr>
-                                              <td>{shop.shopName}</td></tr>
-                                            <tr>
-                                             <td>{shop.openingTime}</td></tr>
-                          <a href="/Menu" class="line_btn">ไปยังร้านค้า</a>
+                               
+                                    <h5>{shop.shopName}</h5>
+                                    <h5>{shop.openingTime}</h5>
+                                    <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5>
                       </div>
                        
                   </div>

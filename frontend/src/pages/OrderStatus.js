@@ -18,12 +18,8 @@ class OrderStatus extends React.Component{
 			<div class="row">
 				<div class="col-lg-12">
 						<div class="card mb-3">
-						<div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">หมายเลขออร์เดอร์ - </span><span class="text-medium">34VB5540K83</span></div>
-						<div class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2 bg-secondary">
-							<div class="w-100 text-center py-1 px-2"><span class="text-medium">คำสั่งซื้อ </span> ยืนยัน</div>
-							<div class="w-100 text-center py-1 px-2"><span class="text-medium">สถานะ :</span> กำลังปรุง</div>
-							<div class="w-100 text-center py-1 px-2"><span class="text-medium">เวลาที่จะจัดส่ง :</span> 11:30</div>
-						</div>
+						<div class="p-4 text-center text-white text-lg bg-dark rounded-top"><h4 span class="text-uppercase">สถานะคำสั่งซื้อของออร์เดอร์ </h4><h4 class="text-medium">34VB5540K83</h4></div>
+						
 						<div class="card-body">
 							<div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
 							<div class="step completed">
@@ -56,11 +52,6 @@ class OrderStatus extends React.Component{
 					</div>
 					</div>
 
-
-
-					
-
-  
 					<div class="row">
 						<div class="col-lg-12">
 						<div class="card mb-4">
@@ -69,8 +60,9 @@ class OrderStatus extends React.Component{
 								<tbody>
 								<tr>
 									<td></td>
-									<td>จำนวน</td>
-									<td class="text-end">ราคา</td>
+									<h5><td>จำนวน</td></h5>
+									<td></td>
+									<h5><td class="text-end">ราคา</td></h5>
 								</tr>
 								<tr>
 									<td>
@@ -84,35 +76,26 @@ class OrderStatus extends React.Component{
 										</div>
 									</div>
 									</td>
-									<td>1</td>
-									<td class="text-end">50</td>
+									<h5><td>1</td></h5>
+									<td></td>
+									<h5><td class="text-end">50</td></h5>
 								</tr>
-								<tr>
-									<td>
-									<div class="d-flex mb-2">
-										<div class="flex-shrink-0">
-										<img src="img/post/post_3.png" alt=""/>
-										</div>
-										<div class="flex-lg-grow-1 ms-3">
-										<h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5>
-										<h5 ><span class="small">ประเภทอาหาร: ข้าว</span></h5>
-										</div>
-									</div>
-									</td>
-									<td>1</td>
-									<td class="text-end">45</td>
-								</tr>
+								
 								</tbody>
 								<tfoot>
 								<tr>
-									<td>
-									<a href="/Order" >จำนวนรายการทั้งหมด</a>
-									</td>
-									<td class="text-danger text-end">2 รายการ</td>
+									
+									<td><h5><a href="/Order" >จำนวนรายการทั้งหมด</a></h5></td>
+									<td></td>
+									<td></td>
+									<h5><td >2 รายการ</td></h5>
 								</tr>
 								<tr class="fw-bold">
-									<td colspan="2">รวมทั้งหมด</td>
-									<td class="text-end">95 บาท</td>
+								
+									<h5><td colspan="2">รวมทั้งหมด</td></h5>
+									<td></td>
+									<td></td>
+									<h5><td class="text-end">95 บาท</td></h5>
 								</tr>
 								</tfoot>
 							</table>

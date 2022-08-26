@@ -16,7 +16,7 @@ import Register from './pages/Register';
 import Shop from './pages/Shop';
 import Shopdetail from './pages/ShopDetail';
 import Menu from './pages/Menu';
-import TypeFood from './pages/TypeFood';
+import Typefood from './pages/Typefood';
 import Rent from './pages/Rent';
 import YearRent from './pages/YearRent';
 import AddOwner from './pages/AddOwner';
@@ -91,8 +91,8 @@ class App extends React.Component {
         <Route path="/ShopOwner">
             <ShopOwner />
           </Route>
-        <Route path="/TypeFood">
-            <TypeFood />
+        <Route path="/Typefood">
+            <Typefood />
         </Route>
         <Route path="/Rent/:id" component={Rent}>
         </Route>

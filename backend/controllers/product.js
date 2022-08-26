@@ -89,10 +89,10 @@ exports.deleteProduct = (req, res, next) => {
 exports.getProductByShop = (req, res, next) => {
     // const productID = req.query.product_id;
     const {shopID} = req.params;
-    Product.findById(shopID).then(shop => {
+    Product.getProductByShop(shopID).then((product) => {
         res.status(200).json({
             "message": "success",
-            "data": shop[0]
+            "data": product
         });
     }).catch(err => {
         res.status(500).json({

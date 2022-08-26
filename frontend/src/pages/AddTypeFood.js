@@ -27,8 +27,14 @@ class AddTypeFood extends React.Component {
         typeName: this.state.value
       }).then((res) => {  
         console.log(res.data.message)
-        alert('เพิ่มข้อมูลสำเร็จ')
-        this.setState({redirect: true})
+        if(res.data.message=='success'){
+          alert('เพิ่มข้อมูลสำเร็จ')
+          this.setState({redirect: true})
+        }else{
+          alert('ข้อมูลซ้ำ')
+          this.setState({redirect: false})
+        }
+        
 
       }).catch(err => {
         console.log(err)

@@ -100,3 +100,19 @@ exports.getProductByShop = (req, res, next) => {
         })
     })
 }
+
+
+exports.getProductByItem = (req, res, next) => {
+    // const productID = req.query.product_id;
+    const {productID} = req.params;
+    Product.getProductByItem(productID).then((product) => {
+        res.status(200).json({
+            "message": "success",
+            "data": product
+        });
+    }).catch(err => {
+        res.status(500).json({
+            "message": err
+        })
+    })
+}

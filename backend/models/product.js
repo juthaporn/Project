@@ -50,6 +50,9 @@ class Product{
             [shopID]
         )
     }
+
+    
+   
 }
 
 module.exports = Product

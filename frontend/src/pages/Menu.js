@@ -13,24 +13,24 @@ class Menu extends React.Component{
     }
    
 
-    componentDidMount(){
-        this.getData()
-        console.log("shopID",this.props.match.params.id)
-      }
-  
-      getData = () => {
-        var x = this;
-        axios.get("http://localhost:3000/product/getProductByShop/"+this.props.match.params.id).then((res) => {  
-          console.log(this.state.data[0])
-          this.setState({data: res.data.data[0]});
-          this.setState({shopID: this.state.data[0].shopID})
-          this.setState({productName: this.state.data[0].productName})
-          this.setState({productPrice: this.state.data[0].productPrice})
-          // x.setState({data: res.data.data});
-        }).catch((error) => {
-          console.log(error);
-        });
-      }
+          componentDidMount(){
+            this.getData()
+            console.log("shopID",this.props.match.params.id)
+          }
+
+          getData = () => {
+            var x = this;
+            axios.get("http://localhost:3000/product/getProductByShop/"+this.props.match.params.id).then((res) => {  
+              console.log(this.state.data[0])
+              this.setState({data: res.data.data[0]});
+              this.setState({shopID: this.state.data[0].shopID})
+              this.setState({productName: this.state.data[0].productName})
+              this.setState({productPrice: this.state.data[0].productPrice})
+              // x.setState({data: res.data.data});
+            }).catch((error) => {
+              console.log(error);
+            });
+          }
 
     render(){
         return(    
@@ -49,12 +49,12 @@ class Menu extends React.Component{
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
-                              <img src="img/recepie/recpie_1.png" alt=""/>
+                          <img src="img/recepie/recpie_2.png" alt=""/>
                           </div>
-                      
+
                           <h5>{item.productName}</h5>
-                          <h5>{item.productPrice}</h5>
-                          <h5><a href="/MenuSelect" class='badge badge-primary'>เพิ่มไปยังรถเข็น</a></h5>
+                          <h5>{item.productPrice} บาท</h5>
+                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-menu">ไปยังร้านค้า</Link> 
                       </div>
                        
                   </div>

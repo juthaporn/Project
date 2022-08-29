@@ -38,17 +38,16 @@ class Shop extends React.Component{
            <div class="recepie_area">
           <div class="container">
               <div class="row">
-              { this.state.data?.map(shop => (
+              { 
+                this.state.data?.map(shop => (
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
                               <img src="img/recepie/recpie_1.png" alt=""/>
-                          </div>
-                               
+                          </div>  
                           <h5>{shop.shopName}</h5>
-                          <h5>{shop.openingTime}</h5>
-                          {/* <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5> */}
-                          <Link to={"/Menu/"+shop.shopID} class="button button-contactForm btn_4 boxed-btn-add">ไปยังร้านค้า</Link>
+                          <h5>{shop.openingTime} น.</h5>
+                          <Link to={"/Menu/"+shop.shopID} class="button button-contactForm btn_4 boxed-btn-shop">ไปยังร้านค้า</Link>
                       </div>
                        
                   </div>

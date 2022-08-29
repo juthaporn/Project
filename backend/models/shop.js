@@ -48,8 +48,6 @@ class Shop{
 
     static getShopByMemberID(memberID){
         return db.execute(
-            // 'select * from shop where memberID=?',
-            // [memberID]
             'SELECT * from shop inner JOIN member ON shop.memberID = member.memberID INNER JOIN shoptype ON shop.shopTypeID = shoptype.shopTypeID where shop.memberID=?',
             [memberID]
         )

@@ -51,7 +51,12 @@ class Product{
         )
     }
 
-    
+    static getOneProduct(productID){
+        return db.execute(
+            'select * from product where productID = ?',
+            [productID]
+        )
+    }
    
 }
 

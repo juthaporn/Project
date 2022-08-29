@@ -46,12 +46,6 @@ exports.getEditProduct = (req, res, next) => {
 }
 
 exports.editProduct = (req, res, next) => {
-    // const product_name = req.body.product_name;
-    // const brand = req.body.brand;
-    // const color = req.body.color;
-    // const type = req.body.type;
-    // const description = req.body.description;
-    // const price = req.body.price;
     console.log(req.body)
     const {productID, productName, productDetail, productPrice, typeID} = req.body;
     // const product = new Product(null, product_name, brand, color, type, description, price);
@@ -102,13 +96,13 @@ exports.getProductByShop = (req, res, next) => {
 }
 
 
-exports.getProductByItem = (req, res, next) => {
+exports.getOneProduct = (req, res, next) => {
     // const productID = req.query.product_id;
     const {productID} = req.params;
-    Product.getProductByItem(productID).then((product) => {
+    Product.getOneProduct(productID).then((product) => {
         res.status(200).json({
             "message": "success",
-            "data": product
+            "data": product[0]
         });
     }).catch(err => {
         res.status(500).json({

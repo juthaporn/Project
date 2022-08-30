@@ -11,6 +11,7 @@ const yearRent = require('./routes/yearRent')
 const monthlyRent = require('./routes/monthlyRent')
 const role = require('./routes/role')
 const product = require('./routes/product')
+const order = require('./routes/order')
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -29,6 +30,7 @@ app.use('/yearRent', yearRent)
 app.use('/monthlyRent', monthlyRent)
 app.use('/role', role)
 app.use('/product', product)
+app.use('/order', order)
 
 app.get("/test", function (req, res) {
     res.json({"message": "hello world"});

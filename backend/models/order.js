@@ -2,10 +2,12 @@ const db = require('../util/database');
 
 class Order{
 
-    constructor(orderID, orderName, orderStatus, memberID, shopID){
+    constructor(orderID, orderDate, orderTime, orderStatus, subtotal, memberID, shopID){
         this.orderID = orderID;
-        this.orderName = orderName;
+        this.orderDate = orderDate;
+        this.orderTime = orderTime;
         this.orderStatus = orderStatus;
+        this.subtotal = subtotal;
         this.memberID = memberID;
         this.shopID = shopID;
     }
@@ -17,13 +19,13 @@ class Order{
     save(){
         if(this.orderID){
             return db.execute(
-                'update order set orderName=?, orderStatus=?, memberID=?, shopID=? where orderID = ?',
-                [this.orderName, this.orderStatus, this.memberID, this.shopID, this.orderID]
+                'update order set orderDate=?, orderTime=?, orderStatus=?, subtotal=?, memberID=?, shopID=? where orderID = ?',
+                [this.orderDate, this.orderTime, this.orderStatus, this.subtotal, this.memberID, this.shopID, this.orderID]
             );
         }else{
             return db.execute(
-                'insert into order (orderName, orderStatus, memberID, shopID) values(?,?,?,?)',
-                [this.orderName, this.orderStatus, this.memberID, this.shopID]
+                'insert into order (orderDate, orderTime, orderStatus, subtotal, memberID, shopID) values(?,?,?,?,?,?)',
+                [this.orderDate, this.orderTime, this.orderStatus, this.subtotal, this.memberID, this.shopID]
             );
         }
     }

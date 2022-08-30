@@ -5,8 +5,8 @@ class MenuSelect extends React.Component{
 	constructor(props){
         super(props);
         this.state = {
-          productName: '',
-          productPrice:'',
+        //   productName: '',
+        //   productPrice:'',
           data:[]
         }
     }
@@ -21,12 +21,29 @@ class MenuSelect extends React.Component{
             axios.get("http://localhost:3000/product/getOneProduct/"+this.props.match.params.id).then((res) => {  
 				console.log(res.data.data[0])
               this.setState({data: res.data.data[0]});
-              this.setState({productID: this.state.data[0].productID})
-              this.setState({productName: this.state.data[0].productName})
-              this.setState({productPrice: this.state.data[0].productPrice})
+            //   this.setState({productID: this.state.data[0].productID})
+            //   this.setState({productName: this.state.data[0].productName})
+            //   this.setState({productPrice: this.state.data[0].productPrice})
 		}).catch((error) => {
 			console.log(error);
 		});
+	}
+
+	handleSubmit = (e) => {
+		e.preventDefult()
+		axios.post('http://localhost:3000/order/createOrder',{
+			orderDate: this.state.orderDate,
+        	orderTime: this.state.orderTime,
+        	orderStatus: this.state.orderStatus,
+        	subtotal: this.state.subtotal,
+        	memberID: this.state.memberID,
+        	shopID: this.state.shopID
+		}).then(res => {
+			console.log(res)
+			alert('Add Shop Success!')
+		  }).catch(err => {
+			console.log(err)
+		  })
 	}
 
     render(){

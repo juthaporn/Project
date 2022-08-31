@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2022 at 09:03 AM
+-- Generation Time: Aug 31, 2022 at 05:56 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -34,7 +34,17 @@ CREATE TABLE `member` (
   `name` varchar(200) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `roleID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`memberID`, `username`, `password`, `name`, `phone`, `roleID`) VALUES
+(10, 'anun', '12368', 'อนันต์ สุรสาร', '0937273121', 3),
+(11, 'sujin', '1234', 'สุจิน  ทองนาก\r\n', '0860223393', 3),
+(12, '324324', '546456', '324234', '4234324', 3),
+(13, 'iii', '1234', 'รรร', '0235', 3);
 
 -- --------------------------------------------------------
 
@@ -46,7 +56,6 @@ CREATE TABLE `monthlyrentalfee` (
   `rentalID` int(11) NOT NULL,
   `rentalDetail` varchar(100) NOT NULL,
   `month` date NOT NULL,
-  `year` year(4) NOT NULL,
   `waterBill` double NOT NULL,
   `waterUnit` double NOT NULL,
   `electricityBill` double NOT NULL,
@@ -55,6 +64,20 @@ CREATE TABLE `monthlyrentalfee` (
   `wasteDisposalFee` double NOT NULL,
   `shopID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `monthlyrentalfee`
+--
+
+INSERT INTO `monthlyrentalfee` (`rentalID`, `rentalDetail`, `month`, `waterBill`, `waterUnit`, `electricityBill`, `powerUnit`, `cleaningFee`, `wasteDisposalFee`, `shopID`) VALUES
+(4, 'สส', '2022-08-15', 12, 15, 2, 15, 20, 30, 13),
+(5, '0', '0000-00-00', 123, 213, 213, 12, 12, 123, 13),
+(6, '123', '0000-00-00', 123, 1235, 5468, 456, 123456, 546456, 13),
+(7, '123', '0000-00-00', 123, 1235, 5468, 456, 123456, 546456, 13),
+(8, '123', '0000-00-00', 123, 1235, 5468, 456, 123456, 546456, 13),
+(9, '123', '0000-00-00', 123, 1235, 5468, 456, 123456, 546456, 13),
+(10, '123', '2022-07-01', 123, 1235, 5468, 456, 123456, 546456, 13),
+(11, '123', '2022-09-01', 123, 1235, 5468, 456, 123456, 546456, 13);
 
 -- --------------------------------------------------------
 
@@ -65,6 +88,7 @@ CREATE TABLE `monthlyrentalfee` (
 CREATE TABLE `order` (
   `orderID` int(11) NOT NULL,
   `orderDate` date NOT NULL,
+  `orderTime` datetime NOT NULL,
   `orderStatus` varchar(20) NOT NULL,
   `subtotal` double NOT NULL,
   `shopID` int(11) NOT NULL,
@@ -121,10 +145,12 @@ INSERT INTO `producttype` (`typeID`, `typeName`) VALUES
 (3, 'ก๋วยเตี๋ยว'),
 (6, 'ขนมหวาน'),
 (12, 'ข้าวแกง'),
+(13, 'ชานม'),
 (4, 'น้ำ'),
 (5, 'ผลไม้'),
 (2, 'อาหารตามสั่ง'),
-(10, 'โรตี');
+(10, 'โรตี'),
+(14, 'ไอศกรีม');
 
 -- --------------------------------------------------------
 
@@ -160,11 +186,18 @@ CREATE TABLE `shop` (
   `shopPhone` varchar(10) NOT NULL,
   `shopDetail` varchar(50) NOT NULL,
   `openingTime` varchar(50) NOT NULL,
-  `shopType` varchar(50) NOT NULL,
   `shopRentalContract` varchar(100) NOT NULL,
   `memberID` int(11) NOT NULL,
   `shopTypeID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shop`
+--
+
+INSERT INTO `shop` (`shopID`, `shopName`, `shopPhone`, `shopDetail`, `openingTime`, `shopRentalContract`, `memberID`, `shopTypeID`) VALUES
+(13, 'อาบูซอบัร ตามสั่งมุสลิม', '0937273121', 'อาหารตามสั่งมุสลิม', '08.00-16.00', '2 พฤษภาคม 2564 - 2 พฤษภาคม 2566', 10, 1),
+(16, 'ชายสี่บะหมี่เกี๊ยว\r\n', '0860223393', 'บะหมี่เกี๊ยว', '10.00-18.00', '2 พฤษภาคม 2564 - 2 พฤษภาคม 2566', 11, 4);
 
 -- --------------------------------------------------------
 
@@ -175,7 +208,18 @@ CREATE TABLE `shop` (
 CREATE TABLE `shoptype` (
   `shopTypeID` int(11) NOT NULL,
   `typeName` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shoptype`
+--
+
+INSERT INTO `shoptype` (`shopTypeID`, `typeName`) VALUES
+(6, 'test'),
+(4, 'ก๋วยเตี๋ยว'),
+(5, 'ข้าวผัด'),
+(1, 'อาหารตามสั่ง'),
+(3, 'อาหารอีสาน');
 
 -- --------------------------------------------------------
 
@@ -192,6 +236,15 @@ CREATE TABLE `yearlyrent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `yearlyrent`
+--
+
+INSERT INTO `yearlyrent` (`rentID`, `rentDetail`, `year`, `rentalFee`, `shopID`) VALUES
+(14, '12', 2021, 1200, 13),
+(15, '12323', 2019, 12210, 13),
+(16, '123', 2022, 12322, 13);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -201,7 +254,7 @@ CREATE TABLE `yearlyrent` (
 ALTER TABLE `member`
   ADD PRIMARY KEY (`memberID`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `roleID` (`roleID`);
+  ADD KEY `member_ibfk_1` (`roleID`);
 
 --
 -- Indexes for table `monthlyrentalfee`
@@ -231,7 +284,6 @@ ALTER TABLE `orderdetail`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`productID`),
-  ADD UNIQUE KEY `productName` (`productName`),
   ADD KEY `typeID` (`typeID`),
   ADD KEY `product_ibfk_2` (`shopID`);
 
@@ -246,7 +298,8 @@ ALTER TABLE `producttype`
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
-  ADD PRIMARY KEY (`roleID`);
+  ADD PRIMARY KEY (`roleID`),
+  ADD UNIQUE KEY `roleName` (`roleName`);
 
 --
 -- Indexes for table `shop`
@@ -261,14 +314,15 @@ ALTER TABLE `shop`
 -- Indexes for table `shoptype`
 --
 ALTER TABLE `shoptype`
-  ADD PRIMARY KEY (`shopTypeID`);
+  ADD PRIMARY KEY (`shopTypeID`),
+  ADD UNIQUE KEY `typeName` (`typeName`);
 
 --
 -- Indexes for table `yearlyrent`
 --
 ALTER TABLE `yearlyrent`
   ADD PRIMARY KEY (`rentID`),
-  ADD KEY `shopID` (`shopID`);
+  ADD KEY `FOREIGNKEY` (`shopID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -278,13 +332,13 @@ ALTER TABLE `yearlyrent`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `monthlyrentalfee`
 --
 ALTER TABLE `monthlyrentalfee`
-  MODIFY `rentalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `rentalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -308,7 +362,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `producttype`
 --
 ALTER TABLE `producttype`
-  MODIFY `typeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `typeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -320,19 +374,19 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `shopID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `shopID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `shoptype`
 --
 ALTER TABLE `shoptype`
-  MODIFY `shopTypeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `shopTypeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `yearlyrent`
 --
 ALTER TABLE `yearlyrent`
-  MODIFY `rentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `rentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -382,7 +436,7 @@ ALTER TABLE `shop`
 -- Constraints for table `yearlyrent`
 --
 ALTER TABLE `yearlyrent`
-  ADD CONSTRAINT `yearlyrent_ibfk_1` FOREIGN KEY (`shopID`) REFERENCES `shop` (`shopID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `FOREIGNKEY` FOREIGN KEY (`shopID`) REFERENCES `shop` (`shopID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

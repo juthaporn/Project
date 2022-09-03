@@ -32,8 +32,12 @@ class ShopType extends React.Component{
     axios.get('http://localhost:3000/shopType/deleteShopType/' + typeID)
     .then(res => {
       console.log(res.data.message)
-      console.log(typeID)
-      this.getData()
+      // console.log(typeID)
+      // this.getData()
+      if(res.data.message=='success'){
+        alert('ลบข้อมูลสำเร็จ') 
+          this.getData()
+      }
     }).catch(err => {
       console.log(err)
     })

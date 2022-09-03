@@ -34,8 +34,6 @@ class AddTypeFood extends React.Component {
           alert('ข้อมูลซ้ำ')
           this.setState({redirect: false})
         }
-        
-
       }).catch(err => {
         console.log(err)
         // alert('เพิ่มข้อมูลไม่สำเร็จ')

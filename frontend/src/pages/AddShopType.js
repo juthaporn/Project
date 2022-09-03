@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class AddShopType extends React.Component {
     constructor(props){
@@ -22,6 +22,13 @@ class AddShopType extends React.Component {
         typeName: this.state.value
       }).then((res) => {  
         console.log(res.result)
+        if(res.data.message=='success'){
+          alert('เพิ่มข้อมูลสำเร็จ')
+          this.setState({redirect: true})
+        }else{
+          alert('ข้อมูลซ้ำ')
+          this.setState({redirect: false})
+        }
         // this.setState({redirect: true})
         // alert('Add Shop Success!')
       // }).catch(err =>{
@@ -32,6 +39,9 @@ class AddShopType extends React.Component {
     }
     
     render(){
+      // if(this.state.redirect){
+      //   return <Redirect to='/ShopType' />
+      // }
         return(
           <main>
             <div class="container">

@@ -63,7 +63,13 @@ class AddShop extends React.Component {
         shopTypeID: this.state.shopTypeID
       }).then(res => {
         console.log(res)
-        alert('Add Shop Success!')
+        if(res.data.message=='success'){
+          alert('เพิ่มข้อมูลสำเร็จ')
+          this.setState({redirect: true})
+        }else{
+          alert('ข้อมูลซ้ำ')
+          this.setState({redirect: false})
+        }
       }).catch(err => {
         console.log(err)
       })

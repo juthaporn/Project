@@ -32,7 +32,11 @@ class TypeFood extends React.Component{
     axios.get('http://localhost:3000/productType/deleteProductType/' + typeID)
     .then(res => {
       console.log(res.data.message)
-      this.getData()
+      if(res.data.message=='success'){
+        alert('ลบข้อมูลสำเร็จ') 
+          this.getData()
+      }
+
     }).catch(err => {
       console.log(err)
     })
@@ -66,10 +70,10 @@ class TypeFood extends React.Component{
                                     this.state.data?.map(item => (
                                         <tr>
                                             <td>{item.typeName}</td>
-                                            <td>
+                                            <td></td>
+                                            <td width="45%">
                                                 <Link to={"/EditTypeFood/"+item.typeID} class="button button-contactForm btn_4 boxed-btn-edit">แก้ไข</Link>
-                                            </td>
-                                            <td width="30%">
+
                                               <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() => this.handleDelete(item.typeID)}>ลบ</button>
                                                {/* onClick={() => {if (window.confirm('Are you sure you wish to delete this item?'))} this.handleDelete(item.typeID)} */}
                                             </td>

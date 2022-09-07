@@ -38,20 +38,6 @@ class MenuSelect extends React.Component{
 	handleSubmit = (e) => {
 		// e.preventDefult()
 		console.log(this.state.number, this.state.data)
-		
-		// axios.post('http://localhost:3000/order/createOrder',{
-		// 	orderDate: this.state.orderDate,
-        // 	orderTime: this.state.orderTime,
-        // 	orderStatus: this.state.orderStatus,
-        // 	subtotal: this.state.subtotal,
-        // 	memberID: this.state.memberID,
-        // 	shopID: this.state.shopID
-		// }).then(res => {
-		// 	console.log(res)
-		// 	alert('Add Shop Success!')
-		//   }).catch(err => {
-		// 	console.log(err)
-		//   })
 	}
 
     render(){

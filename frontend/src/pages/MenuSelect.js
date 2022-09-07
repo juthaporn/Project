@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 class MenuSelect extends React.Component{
 	constructor(props){
@@ -29,21 +30,28 @@ class MenuSelect extends React.Component{
 		});
 	}
 
+	handleChange = (e) => {
+		console.log(e.target.value)
+		this.setState({number: e.target.value})
+	}
+
 	handleSubmit = (e) => {
-		e.preventDefult()
-		axios.post('http://localhost:3000/order/createOrder',{
-			orderDate: this.state.orderDate,
-        	orderTime: this.state.orderTime,
-        	orderStatus: this.state.orderStatus,
-        	subtotal: this.state.subtotal,
-        	memberID: this.state.memberID,
-        	shopID: this.state.shopID
-		}).then(res => {
-			console.log(res)
-			alert('Add Shop Success!')
-		  }).catch(err => {
-			console.log(err)
-		  })
+		// e.preventDefult()
+		console.log(this.state.number, this.state.data)
+		
+		// axios.post('http://localhost:3000/order/createOrder',{
+		// 	orderDate: this.state.orderDate,
+        // 	orderTime: this.state.orderTime,
+        // 	orderStatus: this.state.orderStatus,
+        // 	subtotal: this.state.subtotal,
+        // 	memberID: this.state.memberID,
+        // 	shopID: this.state.shopID
+		// }).then(res => {
+		// 	console.log(res)
+		// 	alert('Add Shop Success!')
+		//   }).catch(err => {
+		// 	console.log(err)
+		//   })
 	}
 
     render(){
@@ -79,11 +87,13 @@ class MenuSelect extends React.Component{
 											<div class="flex-lg-grow-1 ms-3">
 												{/* <h5>{item.productName}</h5> */}
 												{/* <h5>{item.productPrice}</h5> */}
-												ยยยยยยย
+												{/* ยยยยยยย */}
+												<h5>{this.state.data.productName}</h5>
+
 											</div>
 										</div>
 									</td><br/>
-									<input type="number" id="tentacles" name="tentacles" min="0" max="100"></input>
+									<input type="number" id="tentacles" name="tentacles" min="0" max="100" onChange={(e) => this.handleChange(e)}></input>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 								</tr>
@@ -97,7 +107,9 @@ class MenuSelect extends React.Component{
 							</div>
 
 							<div class="form-group text-center">
-							<a href="/Order" class="button button-contactForm btn_4 boxed-btn-data">สั่งซื้อ</a><br/>
+							{/* <a href="/Order" class="button button-contactForm btn_4 boxed-btn-data">สั่งซื้อ</a><br/> */}
+								{/* <button type='button' className='button button-contactForm btn_4 boxed-btn-data' onClick={(e) => this.handleSubmit(e)}>สั่งซื้อ</button> */}
+								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-add" >สั่งซื้อ</Link>
 							</div>
 						</div>
 					</div>

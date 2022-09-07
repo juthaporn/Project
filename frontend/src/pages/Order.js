@@ -15,6 +15,23 @@ class Order extends React.Component{
             subtotal:''
         }
 }
+	componentDidMount(){
+	this.getData()
+		console.log("productID",this.props.match.params.product) 
+		console.log("number", this.props.match.params.number)	
+
+	}
+
+	getData = () => {
+		axios.get("http://localhost:3000/product/getOneProduct/" + this.props.match.params.product)
+		.then(res => {
+			console.log(res.data.data[0])
+			this.setState({product: res.data.data[0]})
+			this.setState({name: this.state.product.productName})
+			// console.log(this.state.product.productPrice)
+			this.setState({price: this.state.product.productPrice})
+		})
+	}
 			// componentDidMount(){
 			// 	this.getData()
 			// }
@@ -58,14 +75,15 @@ class Order extends React.Component{
 										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5>
+										{/* <h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5> */}
+										<h5 className='box-title'>{this.state.name}</h5>
 										<h5 ><span class="small">ประเภทอาหาร: ข้าว</span></h5>
 										</div>
 									</div>
 									</td>
-									<h5><td>1</td></h5>
+									<h5><td>{this.props.match.params.number}</td></h5>
 									<td></td>
-									<h5><td class="text-end">50</td></h5>
+									<h5><td class="text-end">{(this.props.match.params.number * this.state.price)}</td></h5>
 								</tr>
 								
 								</tbody>
@@ -75,14 +93,14 @@ class Order extends React.Component{
 									<td><h5><a>จำนวนรายการทั้งหมด</a></h5></td>
 									<td></td>
 									<td></td>
-									<h5><td >2 รายการ</td></h5>
+									<h5><td >{this.props.match.params.number} รายการ</td></h5>
 								</tr>
 								<tr class="fw-bold">
 								
 									<h5><td colspan="2">รวมทั้งหมด</td></h5>
 									<td></td>
 									<td></td>
-									<h5><td class="text-end">95 บาท</td></h5>
+									<h5><td class="text-end">{(this.props.match.params.number * this.state.price)} บาท</td></h5>
 								</tr>
 								</tfoot>
 							</table>

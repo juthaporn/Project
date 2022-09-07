@@ -43,12 +43,12 @@ class EditTypeFood extends React.Component {
       e.preventDefault();
       axios.post('http://localhost:3000/productType/editProductType',this.state).then(res => {
         console.log(res.data);
-        if(res.data.result){
-          // if(){
-            
-          // }else{
-          //   alert('กรุณากรอกเฉพาะตัวเลข')
-          // }
+        if(res.data.message=='success'){
+          alert('แก้ไขข้อมูลสำเร็จ')
+          this.setState({redirect: true})
+        }else{
+          alert('ข้อมูลซ้ำ')
+          this.setState({redirect: false})
         }
         }).catch(error => {
           console.log(error);
@@ -56,9 +56,9 @@ class EditTypeFood extends React.Component {
       }
 
     render(){
-      // if(this.state.redirect){
-      //   return <Redirect to='/Typefood' />
-      // }
+      if(this.state.redirect){
+        return <Redirect to='/Typefood' />
+      }
         return(
           <main>
             <div class="container">

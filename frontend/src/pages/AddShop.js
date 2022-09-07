@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Select from 'react-select'
 
 class AddShop extends React.Component {
@@ -76,6 +76,9 @@ class AddShop extends React.Component {
     }
 
     render(){
+      // if(this.state.redirect){
+      //   return <Redirect to={'/ShopByOwner/'+this.state.memberID} />
+      // }
         return(
           <main>
             <div class="container">

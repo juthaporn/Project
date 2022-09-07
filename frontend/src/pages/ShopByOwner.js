@@ -39,7 +39,10 @@ class ShopByOwner extends React.Component{
         axios.get('http://localhost:3000/shop/deleteShop/'+ shopID)
         .then((res) => {
           console.log(res.data);
-          this.getData()
+          if(res.data.message=='success'){
+            alert('ลบข้อมูลสำเร็จ') 
+              this.getData()
+          }
         }).catch(error => {
           console.log(error);
         });

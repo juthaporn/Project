@@ -21,7 +21,7 @@ class Menu extends React.Component{
           getData = () => {
             var x = this;
             axios.get("http://localhost:3000/product/getProductByShop/"+this.props.match.params.id).then((res) => {  
-              console.log(this.state.data[0])
+              console.log(res.data.data[0])
               this.setState({data: res.data.data[0]});
               this.setState({shopID: this.state.data[0].shopID})
               this.setState({productName: this.state.data[0].productName})
@@ -54,7 +54,7 @@ class Menu extends React.Component{
 
                           <h5>{item.productName}</h5>
                           <h5>{item.productPrice} บาท</h5>
-                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-menu">ไปยังร้านค้า</Link> 
+                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-menu">ใส่ตระกร้า</Link> 
                       </div>
                        
                   </div>

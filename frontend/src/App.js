@@ -70,9 +70,12 @@ class App extends React.Component {
             </Route>
         <Route path="/MenuSelect/:id" component={MenuSelect}>
             </Route>
-        <Route path="/Order">
-            <Order />
+            <Route path="/Order/:product/:number" component={Order}>
+              
             </Route>
+        {/* <Route path="/Order">
+            <Order />
+            </Route> */}
         <Route path="/ShopOwnerDetail">
             <ShopOwnerDetail />
             </Route>

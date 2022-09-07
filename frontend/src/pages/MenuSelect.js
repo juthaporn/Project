@@ -93,7 +93,7 @@ class MenuSelect extends React.Component{
 											</div>
 										</div>
 									</td><br/>
-									<input type="number" id="tentacles" name="tentacles" min="0" max="100" onChange={(e) => this.handleChange(e)}></input>
+									<input type="number" id="tentacles" name="tentacles" min="1" max="100" onChange={(e) => this.handleChange(e)}></input>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 								</tr>

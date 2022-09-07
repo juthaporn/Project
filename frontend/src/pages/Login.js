@@ -27,9 +27,9 @@ class Login extends React.Component{
             roleID: 0,
             first_page: [
                 '',
-                '/Register', // admin
-                '',             // 
-                '',
+                '/Admin', // admin
+                '/Shop',             // 
+                '/SelectShopByOwner',
                 ''
             ],
             redirect: ''
@@ -49,8 +49,8 @@ class Login extends React.Component{
                 : '';
             break;
         case 'password': 
-            errors.password = value.length < 6
-                ? 'Password must be 8 characters long!'
+            errors.password = value.length < 4
+                ? 'Password must be 4 characters long!'
                 : '';
             break;
         default:

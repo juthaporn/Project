@@ -38,10 +38,8 @@ class Order extends React.Component{
          
           <div class ="container">
 			<br/>   
-			<a href="/OrderStatus" class="button button-contactForm btn_3 boxed-btn-data">สถานะของอาหาร</a>
-			<a href="/Shop" class="button button-contactForm btn_3 boxed-btn-data">หน้ารายการอาหาร</a>
 		   <h5 class="text-left ">หน้าสถานะของรายการอาหาร</h5><br/>
-		   
+		   <td><a href="/Shop" class="button button-contactForm btn_3 boxed-btn-home">หน้ารายการอาหาร</a></td><br/>
 		   <div class="row">
 						<div class="col-lg-12">
 						<div class="card mb-4">
@@ -61,9 +59,7 @@ class Order extends React.Component{
 										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										{/* <h5 class="box-title">Wireless Headphones with Noise Cancellation Tru Bass Bluetooth HiFi</h5> */}
 										<h5 className='box-title'>{this.state.name}</h5>
-										<h5 ><span class="small">ประเภทอาหาร: ข้าว</span></h5>
 										</div>
 									</div>
 									</td>
@@ -91,6 +87,9 @@ class Order extends React.Component{
 								</tfoot>
 							</table>
 							</div>
+							<div class="form-group text-center">
+									<Link to={"/OrderStatus/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_3 boxed-btn-menu">สถานะของอาหาร</Link>
+								</div>
 						</div>
 					</div>
  					 </div>

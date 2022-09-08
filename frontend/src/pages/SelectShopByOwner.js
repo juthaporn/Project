@@ -18,8 +18,9 @@ class SelectShopByOwner extends React.Component{
   
       getData = () => {
         var x = this;
-        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {     ///
-          this.setState({data: res.data.data[0]});
+        axios.get("http://localhost:3000/shop/getAllShop").then((res) => {     
+          // axios.get("http://localhost:3000/shop/getOneShop/:shopID").then((res) => {     
+          this.setState({data: res.data.data[0]});  
           console.log("owner",this.state.data)
           // x.setState({data: res.data.data});
         }).catch((error) => {
@@ -48,8 +49,8 @@ class SelectShopByOwner extends React.Component{
                                               <h5>{shop.shopName}</h5>
                                               {/* <td>{shop.openingTime}</td> */}
                                               <br/>
-                                              <a href="/Shopowner"  class="button btn_4 boxed-btn-add"><h5>ยอดการสั่งซื้อ</h5></a>
-                                              <a href="/Orderowner"  class="button btn_4 boxed-btn-add"><h5>ออร์เดอร์</h5></a>
+                                              <Link to={"/Shopowner/"} class="button btn_4 boxed-btn-orderamount">ยอดการสั่งซื้อ</Link> 
+                                              <Link to={"/Orderowner/"} class="button btn_4 boxed-btn-order">ออร์เดอร์</Link> 
                                           </tr>
                                           
                                          

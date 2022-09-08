@@ -74,7 +74,7 @@ class ShopOwner extends React.Component{
                         <div class="col-md-12 stretch-card transparent">
                         <div class="card tale-bg">
                             <div class="card-people mt-auto">
-                            <img class="card-img" src="img/recepie/recepie_details.png" alt="" />
+                            <img class="card-img" src="../img/recepie/recepie_details.png" alt="" />
                             </div>
                             </div>
                             <br/>
@@ -86,15 +86,15 @@ class ShopOwner extends React.Component{
                                         <table class="table ">
                                         <tbody>
                                         <tr>                       
-                                        <td><img src="img/post/post_10.png" alt=""/></td>
+                                        <td><img src="../img/post/post_10.png" alt=""/></td>
                                         <td> <h3 class="box-title">ข้าวกะเพรา</h3></td>
                                         </tr>
                                         <tr>
-                                        <td><img src="img/post/post_7.png" alt=""/></td>
+                                        <td><img src="../img/post/post_7.png" alt=""/></td>
                                         <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td>
                                         </tr>
                                         <tr>
-                                        <td><img src="img/post/post_5.png" alt=""/></td>
+                                        <td><img src="../img/post/post_5.png" alt=""/></td>
                                         <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td></tr>
                                         </tbody>
                                     </table>

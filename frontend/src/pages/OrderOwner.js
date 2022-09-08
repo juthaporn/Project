@@ -103,7 +103,7 @@ class OrderOwner extends React.Component{
                             <tbody>
                               <tr>
                               <td ><h3 class="box-title">1</h3></td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
+                              <td><img src="../img/post/post_5.png" alt=""/></td>
                                 <td><h3 class="box-title">ข้าว</h3></td>
                                 <td><h3 class="box-title">20:18</h3></td>
                                 <td><h3 class="box-title">30</h3></td>
@@ -122,7 +122,7 @@ class OrderOwner extends React.Component{
 
                               <tr>
                               <td></td>
-                              <td><img src="img/post/post_5.png" alt=""/></td>
+                              <td><img src="../img/post/post_5.png" alt=""/></td>
                               <td><h3 class="box-title">ข้าว</h3></td>
                                 <td><h3 class="box-title">20:18</h3></td>
                                 <td><h3 class="box-title">45</h3></td>

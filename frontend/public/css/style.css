@@ -568,6 +568,72 @@ tr:nth-child(even) {
 .boxed-btn-btn.large-width {
   width: 220px;
 }
+
+.boxed-btn-menu {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 24px;
+  margin-right: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #009900;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #009900 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-menu:hover {
+  background: #009900;
+  color: #fff !important;
+  border: 1px solid #009900;
+}
+
+.boxed-btn-menu:focus {
+  outline: none;
+}
+
+.boxed-btn-menu.large-width {
+  width: 100px;
+}
+
+.boxed-btn-home {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 10px 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #000000;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #000000 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-home:hover {
+  background: #000000;
+  color: #fff !important;
+  border: 1px solid #000000;
+}
+
+.boxed-btn-home:focus {
+  outline: none;
+}
+
+.boxed-btn-home.large-width {
+  width: 220px;
+}
+
 .boxed-btn-shop {
   background: #fff;
   color: #0B49C4;
@@ -692,6 +758,71 @@ tr:nth-child(even) {
   width: 220px;
 }
 
+.boxed-btn-order {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 34px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0px;
+  border: 1px solid #ffc000;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffc000 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-order:hover {
+  background: #ffc000;
+  color: #fff !important;
+  border: 1px solid #ffc000;
+}
+
+.boxed-btn-order:focus {
+  outline: none;
+}
+
+.boxed-btn-order.large-width {
+  width: 100px;
+}
+
+.boxed-btn-orderamount {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 34px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #1d44f2;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #1d44f2 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-orderamount:hover {
+  background: #1d44f2;
+  color: #fff !important;
+  border: 1px solid #1d44f2;
+}
+
+.boxed-btn-orderamount:focus {
+  outline: none;
+}
+
+.boxed-btn-orderamount.large-width {
+  width: 100px;
+}
 .boxed-btn-add {
   background: #fff;
   color: #131313;

@@ -6,8 +6,6 @@ class MenuSelect extends React.Component{
 	constructor(props){
         super(props);
         this.state = {
-        //   productName: '',
-        //   productPrice:'',
           data:[]
         }
     }
@@ -35,10 +33,29 @@ class MenuSelect extends React.Component{
 		this.setState({number: e.target.value})
 	}
 
+	// handleSubmit = (e) => {
+	// 	// e.preventDefult()
+	// 	console.log(this.state.number, this.state.data)
+	// }
 	handleSubmit = (e) => {
-		// e.preventDefult()
-		console.log(this.state.number, this.state.data)
-	}
+		// console.log("handleSubmit", this.state)
+		e.preventDefault()
+		axios.post('http://localhost:3000/order/createOrder', {
+		  orderDate: this.state.orderDate,
+		//   productPrice: this.state.productPrice,
+		//   productID: this.state.productID,
+		  shopID: this.props.match.params.shopID,
+		  orderID: this.props.match.params.shopID,
+		  memberID: this.props.match.params.id,
+		  orderStatus: this.props.match.params.orderStatus,
+		  subtotal: this.props.match.params.subtotal,
+		}).then((res) => {  
+		  console.log(res.data)
+		}).catch(err => {
+		  console.log(err)
+		})
+	  
+	  }
 
     render(){
         return(    
@@ -53,50 +70,34 @@ class MenuSelect extends React.Component{
                 <div class="white-box analytics-info">
 					<div class="card-body">
 						<table class="table table-borderless">
-							
-							{/* <tbody> */}
+
 								<tr>
 									<td></td>
 									<td><h5>จำนวน</h5></td>
 									<td class="text-end"><h5>ราคา</h5></td>
 									<td><h5>ยกเลิก</h5></td>
 								</tr>
-								
-								
-								{/* {
-									this.state.data?.map(item => (  */}
 									<tr>		
 									<td><div class="d-flex mb-2">
 											<div class="flex-shrink-0">
 												<img src="img/post/post_4.png" alt=""/>
 											</div>
 											<div class="flex-lg-grow-1 ms-3">
-												{/* <h5>{item.productName}</h5> */}
-												{/* <h5>{item.productPrice}</h5> */}
-												{/* ยยยยยยย */}
-												<h5>{this.state.data.productName}</h5>
+												<h5>{this.state.data.productName} </h5>
 
 											</div>
 										</div>
 									</td><br/>
-									<input type="number" id="tentacles" name="tentacles" min="1" max="100" onChange={(e) => this.handleChange(e)}></input>
+									<input type="number" id="tentacles" name="tentacles" min="1" max="20" onChange={(e) => this.handleChange(e)}></input>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 								</tr>
-								{/* ))
-								}  */}
-								
-								
-								{/* </tbody> */}
-								
 							</table>
-							</div>
 
-							<div class="form-group text-center">
-							{/* <a href="/Order" class="button button-contactForm btn_4 boxed-btn-data">สั่งซื้อ</a><br/> */}
-								{/* <button type='button' className='button button-contactForm btn_4 boxed-btn-data' onClick={(e) => this.handleSubmit(e)}>สั่งซื้อ</button> */}
-								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-add" >สั่งซื้อ</Link>
 							</div>
+							<div class="form-group text-center">
+								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
+							</div><br/>
 						</div>
 					</div>
 					 

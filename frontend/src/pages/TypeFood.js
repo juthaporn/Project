@@ -74,7 +74,7 @@ class TypeFood extends React.Component{
                                             <td width="45%">
                                                 <Link to={"/EditTypeFood/"+item.typeID} class="button button-contactForm btn_4 boxed-btn-edit">แก้ไข</Link>
 
-                                              <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() => this.handleDelete(item.typeID)}>ลบ</button>
+                                              <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() =>{if (window.confirm('ต้องการจะลบข้อมูลใช่หรือไม่ ?')) this.handleDelete(item.typeID)}}>ลบ</button>
                                                {/* onClick={() => {if (window.confirm('Are you sure you wish to delete this item?'))} this.handleDelete(item.typeID)} */}
                                             </td>
                                         </tr>

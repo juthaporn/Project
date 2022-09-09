@@ -76,7 +76,7 @@ class ShopType extends React.Component{
                                                
                                             </td>
                                             <td width="30%">
-                                              <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() => this.handleDelete(item.shopTypeID)}>ลบ</button>
+                                              <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() =>{if (window.confirm('ต้องการจะลบข้อมูลใช่หรือไม่ ?')) this.handleDelete(item.shopTypeID)}}>ลบ</button>
                                             </td>
                                         </tr>
                                     ))

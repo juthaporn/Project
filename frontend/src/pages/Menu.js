@@ -49,12 +49,11 @@ class Menu extends React.Component{
                   <div class="col-xl-4 col-lg-4 col-md-6">
                       <div class="single_recepie text-center">
                           <div class="recepie_thumb">
-                          <img src="img/recepie/recpie_2.png" alt=""/>
+                          <img src="../img/recepie/recpie_3.png" alt=""/>
                           </div>
-
                           <h5>{item.productName}</h5>
                           <h5>{item.productPrice} บาท</h5>
-                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-menu">ใส่ตระกร้า</Link> 
+                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-shop">ใส่ตระกร้า</Link> 
                       </div>
                        
                   </div>

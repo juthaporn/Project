@@ -29,26 +29,39 @@ class MenuSelect extends React.Component{
 	}
 
 	handleChange = (e) => {
-		console.log(e.target.value)
-		this.setState({number: e.target.value})
-	}
-
+		this.setState({
+		  ...this.state,
+		  [e.target.name]: e.target.value
+		})
+	  }
+  
+	
 	// handleSubmit = (e) => {
-	// 	// e.preventDefult()
-	// 	console.log(this.state.number, this.state.data)
-	// }
-	handleSubmit = (e) => {
-		// console.log("handleSubmit", this.state)
+	// 	console.log("handleSubmit", this.state)
+	// 	e.preventDefault()
+	// 	axios.post('http://localhost:3000/order/createOrder', { 
+	// 	  orderDate: this.state.orderDate,
+	// 	  orderName:this.state.orderName,
+	// 	  shopID: this.props.match.params.shopID,
+	// 	  orderID: this.props.match.params.orderID,
+	// 	  memberID: this.props.match.params.memberID,
+	// 	  orderStatus: this.props.match.params.orderStatus,
+	// 	  subtotal: this.props.match.params.subtotal,
+	// 	}).then((res) => {  
+	// 	  console.log(res.data)
+	// 	}).catch(err => {
+	// 	  console.log(err)
+	// 	})
+	  
+	//   }
+	  handleSubmit = (e) => {
+		console.log("handleSubmit", this.state)
 		e.preventDefault()
-		axios.post('http://localhost:3000/order/createOrder', {
-		  orderDate: this.state.orderDate,
-		//   productPrice: this.state.productPrice,
-		//   productID: this.state.productID,
-		  shopID: this.props.match.params.shopID,
-		  orderID: this.props.match.params.shopID,
-		  memberID: this.props.match.params.id,
-		  orderStatus: this.props.match.params.orderStatus,
-		  subtotal: this.props.match.params.subtotal,
+		axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
+			orderDetailID: this.state.orderDetailID,
+			quantity:this.state.quantity,
+			price:this.state.price,
+			productID:this.state.productID,
 		}).then((res) => {  
 		  console.log(res.data)
 		}).catch(err => {
@@ -77,26 +90,28 @@ class MenuSelect extends React.Component{
 									<td class="text-end"><h5>ราคา</h5></td>
 									<td><h5>ยกเลิก</h5></td>
 								</tr>
-									<tr>		
+									<tr>
+									<form class="form-contact contact_form" onSubmit={this.handleSubmit}>		
 									<td><div class="d-flex mb-2">
-											<div class="flex-shrink-0">
+											<div class="flex-shrink-0" >
 												<img src="img/post/post_4.png" alt=""/>
 											</div>
 											<div class="flex-lg-grow-1 ms-3">
-												<h5>{this.state.data.productName} </h5>
-
+												<h5> {this.state.data.productName}</h5>
+												<input name="orderDetailID" class="form-control" onChange={this.handleChange} value={this.state.data.productName} required />
 											</div>
 										</div>
 									</td><br/>
-									<input type="number" id="tentacles" name="tentacles" min="1" max="20" onChange={(e) => this.handleChange(e)}></input>
+									<input name="quantity"type="number" id="tentacles"  min="1" max="20" onChange={(e) => this.handleChange(e)}></input>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
+									</form>
 								</tr>
 							</table>
 
 							</div>
 							<div class="form-group text-center">
-								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
+								<Link to={"/Order/"+this.props.match.params.productName+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
 							</div><br/>
 						</div>
 					</div>

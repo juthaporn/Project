@@ -14,36 +14,14 @@ class OrderStatus extends React.Component{
             subtotal:''
         }
 }
-				// componentDidMount(){
-				// 	this.getData()
-				// 		console.log("orderID",this.props.match.params.product) 
-				// 		// console.log("number", this.props.match.params.number)	
-
-				// 	}
-
-				// 	getData = () => {
-				// 		axios.get("http://localhost:3000/orderID/" + this.props.match.params.product)
-				// 		.then(res => {
-				// 			console.log(res.data.data[0])
-				// 			this.setState({product: res.data.data[0]})
-				// 			this.setState({name: this.state.product.productName})
-				// 			// console.log(this.state.product.productPrice)
-				// 			this.setState({price: this.state.product.productPrice})
-				// 		})
-				// 	}
 				componentDidMount(){
 					this.getData()
-					console.log("orderId",this.props.match.params.id) 
-				}
-				// componentDidMount(){
-				// 	this.getData()
-				// 		console.log("productID",this.props.match.params.product) 
-				// 		console.log("number", this.props.match.params.number)	
-				
-				// 	}
-				
+						console.log("orderID",this.props.match.params.product)
+					}
+
 					getData = () => {
-						axios.get("http://localhost:3000/product/getOneProduct/" + this.props.match.params.product)
+						var x = this;
+						axios.get("http://localhost:3000/orderID/" + this.props.match.params.product)
 						.then(res => {
 							console.log(res.data.data[0])
 							this.setState({product: res.data.data[0]})
@@ -52,6 +30,7 @@ class OrderStatus extends React.Component{
 							this.setState({price: this.state.product.productPrice})
 						})
 					}
+			
 				
 
     render(){
@@ -87,9 +66,9 @@ class OrderStatus extends React.Component{
 							</div> */}
 							<div class="step">
 								<div class="step-icon-wrap">
-								<div class="step-icon"><i class="pe-7s-home"></i></div>
+								<div class="step-icon"><i class="pe-7s-more"></i></div>
 								</div>
-								<h4 class="step-title">รับอาหาร {this.state.name} </h4>
+								<h4 class="step-title">รับอาหาร {this.state.naame} </h4>
 							</div>
 							</div>
 						</div>

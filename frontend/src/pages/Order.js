@@ -13,6 +13,7 @@ class Order extends React.Component{
             quantity: '',
             orderDate:'',
             subtotal:''
+			
         }
 }
 	componentDidMount(){

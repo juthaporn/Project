@@ -160,7 +160,7 @@ class OrderOwner extends React.Component{
                         <div class="modal-body">
                          เลือกสถานะ
                         </div>
-                        <button type="button" class="btn btn-primary">รอคิว</button>
+                        <button type="button" class="btn btn-primary">รอคิว </button>
                         <button type="button" class="btn btn-secondary">กำลังปรุง</button>
                         <button type="button" class="btn btn-success">ปรุงเสร็จ</button>
                         <button type="button" class="btn btn-danger">ยกเลิก</button>

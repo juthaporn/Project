@@ -30,7 +30,7 @@ class SelectShopByOwner extends React.Component{
 
     render(){
         return(   
-         
+        
             <div class ="container"> 
             <br/>
             <h5 class="text-left ">หน้าเลือกร้านอาหาร</h5>     
@@ -45,13 +45,21 @@ class SelectShopByOwner extends React.Component{
                                     this.state.data?.map(shop => (
                                 <div class="white-box analytics-info">
                                   <img src="img/post/post_10.png" alt=""/><br/><br/>
+                                
                                           <tr>
+                                            
                                               <h5>{shop.shopName}</h5>
-                                              {/* <td>{shop.openingTime}</td> */}
-                                              <br/>
-                                              <Link to={"/Shopowner/"} class="button btn_4 boxed-btn-orderamount">ยอดการสั่งซื้อ</Link> 
-                                              <Link to={"/Orderowner/"} class="button btn_4 boxed-btn-order">ออร์เดอร์</Link> 
+                                              <h5>เบอร์โทร {shop.shopPhone}</h5>
+                                              <h5>สัญญา {shop.shopRentalContract}</h5>                          
+                                              
                                           </tr>
+                                          <table>
+                                              <td><Link to={"/Orderowner/"+shop.shopID} class="button btn_4 boxed-btn-order"><h5>ออร์เดอร์</h5></Link></td>
+                                              <td></td>
+                                              <td></td> 
+                                              <td></td>
+                                              <td><Link to={"/Shopowner/"+shop.shopID} class="button btn_4 boxed-btn-orderamount"><h5>ยอดการสั่งซื้อ</h5></Link></td>
+                                        </table>
                                           
                                          
                                 </div>

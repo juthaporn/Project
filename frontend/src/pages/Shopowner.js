@@ -4,25 +4,26 @@ class ShopOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            shopName: '',
-            productName : '',
-            productPrice: ''
+            data:[]
         }
 }
-            // componentDidMount(){
-            //     this.getData()
-            // }
+        //     componentDidMount(){
+        //         this.getData()
+        //         console.log("shopID",this.props.match.params.id)
+        //     }
 
-            // getData = () => {
-            //     var x = this;
-            //     axios.get("http://localhost:3000/shop/getAllShop").then((res) => {
-            //     this.setState({data: res.data.data[0]});
-            //     console.log("owner",this.state.data)
-            //     // x.setState({data: res.data.data});
-            //     }).catch((error) => {
-            //     console.log(error);
-            //     });
-            // }
+        //     getData = () => {
+        //         var x = this;
+        //         axios.get("http://localhost:3000/order/getOrder"+this.props.match.params.id).then((res) => {  
+        //             console.log(res.data.data[0])
+        //           this.setState({data: res.data.data[0]});
+        //         //   this.setState({productID: this.state.data[0].productID})
+        //         //   this.setState({productName: this.state.data[0].productName})
+        //     }).catch((error) => {
+        //         console.log(error);
+        //     });
+        // }
+    
 
 
     render(){

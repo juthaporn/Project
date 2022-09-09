@@ -89,7 +89,7 @@ class Order extends React.Component{
 							</table>
 							</div>
 							<div class="form-group text-center">
-									<Link to={"/OrderStatus/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_3 boxed-btn-menu">สถานะของอาหาร</Link>
+									{/* <Link to={"/OrderStatus/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_3 boxed-btn-menu">สถานะของอาหาร</Link> */}
 								</div>
 						</div>
 					</div>

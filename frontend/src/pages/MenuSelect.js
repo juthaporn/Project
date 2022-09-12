@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom';
 
 class MenuSelect extends React.Component{
 	constructor(props){
         super(props);
         this.state = {
-          data:[]
+          data:[],
+		  redirect: false
         }
+		this.handleSubmit = this.handleSubmit.bind(this)
     }
 
 	componentDidMount(){
@@ -76,6 +78,9 @@ class MenuSelect extends React.Component{
 	//   }
 
     render(){
+		if(this.state.redirect){
+			return <Redirect to='/order' />
+		  }
         return(    
               
         <div class ="container"> 
@@ -96,21 +101,19 @@ class MenuSelect extends React.Component{
 									<td><h5>ยกเลิก</h5></td>
 								</tr>
 									<tr>
-									{/* <form class="form-contact contact_form" onSubmit={this.handleSubmit}>		 */}
 									<td><div class="d-flex mb-2">
 											<div class="flex-shrink-0" >
 												<img src="img/post/post_4.png" alt=""/>
 											</div>
 											<div class="flex-lg-grow-1 ms-3">
 												<h5> {this.state.data.productName}</h5>
-												{/* <input name="orderDetailID" class="form-control" onChange={this.handleChange} value={this.state.data.productName} required /> */}
+												
 											</div>
 										</div>
 									</td><br/>
 									<input name="quantity"type="number" id="tentacles"  min="1" max="20" onChange={(e) => this.handleChange(e)}></input>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
-									{/* </form> */}
 								</tr>
 							</table>
 

@@ -43,6 +43,15 @@ class Order{
             [orderID]
         )
     }
+    static createOrder(orderID){
+        return db.execute(
+            "insert into orderID (orderDate, orderTime, orderStatus, subtotal, memberID, shopID) values(?,?,?,?,?,?)'",
+            [orderID]
+        )
+    }
+
+  
+    
 
 }
 

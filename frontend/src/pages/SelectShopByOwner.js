@@ -59,6 +59,7 @@ class SelectShopByOwner extends React.Component{
                                               <td></td> 
                                               <td></td>
                                               <td><Link to={"/Shopowner/"+shop.shopID} class="button btn_4 boxed-btn-orderamount"><h5>ยอดการสั่งซื้อ</h5></Link></td>
+                                              
                                         </table>
                                           
                                          

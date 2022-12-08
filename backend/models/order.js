@@ -45,11 +45,11 @@ class Order{
     }
     static createOrder(orderID){
         return db.execute(
-            "insert into orderID (orderDate, orderTime, orderStatus, subtotal, memberID, shopID) values(?,?,?,?,?,?)'",
+            "insert into orderID (orderDate, orderTime, orderStatus, subtotal, memberID, shopID) values(CURDATE(),CURTIME(),?,?,?,?)'", //CURDATE(),CURTIME() วัน,เวลา
             [orderID]
         )
     }
-
+    
   
     
 

@@ -35,6 +35,12 @@ class OrderDetail{
             [this.orderDetailID]
         );
     }
+    static createOrderDetail(orderID){
+        return db.execute(
+            "insert into orderID (orderDetailID, quantity, price, productID, memberID, shopID) values(?,?,?,?,?,?)'",
+            [orderID]
+        )
+    }
 
 }
 

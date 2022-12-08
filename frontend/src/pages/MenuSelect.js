@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+// import Time from 'react-time';
 import { Link, Redirect } from 'react-router-dom';
 
 class MenuSelect extends React.Component{
@@ -11,7 +12,7 @@ class MenuSelect extends React.Component{
         }
 		this.handleSubmit = this.handleSubmit.bind(this)
     }
-
+   
 	componentDidMount(){
 		this.getData()
 		console.log("productID",this.props.match.params.id) 
@@ -35,12 +36,12 @@ class MenuSelect extends React.Component{
 		this.setState({number: e.target.value})
 	}
 
-	// handleChange = (e) => {
-	// 	this.setState({
-	// 	  ...this.state,
-	// 	  [e.target.name]: e.target.value
-	// 	})
-	//   }
+	handleChange = (e) => {
+		this.setState({
+		  ...this.state,
+		  [e.target.name]: e.target.value
+		})
+	  }
   
 	
 	handleSubmit = (e) => {
@@ -78,6 +79,8 @@ class MenuSelect extends React.Component{
 	//   }
 
     render(){
+		// let now = new Date()
+		// let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
 		if(this.state.redirect){
 			return <Redirect to='/order' />
 		  }
@@ -111,7 +114,7 @@ class MenuSelect extends React.Component{
 											</div>
 										</div>
 									</td><br/>
-									<input name="quantity"type="number" id="tentacles"  min="1" max="20" onChange={(e) => this.handleChange(e)}></input>
+									<input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/>
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 								</tr>

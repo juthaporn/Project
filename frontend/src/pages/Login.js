@@ -28,6 +28,8 @@ class Login extends React.Component{
             first_page: [
                 '',
                 '/Admin', // admin
+                '/Shop',             // 
+                '/SelectShopByOwner',
                 '/SelectShopByOwner',             // 
                 '/Shop',
                 ''

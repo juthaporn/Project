@@ -4,7 +4,8 @@ class ShopOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data:[]
+            data:[],
+            datetime: Date()
         }
 }
         //     componentDidMount(){
@@ -32,7 +33,7 @@ class ShopOwner extends React.Component{
             <div class="container">
                 <br/>
                 <h5 class="box-title">หน้ายอดขาย</h5>
-                <h5 class="text-right">วันที่ 10/5/2565</h5>
+                <h5 class="text-right">({this.state.datetime}) </h5>
                     <div class="row">
                             <div class="col-lg-4 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">

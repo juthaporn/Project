@@ -8,10 +8,11 @@ class MenuSelect extends React.Component{
         super(props);
         this.state = {
           data:[],
-		  redirect: false
+		  Date:''
         }
 		this.handleSubmit = this.handleSubmit.bind(this)
     }
+	
    
 	componentDidMount(){
 		this.getData()
@@ -23,9 +24,9 @@ class MenuSelect extends React.Component{
             axios.get("http://localhost:3000/product/getOneProduct/"+this.props.match.params.id).then((res) => {  
 				console.log(res.data.data[0])
               this.setState({data: res.data.data[0]});
-            //   this.setState({productID: this.state.data[0].productID})
-            //   this.setState({productName: this.state.data[0].productName})
-            //   this.setState({productPrice: this.state.data[0].productPrice})
+              this.setState({productID: this.state.data[0].productID})
+              this.setState({productName: this.state.data[0].productName})
+              this.setState({productPrice: this.state.data[0].productPrice})
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -34,16 +35,9 @@ class MenuSelect extends React.Component{
 	handleChange = (e) => {
 		console.log(e.target.value)
 		this.setState({number: e.target.value})
+	
 	}
 
-	handleChange = (e) => {
-		this.setState({
-		  ...this.state,
-		  [e.target.name]: e.target.value
-		})
-	  }
-  
-	
 	handleSubmit = (e) => {
 		console.log("handleSubmit", this.state)
 		e.preventDefault()
@@ -54,33 +48,34 @@ class MenuSelect extends React.Component{
 		  orderID: this.props.match.params.orderID,
 		  memberID: this.props.match.params.memberID,
 		  orderStatus: this.props.match.params.orderStatus,
-		  subtotal: this.props.match.params.subtotal,
+		  subtotal: this.state.subtotal,
 		}).then((res) => {  
 		  console.log(res.data)
 		}).catch(err => {
 		  console.log(err)
 		}) 
 	  }
+	
 	  
-	//   handleSubmit = (e) => {
-	// 	console.log("handleSubmit", this.state)
-	// 	e.preventDefault()
-	// 	axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
-	// 		orderDetailID: this.state.orderDetailID,
-	// 		quantity:this.state.quantity,
-	// 		price:this.state.price,
-	// 		productID:this.state.productID,
-	// 	}).then((res) => {  
-	// 	  console.log(res.data)
-	// 	}).catch(err => {
-	// 	  console.log(err)
-	// 	})
 	  
-	//   }
+	  handleSubmit = (e) => {
+		console.log("handleSubmit", this.state)
+		e.preventDefault()
+		axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
+			orderDetailID: this.props.match.params.orderDetailID,
+			quantity:this.state.quantity,
+			productPrice:this.state.productPrice,
+			productID: this.props.match.params.id
+		}).then((res) => {  
+		  console.log(res.data)
+		}).catch(err => {
+		  console.log(err)
+		})
+	  
+	  }
 
     render(){
-		// let now = new Date()
-		// let wasDate = new Date("Thu Jul 18 2013 15:48:59 GMT+0400")
+
 		if(this.state.redirect){
 			return <Redirect to='/order' />
 		  }
@@ -98,7 +93,7 @@ class MenuSelect extends React.Component{
 						<table class="table table-borderless">
 
 								<tr>
-									<td></td>
+									<td><h5>เมนู</h5></td>
 									<td><h5>จำนวน</h5></td>
 									<td class="text-end"><h5>ราคา</h5></td>
 									<td><h5>ยกเลิก</h5></td>
@@ -114,7 +109,10 @@ class MenuSelect extends React.Component{
 											</div>
 										</div>
 									</td><br/>
-									<input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/>
+									<div class="form-group">
+									<input name="subtotal"  onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
+									</div>
+									{/* <input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/> */}
 									<td class="text-end"><h5>50</h5></td>
 									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 								</tr>
@@ -123,7 +121,7 @@ class MenuSelect extends React.Component{
 							</div>
 							<div class="form-group text-center">
 								{/* ห้ามเปลี่ยนนะบรรทัดนี้อะ */}
-								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
+								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} type="submit" class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
 							</div><br/>
 						</div>
 					</div>

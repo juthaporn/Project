@@ -16,15 +16,17 @@ class Order extends React.Component{
 			
         }
 }
+	
 	componentDidMount(){
-	this.getData()
+		this.getData()
 		console.log("productID",this.props.match.params.product) 
-		console.log("number", this.props.match.params.number)	
+		console.log("number", this.props.match.params.number)
+		console.log("MemberID",this.props.match.params.id)	
 
 	}
 
 	getData = () => {
-		axios.get("http://localhost:3000/product/getOneProduct/" + this.props.match.params.product)
+		axios.get("http://localhost:3000/product/getOneProduct/25" + this.props.match.params.product)
 		.then(res => {
 			console.log(res.data.data[0])
 			this.setState({product: res.data.data[0]})
@@ -77,6 +79,7 @@ class Order extends React.Component{
 									<td></td>
 									<td></td>
 									<h5><td >{this.props.match.params.number} รายการ</td></h5>
+									<h2>{this.state.datetime}</h2>
 								</tr>
 								<tr class="fw-bold">
 								
@@ -89,7 +92,7 @@ class Order extends React.Component{
 							</table>
 							</div>
 							<div class="form-group text-center">
-									{/* <Link to={"/OrderStatus/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_3 boxed-btn-menu">สถานะของอาหาร</Link> */}
+									<Link to={"/OrderStatus/"+this.props.match.params.id+"/"+this.state.number} class="button button-contactForm btn_3 boxed-btn-menu">สถานะของอาหาร</Link>
 								</div>
 						</div>
 					</div>

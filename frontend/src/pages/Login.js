@@ -7,14 +7,14 @@ import { Redirect } from 'react-router';
 const validateForm = (errors) => {
     let valid = true;
     Object.values(errors).forEach(
-      (val) => val.length > 0 && (valid = false)
+        (val) => val.length > 0 && (valid = false)
     );
     return valid;
 }
 
-class Login extends React.Component{
+class Login extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             username: '',
@@ -30,8 +30,6 @@ class Login extends React.Component{
                 '/Admin', // admin
                 '/Shop',             // 
                 '/SelectShopByOwner',
-                '/SelectShopByOwner',             // 
-                '/Shop',
                 ''
             ],
             redirect: ''
@@ -45,30 +43,30 @@ class Login extends React.Component{
         let errors = this.state.errors;
 
         switch (name) {
-        case 'username': 
-            errors.username = value.length == 0
-                ? 'required'
-                : '';
-            break;
-        case 'password': 
-            errors.password = value.length < 4
-                ? 'Password must be 4 characters long!'
-                : '';
-            break;
-        default:
-            break;
+            case 'username':
+                errors.username = value.length == 0
+                    ? 'required'
+                    : '';
+                break;
+            case 'password':
+                errors.password = value.length < 4
+                    ? 'Password must be 4 characters long!'
+                    : '';
+                break;
+            default:
+                break;
         }
 
-        this.setState({errors, [name]: value});
+        this.setState({ errors, [name]: value });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
-        if(validateForm(this.state.errors)) {
-            axios.post(setting.IP+'login', this.state).then(res => {
+        if (validateForm(this.state.errors)) {
+            axios.post(setting.IP + 'login', this.state).then(res => {
                 console.log(res.data);
-                if(res.data.data){
+                if (res.data.data) {
                     let user_data = res.data.data;
                     localStorage.setItem("memberID", user_data.memberID);
                     localStorage.setItem("username", user_data.username);
@@ -80,23 +78,23 @@ class Login extends React.Component{
                         roleID: parseInt(user_data.roleID),
                         redirect: this.state.first_page[parseInt(user_data.roleID)]
                     });
-                }else{
+                } else {
                     alert('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง');
                 }
             }).catch(error => {
                 console.log(error);
             });
-        }else{
+        } else {
             console.error('Invalid Form')
         }
     }
 
-    render(){
-        if(this.state.redirect){
+    render() {
+        if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
         }
-        const {errors} = this.state;
-        return(
+        const { errors } = this.state;
+        return (
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -106,25 +104,25 @@ class Login extends React.Component{
                         <h2 class="contact-title">เข้าสู่ระบบ</h2>
                         <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                             {/* <div class="row"> */}
-                                    <div class="form-group">
-                                        <input class="form-control" name="username" placeholder="ชื่อผู้ใช้งาน" onChange={this.handleChange} />
-                                        {errors.username.length > 0 && <span className='error'>{errors.username}</span>}
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" name="password" type="password" placeholder='รหัสผ่าน' onChange={this.handleChange} />
-                                        {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
-                                    </div>
+                            <div class="form-group">
+                                <input class="form-control" name="username" placeholder="ชื่อผู้ใช้งาน" onChange={this.handleChange} />
+                                {errors.username.length > 0 && <span className='error'>{errors.username}</span>}
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="password" type="password" placeholder='รหัสผ่าน' onChange={this.handleChange} />
+                                {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
+                            </div>
                             {/* </div> */}
                             <div class="form-group mt-3 text-center">
                                 <button type="submit" class="button button-contactForm btn_4 boxed-btn">เข้าสู่ระบบ</button>
                             </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         )
-            
+
     }
 }
 

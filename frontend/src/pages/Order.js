@@ -26,15 +26,52 @@ class Order extends React.Component{
 	}
 
 	getData = () => {
-		axios.get("http://localhost:3000/product/getOneProduct/25" + this.props.match.params.product)
-		.then(res => {
+		var x = this;
+		axios.get("http://localhost:3000/product/getOneProduct/"+this.props.match.params.id).then((res) => {  
 			console.log(res.data.data[0])
-			this.setState({product: res.data.data[0]})
-			this.setState({name: this.state.product.productName})
-			// console.log(this.state.product.productPrice)
-			this.setState({price: this.state.product.productPrice})
-		})
-	}
+		  this.setState({data: res.data.data[0]});
+		  this.setState({productID: this.state.data[0].productID})
+		  this.setState({productName: this.state.data[0].productName})
+		  this.setState({productPrice: this.state.data[0].productPrice})
+	}).catch((error) => {
+		console.log(error);
+	});
+}
+
+handleChange = (e) => {
+	console.log(e.target.value)
+	this.setState({number: e.target.value})
+
+}
+
+handleSubmit = (e) => {
+	console.log("handleSubmit", this.state)
+	e.preventDefault()
+	axios.post('http://localhost:3000/order/createOrder', { 
+	  orderDate: this.state.orderDate,
+	  orderName:this.state.orderName,
+	  shopID: this.props.match.params.shopID,
+	  orderID: this.props.match.params.orderID,
+	  memberID: this.props.match.params.memberID,
+	  orderStatus: this.props.match.params.orderStatus,
+	  subtotal: this.state.subtotal,
+	}).then((res) => {  
+	  console.log(res.data)
+	}).catch(err => {
+	  console.log(err)
+	}) 
+  }
+
+	// getData = () => {
+	// 	axios.get("http://localhost:3000/product/getOneProduct/25" + this.props.match.params.product)
+	// 	.then(res => {
+	// 		console.log(res.data.data[0])
+	// 		this.setState({product: res.data.data[0]})
+	// 		this.setState({name: this.state.product.productName})
+	// 		// console.log(this.state.product.productPrice)
+	// 		this.setState({price: this.state.product.productPrice})
+	// 	})
+	// }
 
     render(){
         return(   
@@ -62,13 +99,13 @@ class Order extends React.Component{
 										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h5 className='box-title'>{this.state.name}</h5>
+										{/* <h5 className='box-title'>{this.state.data.productName}</h5> */}
 										</div>
 									</div>
 									</td>
 									<h5><td>{this.props.match.params.number}</td></h5>
 									<td></td>
-									<h5><td class="text-end">{(this.props.match.params.number * this.state.price)}</td></h5>
+									{/* <h5><td class="text-end">{(this.props.match.params.number * this.state.data.productPrice)}</td></h5> */}
 								</tr>
 								
 								</tbody>

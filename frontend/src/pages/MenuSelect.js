@@ -58,13 +58,14 @@ class MenuSelect extends React.Component{
 	
 	  
 	  
+	  // eslint-disable-next-line no-dupe-class-members
 	  handleSubmit = (e) => {
 		console.log("handleSubmit", this.state)
 		e.preventDefault()
 		axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
 			orderDetailID: this.props.match.params.orderDetailID,
-			quantity:this.state.quantity,
-			productPrice:this.state.productPrice,
+			quantity: this.state.quantity,
+			productPrice: this.state.productPrice,
 			productID: this.props.match.params.id
 		}).then((res) => {  
 		  console.log(res.data)
@@ -89,44 +90,47 @@ class MenuSelect extends React.Component{
 		
 		  	<div class="col-lg-12 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
-					<div class="card-body">
-						<table class="table table-borderless">
+					{/* <form class="form-contact contact_form" onSubmit={this.handleSubmit}> */}
+						<div class="card-body">
+						
+							<table class="table table-borderless">
 
-								<tr>
-									<td><h5>เมนู</h5></td>
-									<td><h5>จำนวน</h5></td>
-									<td class="text-end"><h5>ราคา</h5></td>
-									<td><h5>ยกเลิก</h5></td>
-								</tr>
 									<tr>
-									<td><div class="d-flex mb-2">
-											<div class="flex-shrink-0" >
-												<img src="img/post/post_4.png" alt=""/>
+										<td><h5>เมนู</h5></td>
+										<td><h5>จำนวน</h5></td>
+										<td class="text-end"><h5>ราคา</h5></td>
+										<td><h5>ยกเลิก</h5></td>
+									</tr>
+										<tr>
+										<td>
+											<div class="d-flex mb-2">
+												{/*<div class="flex-shrink-0" >
+													 <img src="img/post/post_4.png" alt=""/>
+												</div> */}
+												<div class="flex-lg-grow-1 ms-3">
+													<h5> {this.state.data.productName}</h5>
+													
+												</div>
 											</div>
-											<div class="flex-lg-grow-1 ms-3">
-												<h5> {this.state.data.productName}</h5>
-												
-											</div>
+										</td><br/>
+										<div class="form-group">
+										{/* <input type="number" name="subtotal" min="1" max="100" step="1" onChange={this.handleChange} value="1" /> */}
+										{/* <input name="subtotal"  onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" /> */}
 										</div>
-									</td><br/>
-									<div class="form-group">
-									<input name="subtotal"  onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" required />
-									</div>
-									{/* <input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/> */}
-									<td class="text-end"><h5>50</h5></td>
-									<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
-								</tr>
+										<input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/>
+										<td class="text-end"><h5>{this.state.data.productPrice}</h5></td>
+										<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
+									</tr>
 							</table>
-
-							</div>
+						</div>
+					{/* </form> */}
 							<div class="form-group text-center">
 								{/* ห้ามเปลี่ยนนะบรรทัดนี้อะ */}
 								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} type="submit" class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
 							</div><br/>
 						</div>
-					</div>
-					 
 					
+					</div>
 				</div>
 					
           {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}

@@ -83,7 +83,6 @@ class AddOwner extends React.Component {
           this.setState({redirect: false})
         }
       })
-    
     }
 
     render(){

@@ -78,9 +78,14 @@ class Login extends React.Component {
                         roleID: parseInt(user_data.roleID),
                         redirect: this.state.first_page[parseInt(user_data.roleID)]
                     });
+                    // <Redirect to={this.state.first_page[parseInt(user_data.roleID)]} />
+                    window.location.reload();
+                    // redirect: this.state.Header
+                    // this.props
                 } else {
                     alert('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง');
                 }
+                return 
             }).catch(error => {
                 console.log(error);
             });
@@ -92,6 +97,7 @@ class Login extends React.Component {
     render() {
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
+
         }
         const { errors } = this.state;
         return (

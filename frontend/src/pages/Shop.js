@@ -31,7 +31,7 @@ class Shop extends React.Component{
           <div class ="container"> 
           <br/>
            <div class="col-lg-12 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
+            <div class="white-box analytics-info">
 						<div class=" text-center "><h5><span >ร้านอาหาร</span></h5></div>
 				</div>
             </div>

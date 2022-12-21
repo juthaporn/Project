@@ -12,6 +12,7 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Logout from './pages/Logout';
 import Register from './pages/Register';
 import Shop from './pages/Shop';
 import Shopdetail from './pages/ShopDetail';
@@ -153,6 +154,9 @@ class App extends React.Component {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/logout">
+            <Logout/>
           </Route>
           <Route path="/">
             <Home />

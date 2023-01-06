@@ -12,7 +12,7 @@ const monthlyRent = require('./routes/monthlyRent')
 const role = require('./routes/role')
 const product = require('./routes/product')
 const order = require('./routes/order')
-
+const orderdetail = require('./routes/orderdetail')
 app.use(express.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -31,6 +31,7 @@ app.use('/monthlyRent', monthlyRent)
 app.use('/role', role)
 app.use('/product', product)
 app.use('/order', order)
+app.use('/orderdetail', orderdetail)
 
 app.get("/test", function (req, res) {
     res.json({"message": "hello world"});

@@ -8,7 +8,11 @@ class MenuSelect extends React.Component{
         super(props);
         this.state = {
           data:[],
-		  Date:''
+		  Date:'',
+		  total:0,
+		  productPrice: 0,
+		  number: 0
+
         }
 		this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -24,37 +28,42 @@ class MenuSelect extends React.Component{
             axios.get("http://localhost:3000/product/getOneProduct/"+this.props.match.params.id).then((res) => {  
 				console.log(res.data.data[0])
               this.setState({data: res.data.data[0]});
-              this.setState({productID: this.state.data[0].productID})
-              this.setState({productName: this.state.data[0].productName})
-              this.setState({productPrice: this.state.data[0].productPrice})
+              this.setState({productID: this.state.data.productID})
+              this.setState({productName: this.state.data.productName})
+              this.setState({productPrice: this.state.data.productPrice})
 		}).catch((error) => {
 			console.log(error);
 		});
 	}
 
 	handleChange = (e) => {
-		console.log(e.target.value)
-		this.setState({number: e.target.value})
+		console.log(parseFloat(e.target.value))
+		console.log(parseFloat(this.state.productPrice))
+		this.setState({
+			number: e.target.value,
+			total: e.target.value*this.state.productPrice
+		})
+
 	
 	}
 
-	handleSubmit = (e) => {
-		console.log("handleSubmit", this.state)
-		e.preventDefault()
-		axios.post('http://localhost:3000/order/createOrder', { 
-		  orderDate: this.state.orderDate,
-		  orderName:this.state.orderName,
-		  shopID: this.props.match.params.shopID,
-		  orderID: this.props.match.params.orderID,
-		  memberID: this.props.match.params.memberID,
-		  orderStatus: this.props.match.params.orderStatus,
-		  subtotal: this.state.subtotal,
-		}).then((res) => {  
-		  console.log(res.data)
-		}).catch(err => {
-		  console.log(err)
-		}) 
-	  }
+	// handleSubmit = (e) => {
+	// 	console.log("handleSubmit", this.state)
+	// 	e.preventDefault()
+	// 	// axios.post('http://localhost:3000/order/createOrder', { 
+	// 	//   orderDate: this.state.orderDate,
+	// 	//   orderName:this.state.orderName,
+	// 	//   shopID: this.props.match.params.shopID,
+	// 	//   orderID: this.props.match.params.orderID,
+	// 	//   memberID: this.props.match.params.memberID,
+	// 	//   orderStatus: this.props.match.params.orderStatus,
+	// 	//   subtotal: this.state.subtotal,
+	// 	// }).then((res) => {  
+	// 	//   console.log(res.data)
+	// 	// }).catch(err => {
+	// 	//   console.log(err)
+	// 	// }) 
+	//   }
 	
 	  
 	  
@@ -62,23 +71,39 @@ class MenuSelect extends React.Component{
 	  handleSubmit = (e) => {
 		console.log("handleSubmit", this.state)
 		e.preventDefault()
-		axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
-			orderDetailID: this.props.match.params.orderDetailID,
-			quantity: this.state.quantity,
-			productPrice: this.state.productPrice,
-			productID: this.props.match.params.id
+		axios.post('http://localhost:3000/order/createOrder', { 
+		  orderDate: null,
+		  orderTime:null,
+		  // orderName:this.state.orderName,
+		  shopID: this.props.match.params.shopID,
+		//   orderID: this.props.match.params.orderID,
+		  memberID: localStorage.getItem("memberID"),
+		  orderStatus: "รอคิว",
+		  subtotal: this.state.total,
 		}).then((res) => {  
-		  console.log(res.data)
+			axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
+				// orderDetailID: this.props.match.params.orderDetailID,
+				quantity: this.state.number,
+				productPrice: this.state.productPrice,
+				productID: this.props.match.params.id,
+				orderID: res.data.insertId
+			}).then((res) => {  
+			  console.log(res.data)
+			  this.setState({redirect:true})
+			}).catch(err => {
+			  console.log(err)
+			})
 		}).catch(err => {
 		  console.log(err)
-		})
+		}) 
+
 	  
 	  }
 
     render(){
 
 		if(this.state.redirect){
-			return <Redirect to='/order' />
+			return <Redirect to={"/order/"+this.props.match.params.id+"/"+this.state.number} />
 		  }
         return(    
               
@@ -117,7 +142,7 @@ class MenuSelect extends React.Component{
 										{/* <input type="number" name="subtotal" min="1" max="100" step="1" onChange={this.handleChange} value="1" /> */}
 										{/* <input name="subtotal"  onChange={this.handleChange} pattern="^[0-9\s]+$" title="กรุณากรอกข้อมูลเป็นตัวเลข" /> */}
 										</div>
-										<input name="subtotal"type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/>
+										<input name="subtotal" type="number" id="tentacles"  min="1" max="20"onChange={this.handleChange} required/>
 										<td class="text-end"><h5>{this.state.data.productPrice}</h5></td>
 										<td><a href="/Shop"class='badge badge-danger' >ยกเลิก</a></td>
 									</tr>
@@ -126,7 +151,8 @@ class MenuSelect extends React.Component{
 					{/* </form> */}
 							<div class="form-group text-center">
 								{/* ห้ามเปลี่ยนนะบรรทัดนี้อะ */}
-								<Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} type="submit" class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link>
+								{/* <Link to={"/Order/"+this.props.match.params.id+"/"+this.state.number} type="submit" class="button button-contactForm btn_4 boxed-btn-menu" >สั่งซื้อ</Link> */}
+								<button type='button' className="button button-contactForm btn_4 boxed-btn-menu" onClick={this.handleSubmit}>สั่งซื้อ</button>
 							</div><br/>
 						</div>
 					

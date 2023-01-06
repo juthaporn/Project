@@ -69,7 +69,7 @@ class App extends React.Component {
         <Route path="/ShopMember">
             <ShopMember />
             </Route>
-        <Route path="/MenuSelect/:id" component={MenuSelect}>
+        <Route path="/MenuSelect/:shopID/:id" component={MenuSelect}>
             </Route>
             <Route path="/Order/:product/:number" component={Order}>
               

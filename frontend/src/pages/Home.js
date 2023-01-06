@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 // import { Container } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 class Home extends React.Component{
     constructor(props){
         super(props);
@@ -46,14 +46,14 @@ class Home extends React.Component{
                                 <div class="recepie_info">
                                     <h3>Chopradu Food Center 
                                     Walailak University</h3>
-                                <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
-                                <div class="video_watch d-flex align-items-center">
+                               
+                                {/* <div class="video_watch d-flex align-items-center">
                                     <a class="popup-video" href="https://www.youtube.com/watch?v=lr6AMBsjxrY"> <i class="ti-control-play"></i> </a>
                                     <div class="watch_text">
                                         <h4>Watch Video</h4>
                                         {/* <p>You will love our execution</p> */}
-                                    </div>
-                                </div>
+                                    {/* </div> */}
+                                {/* </div> */} 
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
@@ -86,7 +86,7 @@ class Home extends React.Component{
                            
                                     <h5>{shop.shopName}</h5>
                                     <h5>{shop.openingTime}</h5>
-                                    <h5><a href="/Menu" class='badge badge-primary'>ไปยังร้านค้า</a></h5>
+                                    <Link to={"/Menu/"+shop.shopID} class="button button-contactForm btn_4 boxed-btn-shop">ไปยังร้านค้า</Link>
                             {/* <p>Time Needs: 30 Mins</p> */}
                             {/* <a href="#" class="line_btn">View Full Recipe</a> */}
                         </div>

@@ -110,38 +110,16 @@ componentDidMount(){
                                 <td><h3 class="box-title">20:18</h3></td>
                                 <td><h3 class="box-title">30</h3></td>
                                 <td><h3 class="box-title">2</h3></td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
-                                {/* <td>
-                                <select class="selectpicker">
+                                <td><select class="selectpicker">
                                   <option class='badge badge-success'>เสร็จสิ้น</option>
                                   <option class='badge badge-primary'>รอ</option>
                                   <option class='badge badge-warning'>กำลังปรุง</option>
                                   <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td> */}
+                                </select></td>
+                               
                                 <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
                               </tr>
 
-                              <tr>
-                              <td></td>
-                              <td><img src="../img/post/post_5.png" alt=""/></td>
-                              <td><h3 class="box-title">ข้าว</h3></td>
-                                <td><h3 class="box-title">20:18</h3></td>
-                                <td><h3 class="box-title">45</h3></td>
-                                <td><h3 class="box-title">2</h3></td>
-                                <td><button type="cancel" className="nav-link" class='badge badge-danger' data-toggle="modal" data-target="#exampleModal">แก้ไข</button></td>
-                                {/* <td>
-                                <select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select>
-                                </td> */}
-                                 <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
-                              </tr>
-                              
-                              
                             </tbody>
                           </table>
                         </div>
@@ -149,36 +127,25 @@ componentDidMount(){
                     </div>
                   </div>
                   <br/>
-                  <modal>          
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">แจ้งเตือน</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                         เลือกสถานะ
-                        </div>
-
-                        {/* <button type="button" class="btn btn-primary">รอคิว </button>
-                        <button type="button" class="btn btn-secondary">กำลังปรุง</button>
-                        <button type="button" class="btn btn-success">ปรุงเสร็จ</button>
-                        <button type="button" class="btn btn-danger">ยกเลิก</button> */}
+                        <select name='status' onChange={this.handleChange}>
+                        <option>รอคิว</option>
+                        <option>กำลังปรุง</option>
+                        <option>ปรุงเสร็จ</option>
+                        <option>ยกเลิก</option>
+                      </select>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับ</button>
                           <button type="button" class="btn btn-danger" data-dismiss="modal">ยืนยัน</button>
                           {/* <button type="button" class="btn btn-danger"></button> */}
                         </div>
                       </div>
-                    </div>
-                  </div>
-                      </modal>   
-          </div>
+          //           </div>
+          //         </div>
+          //             </modal>   
+          // </div>
         )
     }
 }
+
 
 export default OrderOwner;

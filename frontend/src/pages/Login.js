@@ -102,6 +102,7 @@ class Login extends React.Component {
         const { errors } = this.state;
         return (
             <div class="container">
+                <br></br><br></br>
                 <div class="row">
                     <div class="col-lg-6">
                         <img class="card-img" src="img/recepie/recepie_details.png" alt="" />
@@ -126,6 +127,7 @@ class Login extends React.Component {
                     </div>
 
                 </div>
+                <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             </div>
         )
 

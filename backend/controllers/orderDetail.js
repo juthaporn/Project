@@ -16,8 +16,8 @@ exports.getOrderDetail= (req, res, next) => {
 
 exports.createOrderDetail = (req, res, next) => {
     console.log(req.body)
-    const {orderDetailID , detail, quantity, price, productID, orderID} = req.body
-    const orderDetail = new OrderDetail(null ,orderDetailID , detail, quantity, price, productID, orderID);
+    const {quantity, productPrice, productID, orderID} = req.body
+    const orderDetail = new OrderDetail(null ,null,  quantity, productPrice, productID, orderID);
     orderDetail.save().then(() => {
         res.status(200).json({
             "message": "success",

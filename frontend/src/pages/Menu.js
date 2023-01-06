@@ -53,7 +53,7 @@ class Menu extends React.Component{
                           </div>
                           <h5>{item.productName}</h5>
                           <h5>{item.productPrice} บาท</h5>
-                          <Link to={"/MenuSelect/"+item.productID} class="button button-contactForm btn_4 boxed-btn-shop">ใส่ตระกร้า</Link> 
+                          <Link to={"/MenuSelect/"+this.props.match.params.id+"/"+item.productID} class="button button-contactForm btn_4 boxed-btn-shop">ใส่ตระกร้า</Link> 
                       </div>
                        
                   </div>

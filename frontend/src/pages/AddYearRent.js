@@ -71,9 +71,9 @@ class AddYearRent extends React.Component {
           <main>
             <div class="container">
               <div className="row">
-                <div class="col-lg-6">
+              <div class="col-lg-6">
                   <br />
-                  <img class="card-img" src="img/video/big.png" alt="" />
+                  <img class="card-img" src="img/cofe.jpg" alt="" />
                 </div>
                 <div class="col-lg-6">
                   <h2 class="contact-title">เพิ่มค่าเช่าร้าน</h2>
@@ -110,6 +110,7 @@ class AddYearRent extends React.Component {
                   </form>
                 </div>
                 </div>
+                <br></br><br></br><br></br><br></br><br></br>
               </div>
           </main>
         )

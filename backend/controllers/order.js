@@ -18,10 +18,12 @@ exports.createOrder = (req, res, next) => {
     console.log(req.body)
     const {orderDate, orderTime, orderStatus, subtotal, shopID, memberID} = req.body
     const order = new Order(null ,orderDate, orderTime, orderStatus, subtotal, shopID, memberID);
-    order.save().then(() => {
+    order.save().then((r) => {
+        console.log(r);
         res.status(200).json({
             "message": "success",
-            "result": true
+            "result": true,
+            "insertId": r[0].insertId
         });
     }).catch((error) => {
         res.status(200).json({

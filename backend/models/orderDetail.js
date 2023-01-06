@@ -23,7 +23,7 @@ class OrderDetail{
             );
         }else{
             return db.execute(
-                'insert into orderdetail (detail, quantity, price, productID, orderID) values(?,?,?,?)',
+                'insert into orderdetail (detail, quantity, price, productID, orderID) values(?,?,?,?,?)',
                 [this.detail, this.quantity, this.price, this.productID, this.orderID]
             );
         }
@@ -37,8 +37,8 @@ class OrderDetail{
     }
     static createOrderDetail(orderID){
         return db.execute(
-            "insert into orderID (orderDetailID, quantity, price, productID, memberID, shopID) values(?,?,?,?,?,?)'",
-            [orderID]
+            "INSERT INTO `orderdetail`(`detail`, `quantity`, `price`, `productID`, `orderID`) VALUES (?,?,?,?,?)",
+            [this.detail, this.quantity, this.price, this.productID, this.orderID]
         )
     }
 

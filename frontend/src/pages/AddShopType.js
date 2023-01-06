@@ -45,12 +45,13 @@ class AddShopType extends React.Component {
         return(
           <main>
             <div class="container">
+              <br></br> <br></br>
               <div className="row">
                 <div class="col-lg-6">
                   <br />
                   <img class="card-img" src="img/cofe.jpg" alt="" />
                 </div>
-                <div class="col-lg-6 box">
+                <div class="col-lg-6 ">
                   <h2 class="contact-title">เพิ่มประเภทร้านค้า</h2>
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
@@ -64,6 +65,7 @@ class AddShopType extends React.Component {
                 </div>
                 {/* <br /> */}
               </div>
+              <br></br> <br></br> <br></br> <br></br> <br></br>
             </div>
           </main>
         )

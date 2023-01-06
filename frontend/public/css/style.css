@@ -824,6 +824,39 @@ tr:nth-child(even) {
 .boxed-btn-orderamount.large-width {
   width: 100px;
 }
+
+.boxed-btn-addmenu {
+  background: #fff;
+  color: #131313;
+  display: inline-block;
+  padding: 14px 34px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #059c1c;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #059c1c !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right;
+}
+
+.boxed-btn-addmenu:hover {
+  background: #059c1c;
+  color: #fff !important;
+  border: 1px solid #059c1c;
+}
+
+.boxed-btn-addmenu:focus {
+  outline: none;
+}
+
+.boxed-btn-addmenu.large-width {
+  width: 100px;
+}
 .boxed-btn-add {
   background: #fff;
   color: #131313;

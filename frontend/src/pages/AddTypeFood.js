@@ -48,12 +48,13 @@ class AddTypeFood extends React.Component {
         return(
           <main>
                 <div class="container">
+                  <br></br><br></br>
                   <div className="row">
                     <div class="col-lg-6">
                       <br />
                       <img class="card-img" src="img/video/big.png" alt="" />
                     </div>
-                    <div class="col-lg-6 box">
+                    <div class="col-lg-6 ">
                       <h2 class="contact-title">เพิ่มประเภทอาหาร</h2>
                       <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                         <div class="form-group">
@@ -67,6 +68,7 @@ class AddTypeFood extends React.Component {
                     </div>
                     
                   </div>
+                  <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                 </div>
           </main>
         )

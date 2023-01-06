@@ -36,6 +36,7 @@ class AddProduct extends React.Component {
         return(
           <main>
             <div class="container">
+            <br></br>
               <div className="row">
                 <div class="col-lg-6">
                   <br />
@@ -70,6 +71,7 @@ class AddProduct extends React.Component {
                 </div>
               </div>
             </div>
+            <br></br><br></br><br></br>
           </main>
         )
     }

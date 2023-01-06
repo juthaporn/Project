@@ -24,8 +24,9 @@ class Order{
             );
         }else{
             return db.execute(
-                'insert into order (orderDate, orderTime, orderStatus, subtotal, memberID, shopID) values(?,?,?,?,?,?)',
-                [this.orderDate, this.orderTime, this.orderStatus, this.subtotal, this.memberID, this.shopID]
+                // 'insert into order (orderStatus, subtotal, memberID, shopID) values(?,?,?,?,?,?)',
+                'INSERT INTO `order`(`orderStatus`, `subtotal`, `shopID`, `memberID`) VALUES (?,?,?,?)',
+                [this.orderStatus, this.subtotal, this.memberID, this.shopID]
             );
         }
     }

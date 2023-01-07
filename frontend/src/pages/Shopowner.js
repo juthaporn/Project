@@ -50,7 +50,7 @@ class ShopOwner extends React.Component{
                             </div>
                             <div class="col-lg-4 col-sm-6 col-xs-12">
                                 <div class="white-box analytics-info">
-                                    <h3 class="box-title">จำนวนรายการสั่งซื้อ (ออร์เดอร์)</h3>
+                                    <h3 class="box-title">จำนวนรายการสั่งซื้อ (ออเดอร์)</h3>
                                     <ul class="list-inline two-part">
                                         <li>
                                             <div id="sparklinedash2"></div>

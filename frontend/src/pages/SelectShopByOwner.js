@@ -54,7 +54,7 @@ class SelectShopByOwner extends React.Component{
                                               
                                           </tr>
                                           <table>
-                                              <td><Link to={"/Orderowner/"+shop.shopID} class="button btn_4 boxed-btn-order"><h5>ออร์เดอร์</h5></Link></td>
+                                              <td><Link to={"/Orderowner/"+shop.shopID} class="button btn_4 boxed-btn-order"><h5>ออเดอร์</h5></Link></td>
                                               <td></td>
                                               <td></td> 
                                               <td></td>

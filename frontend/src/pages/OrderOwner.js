@@ -9,6 +9,7 @@ class OrderOwner extends React.Component{
             data:[],
             status:''
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
 }
 
 componentDidMount(){
@@ -105,13 +106,12 @@ componentDidMount(){
                                 <td><h3 class="box-title">20:18</h3></td>
                                 <td><h3 class="box-title">30</h3></td>
                                 <td><h3 class="box-title">2</h3></td>
-                                <td><select class="selectpicker">
-                                  <option class='badge badge-success'>เสร็จสิ้น</option>
-                                  <option class='badge badge-primary'>รอ</option>
-                                  <option class='badge badge-warning'>กำลังปรุง</option>
-                                  <option class='badge badge-danger'>ยกเลิก</option>
-                                </select></td>
-                               
+                                <td> <select name='status' onChange={this.handleChange}>
+                                      <option>รอคิว</option>
+                                      <option>กำลังปรุง</option>
+                                      <option>ปรุงเสร็จ</option>
+                                      <option>ยกเลิก</option>
+                                    </select></td>
                                 <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
                               </tr>
 
@@ -122,7 +122,8 @@ componentDidMount(){
                     </div>
                   </div>
                   <br/>      
-            </div>
+           </div>
+         
         )
     }
 }

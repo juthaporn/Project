@@ -6,20 +6,17 @@ class OrderOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data:[],
-            status:''
+            data:[]
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
 }
 
 componentDidMount(){
   this.getData()
-  console.log("shopID",this.props.match.params.id)
 }
 
               getData = () => {
                 var x = this;
-                axios.get("http://localhost:3000/getOneShop/13"+this.props.match.params.id).then((res) =>  {
+                axios.get("http://localhost:3000/getOneShop/13").then((res) => {
                   this.setState({data: res.data.data[0]});
                   console.log("owner",this.state.data)
                   // x.setState({data: res.data.data});
@@ -107,12 +104,13 @@ componentDidMount(){
                                 <td><h3 class="box-title">20:18</h3></td>
                                 <td><h3 class="box-title">30</h3></td>
                                 <td><h3 class="box-title">2</h3></td>
-                                <td> <select name='status' onChange={this.handleChange}>
-                                      <option>รอคิว</option>
-                                      <option>กำลังปรุง</option>
-                                      <option>ปรุงเสร็จ</option>
-                                      <option>ยกเลิก</option>
-                                    </select></td>
+                                <td><select name='status' onChange={this.handleChange}>
+                                        <option>รอคิว</option>
+                                        <option>กำลังปรุง</option>
+                                        <option>ปรุงเสร็จ</option>
+                                        <option>ยกเลิก</option>
+                                      </select></td>
+                               
                                 <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
                               </tr>
 
@@ -122,9 +120,8 @@ componentDidMount(){
                       </div>
                     </div>
                   </div>
-                  <br/>      
-           </div>
-         
+                  <br/>  
+            </div>
         )
     }
 }

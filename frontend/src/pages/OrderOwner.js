@@ -14,11 +14,12 @@ class OrderOwner extends React.Component{
 
 componentDidMount(){
   this.getData()
+  console.log("shopID",this.props.match.params.id)
 }
 
               getData = () => {
                 var x = this;
-                axios.get("http://localhost:3000/getOneShop/13").then((res) => {
+                axios.get("http://localhost:3000/getOneShop/13"+this.props.match.params.id).then((res) =>  {
                   this.setState({data: res.data.data[0]});
                   console.log("owner",this.state.data)
                   // x.setState({data: res.data.data});

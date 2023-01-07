@@ -6,13 +6,8 @@ class OrderOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            orderDate: '',
-            orderStatus: '',
-            subtotal: '',
-            orderDetail: '',
-            quantity: '',
-            price: '',
-            productName : '',
+            data:[],
+            status:''
         }
 }
 
@@ -126,23 +121,8 @@ componentDidMount(){
                       </div>
                     </div>
                   </div>
-                  <br/>
-                        <select name='status' onChange={this.handleChange}>
-                        <option>รอคิว</option>
-                        <option>กำลังปรุง</option>
-                        <option>ปรุงเสร็จ</option>
-                        <option>ยกเลิก</option>
-                      </select>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับ</button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">ยืนยัน</button>
-                          {/* <button type="button" class="btn btn-danger"></button> */}
-                        </div>
-                      </div>
-          //           </div>
-          //         </div>
-          //             </modal>   
-          // </div>
+                  <br/>      
+            </div>
         )
     }
 }

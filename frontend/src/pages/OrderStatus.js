@@ -68,7 +68,7 @@ class OrderStatus extends React.Component{
 								<div class="step-icon-wrap">
 								<div class="step-icon"><i class="pe-7s-more"></i></div>
 								</div>
-								<h4 class="step-title">รับอาหาร {this.state.naame} </h4>
+								<h4 class="step-title">รับอาหาร {this.state.name} </h4>
 							</div>
 							</div>
 						</div>

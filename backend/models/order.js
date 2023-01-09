@@ -50,9 +50,40 @@ class Order{
             [orderID]
         )
     }
+    static getOrder(orderID){
+        return db.execute(
+            'select * from order where orderID = ?',
+            // 'select orderID, orderStatus,orderTime,subtotal FROM order'
+            [orderID]
+        )
+    }
 
-  
-    
+    static updateStatus(orderID, status){
+        return db.execute(
+            'UPDATE `order` SET `orderStatus`=? where orderID = ?',
+            // 'select orderID, orderStatus,orderTime,subtotal FROM order'
+            [status, orderID]
+        )
+    }
+    static getOrderByshopID(shopID){
+        console.log("get data");
+        var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+
+        let ndate = [year, month, day].join('-');
+        console.log("select * FROM `order` o join orderdetail od on o.orderID=od.orderID join product p on p.productID=od.productID where o.shopID = ? and o.orderStatus != 'เสร็จสิ้น' and o.orderdate like('%"+ndate+"%') order by o.orderID asc")
+        return db.execute(
+            "select * FROM `order` o join orderdetail od on o.orderID=od.orderID join product p on p.productID=od.productID where o.shopID = ? and o.orderStatus != 'เสร็จสิ้น' and o.orderdate like('%"+ndate+"%') order by o.orderID asc",
+            [shopID]
+        )
+    }
 
 }
 

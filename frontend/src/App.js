@@ -81,9 +81,7 @@ class App extends React.Component {
             </Route>
         <Route path="/OrderStatus/:product/:number" component={OrderStatus}>
             </Route>
-        <Route path="/OrderOwner">
-            <OrderOwner />
-          </Route>
+        <Route path="/OrderOwner/:id" component={OrderOwner} />
         <Route path="/AdminShopDetail">
             <AdminShopDetail />
           </Route>

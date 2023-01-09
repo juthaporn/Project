@@ -1,6 +1,30 @@
 import React from 'react';
 
 class Dashboad extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data: [],
+            i:0
+        }
+    }
+
+    // componentDidMount(){
+    //     this.getData()
+    //     console.log("MemberID",this.props.match.params.id)
+    // }
+
+    // getData = () => {
+    //     var x = this;
+    //     axios.get("http://localhost:3000/member/getMemberRole/3").then((res) => {
+    //       this.setState({data: res.data.data[0]});
+    //       console.log("admin",this.state.data)
+    //       // x.setState({data: res.data.data});
+    //     }).catch((error) => {
+    //       console.log(error);
+    //     });
+    // }
+
     render(){
         return(
             <div class="row">
@@ -28,6 +52,13 @@ class Dashboad extends React.Component{
                                 </li>
                                 <li class="text-right">
                                     <i class="ti-arrow-up text-purple"></i> 
+                                    {/* {
+                                        this.state.data?.map(item => (
+                                            if(item.name != null){
+                                                i++
+                                            }
+                                        ))
+                                    } */}
                                     <h4><strong>69</strong> คน</h4></li>
                             </ul>
                         </div>

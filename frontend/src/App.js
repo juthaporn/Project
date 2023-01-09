@@ -36,7 +36,6 @@ import Admin from './pages/Admin';
 import ShopOwner from './pages/ShopOwner';
 import ShopByOwner from './pages/ShopByOwner';
 import AdminShopDetail from './pages/AdminShopDetail';
-import MonthlyRentalfee from './pages/MonthlyRentalfee';
 import OrderOwner from './pages/OrderOwner';
 import OrderStatus from './pages/OrderStatus';
 import ShopOwnerDetail from './pages/ShopOwnerDetail';
@@ -84,9 +83,6 @@ class App extends React.Component {
             </Route>
         <Route path="/OrderOwner">
             <OrderOwner />
-          </Route>
-        <Route path="/MonthlyRentalfee">
-            <MonthlyRentalfee />
           </Route>
         <Route path="/AdminShopDetail">
             <AdminShopDetail />

@@ -71,7 +71,7 @@ class ShopByOwner extends React.Component{
                             <h5>เบอร์โทร : {this.state.phone}</h5>
                         </td>
                         <td>
-                            <Link to={"/AddShop/"+this.state.memberID} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
+                            <Link to={"/AddShop/"+this.props.match.params.id} class="button button-contactForm btn_4 boxed-btn-addShop">เพิ่มร้านค้า</Link>
                         </td> 
                     </table>
                     <div class="row">

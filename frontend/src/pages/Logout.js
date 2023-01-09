@@ -19,11 +19,12 @@ class Logout extends React.Component {
     }
 
     render() {
-
+        window.location.assign("/");
         // if(this.state.redirect){
-            return <Redirect to='/' />
+            // return <Redirect to='/' />
             //  <Header />
         // }
+        return <></>
         
     }
 

@@ -7,16 +7,9 @@ class AddOwner extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        // username:'',
-        // password:'',
-        // name:'',
-        // phone:'',
-        // roleID: ''
         data:[]
 
       }
-      // this.handleChange = this.handleChange.bind(this)
-      // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount(){
@@ -24,17 +17,6 @@ class AddOwner extends React.Component {
       this.getRole()
       console.log("roleID",this.props.match)
     }
-
-    // getData = () => {
-    //   var x = this;
-    //   axios.get("http://localhost:3000/role/getRole/"+this.props.match.params.id).then((res) => {
-    //     this.setState({data: res.data.data[0]});
-    //     // this.setState({name: this.state.data[0].name})
-    //     console.log(this.state.data.roleName)
-    //   }).catch((error) => {
-    //     console.log(error);
-    //   });
-    // }
 
     getRole = () => {
       axios.get('http://localhost:3000/role/getAllRole')
@@ -46,10 +28,8 @@ class AddOwner extends React.Component {
         }))
         this.setState({role: option})
         console.log(this.state.role)
-        // console.log('shopType', this.state.shopType[0].typeName)
       })
     }
-
 
     handleChange = (e) => {
       console.log(e.target.name, e.target.value)

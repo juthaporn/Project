@@ -46,25 +46,6 @@ class MenuSelect extends React.Component{
 
 	
 	}
-
-	// handleSubmit = (e) => {
-	// 	console.log("handleSubmit", this.state)
-	// 	e.preventDefault()
-	// 	// axios.post('http://localhost:3000/order/createOrder', { 
-	// 	//   orderDate: this.state.orderDate,
-	// 	//   orderName:this.state.orderName,
-	// 	//   shopID: this.props.match.params.shopID,
-	// 	//   orderID: this.props.match.params.orderID,
-	// 	//   memberID: this.props.match.params.memberID,
-	// 	//   orderStatus: this.props.match.params.orderStatus,
-	// 	//   subtotal: this.state.subtotal,
-	// 	// }).then((res) => {  
-	// 	//   console.log(res.data)
-	// 	// }).catch(err => {
-	// 	//   console.log(err)
-	// 	// }) 
-	//   }
-	
 	  
 	  
 	  // eslint-disable-next-line no-dupe-class-members
@@ -84,6 +65,7 @@ class MenuSelect extends React.Component{
 			axios.post('http://localhost:3000/orderdetail/createOrderDetail', { 
 				// orderDetailID: this.props.match.params.orderDetailID,
 				quantity: this.state.number,
+				// productName: this.state.productName,
 				productPrice: this.state.productPrice,
 				productID: this.props.match.params.id,
 				orderID: res.data.insertId
@@ -159,7 +141,7 @@ class MenuSelect extends React.Component{
 					</div>
 				</div>
 					
-          {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
           
         )

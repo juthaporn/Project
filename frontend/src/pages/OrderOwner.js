@@ -12,18 +12,54 @@ class OrderOwner extends React.Component{
 
 componentDidMount(){
   this.getData()
+  // console.log("orderDetailID",this.props.match.params.id) 
+  // console.log("orderID",this.props.match.params.id) 
+  // console.log("productID",this.props.match.params.id)
 }
 
-              getData = () => {
-                var x = this;
-                axios.get("http://localhost:3000/getOneShop/13").then((res) => {
-                  this.setState({data: res.data.data[0]});
-                  console.log("owner",this.state.data)
-                  // x.setState({data: res.data.data});
-                }).catch((error) => {
-                  console.log(error);
-                });
-              }
+getData = () => {
+  var x = this;
+  // axios.get("http://localhost:3000/order/getOrder"+this.props.match.params.id).then((res) => {  
+    axios.get("http://localhost:3000/order/getOrder").then((res) => {  
+      console.log(res.data.data[0])
+            this.setState({data: res.data.data[0]});
+            this.setState({orderID: this.state.data.orderID})
+            this.setState({orderStatus: this.state.data.orderStatus})
+            this.setState({orderTime: this.state.data.orderTime})
+            this.setState({subtotal: this.state.data.subtotal})
+    // }).then((res) => {  
+    //   axios.get('http://localhost:3000/orderdetail/getOrderDetail'+this.props.match.params.id).then((res) => { 
+    //     console.log(res.data.data[0])
+    //     this.setState({data: res.data.data[0]});
+    //     this.setState({quantity: this.state.data.quantity})  
+    //     this.setState({price: this.state.data.price})  
+    //       }).then((res) => {  
+    //         axios.get('http://localhost:3000/product/getproduct'+this.props.match.params.id).then((res) => { 
+    //           console.log(res.data.data[0])
+    //           this.setState({data: res.data.data[0]});
+    //           this.setState({productName: this.state.data.productName})  
+    //           }).catch((error) => {
+    //             console.log(error);
+    //           });
+            
+    //   }).catch((error) => {
+    //     console.log(error);
+    //   });
+        }).catch((error) => {
+          console.log(error);
+        });
+}
+handleSubmit = (e) => {
+  console.log("handleSubmit", this.state)
+  e.preventDefault()
+  axios.post('http://localhost:3000/order/editOrder', { 
+    subtotal: this.state.Status,
+  }).catch(err => {
+    console.log(err)
+  }) 
+
+  
+  }
     render(){
         return(   
           
@@ -93,25 +129,27 @@ componentDidMount(){
                                 <th><h3 class="box-title">ราคา</h3></th>
                                 <th><h3 class="box-title">จำนวน</h3></th>
                                 <th><h3 class="box-title">สถานะ</h3></th>
-                                <th><h3 class="box-title">แก้ไข</h3></th>
+                                <th><h3 class="box-title">ยกเลิก</h3></th>
                               </tr>  
                             </thead>
                             <tbody>
                               <tr>
-                              <td ><h3 class="box-title">1</h3></td>
+                              <td ><h3 class="box-title">{this.state.data.orderID}</h3></td>
                               <td><img src="../img/post/post_5.png" alt=""/></td>
-                                <td><h3 class="box-title">ข้าว</h3></td>
-                                <td><h3 class="box-title">20:18</h3></td>
-                                <td><h3 class="box-title">30</h3></td>
-                                <td><h3 class="box-title">2</h3></td>
-                                <td><select name='status' onChange={this.handleChange}>
+                                {/* <td><h3 class="box-title">{this.state.data.productName}</h3></td> */}
+                                <td><h3 class="box-title">{this.state.data.orderStatus}</h3></td>
+                                <td><h3 class="box-title">{this.state.data.orderTime}</h3></td>
+                                {/* <td><h3 class="box-title">{this.state.data.price}</h3></td> */}
+                                <td><h3 class="box-title">{this.state.data.subtotal}</h3></td>
+                                {/* <td><h3 class="box-title">{this.state.data.quantity}</h3></td> */}
+                                <td><select name='Status'  onClick={this.handleSubmit}>
                                         <option>รอคิว</option>
                                         <option>กำลังปรุง</option>
                                         <option>ปรุงเสร็จ</option>
-                                        <option>ยกเลิก</option>
+                                        <option>รอรับ</option>
                                       </select></td>
                                
-                                <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>แก้ไข</a></td>
+                                <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>ยกเลิก</a></td>
                               </tr>
 
                             </tbody>

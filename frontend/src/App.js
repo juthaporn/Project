@@ -56,7 +56,7 @@ class App extends React.Component {
         <Banner />
         
         <Switch>
-        <Route path="/SelectShopByOwner">
+        <Route path="/SelectShopByOwner/">
             <SelectShopByOwner/>
             </Route>
         <Route path="/Cart">
@@ -70,12 +70,12 @@ class App extends React.Component {
             </Route>
         <Route path="/MenuSelect/:shopID/:id" component={MenuSelect}>
             </Route>
-            <Route path="/Order/:product/:number" component={Order}>
+            {/* <Route path="/Order/:product/:number" component={Order}>
               
-            </Route>
-        {/* <Route path="/Order">
-            <Order />
             </Route> */}
+        <Route path="/Order/:orderID">
+            <Order />
+            </Route>
         <Route path="/ShopOwnerDetail">
             <ShopOwnerDetail />
             </Route>
@@ -148,7 +148,7 @@ class App extends React.Component {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/login">
+          <Route path="/login/">
             <Login />
           </Route>
           <Route path="/logout">

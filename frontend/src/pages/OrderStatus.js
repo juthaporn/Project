@@ -19,17 +19,31 @@ class OrderStatus extends React.Component{
 						console.log("orderID",this.props.match.params.product)
 					}
 
-					getData = () => {
+					etData = () => {
 						var x = this;
-						axios.get("http://localhost:3000/orderID/" + this.props.match.params.product)
-						.then(res => {
-							console.log(res.data.data[0])
-							this.setState({product: res.data.data[0]})
-							this.setState({name: this.state.product.productName})
-							// console.log(this.state.product.productPrice)
-							this.setState({price: this.state.product.productPrice})
-						})
-					}
+						axios.get("http://localhost:3000/order/getOrder"+this.props.match.params.id).then((res) => {  
+								console.log(res.data.data[0])
+							  this.setState({data: res.data.data[0]});
+							  this.setState({orderID: this.state.data.orderID})
+							  this.setState({subtotal: this.state.data.subtotal})
+							  this.setState({orderStatus: this.state.data.orderStatus})
+							}).then((res) => {  
+								axios.get('http://localhost:3000/orderdetail/getOrderDetail'+this.props.match.params.id).then((res) => {  
+								  console.log(res.data.data[0])
+								  this.setState({productName: this.state.data.productName})
+								  this.setState({price: this.state.data.price})
+								  this.setState({quantity: this.state.data.quantity})
+								 
+								  }).catch((error) => {
+									console.log(error);
+								  });
+							  
+					}).catch((error) => {
+				
+						console.log(error);
+					});
+					
+				}
 			
 				
 
@@ -42,33 +56,15 @@ class OrderStatus extends React.Component{
 			<div class="row">
 				<div class="col-lg-12">
 						<div class="card mb-3">
-						<div class="p-4 text-center text-white text-lg bg-dark rounded-top"><h4 span class="text-uppercase">สถานะคำสั่งซื้อของออร์เดอร์ </h4><h4 class="text-medium">34VB5540K83</h4></div>
+						<div class="p-4 text-center text-white text-lg bg-dark rounded-top"><h4 span class="text-uppercase">สถานะคำสั่งซื้อของออร์เดอร์ </h4><h4 class="text-medium">{this.state.orderID}</h4></div>
 						
 						<div class="card-body">
 							<div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
-							{/* <div class="step completed">
-								<div class="step-icon-wrap">
-								<div class="step-icon"><i class="pe-7s-cart"></i></div>
-								</div>
-								<h4 class="step-title">ยืนยันคำสั่งซื้อ</h4>
-							</div>
-							<div class="step completed">
-								<div class="step-icon-wrap">
-								<div class="step-icon"><i class="pe-7s-config"></i></div>
-								</div>
-								<h4 class="step-title">รอคิว</h4>
-							</div>
-							<div class="step completed">
-								<div class="step-icon-wrap">
-								<div class="step-icon"><i class="pe-7s-medal"></i></div>
-								</div>
-								<h4 class="step-title">กำลังปรุง</h4>
-							</div> */}
 							<div class="step">
 								<div class="step-icon-wrap">
 								<div class="step-icon"><i class="pe-7s-more"></i></div>
 								</div>
-								<h4 class="step-title">รับอาหาร {this.state.name} </h4>
+								<h4 class="step-title">รับอาหาร  {this.state.orderStatus} </h4>
 							</div>
 							</div>
 						</div>
@@ -95,7 +91,7 @@ class OrderStatus extends React.Component{
 										<img src="img/post/post_4.png" alt=""/>
 										</div>
 										<div class="flex-lg-grow-1 ms-3">
-										<h5 class="box-title">{this.state.name}</h5>
+										<h5 class="box-title">{this.state.productName}</h5>
 										</div>
 									</div>
 									</td>
@@ -111,14 +107,14 @@ class OrderStatus extends React.Component{
 									<td><h5><a href="/Order" >จำนวนรายการทั้งหมด</a></h5></td>
 									<td></td>
 									<td></td>
-									<h5><td >{this.props.match.params.number} รายการ</td></h5>
+									<h5><td >{this.state.data.quantity} รายการ</td></h5>
 								</tr>
 								<tr class="fw-bold">
 								
 									<h5><td colspan="2">รวมทั้งหมด</td></h5>
 									<td></td>
 									<td></td>
-									<h5><td class="text-end">{(this.props.match.params.number * this.state.price)} บาท</td></h5>
+									<h5><td class="text-end">{this.state.data.subtotal} บาท</td></h5>
 								</tr>
 								</tfoot>
 							</table>

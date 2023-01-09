@@ -49,7 +49,8 @@ class AddOwner extends React.Component {
       axios.post('http://localhost:3000/member/createMember', {
         username: this.state.username,
         password: this.state.password,
-        name: this.state.name,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         phone: this.state.phone,
         roleID: this.state.roleValue
       }).then((res) => {  
@@ -81,7 +82,11 @@ class AddOwner extends React.Component {
                   <form class="form-contact contact_form" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>ชื่อผู้ประกอบการ</label>
-                      <input name="name" class="form-control" placeholder="ชื่อผู้ประกอบการ" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อผู้ประกอบการเป็นภาษาไทย" required />
+                      <input name="firstName" class="form-control" placeholder="ชื่อผู้ประกอบการ" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกชื่อผู้ประกอบการเป็นภาษาไทย" required />
+                    </div>
+                    <div class="form-group">
+                      <label>นามสกุลผู้ประกอบการ</label>
+                      <input name="lastName" class="form-control" placeholder="นามสกุลผู้ประกอบการ" onChange={this.handleChange} pattern="^[ก-๏\s]+$" title="กรุณากรอกนามสกุลผู้ประกอบการเป็นภาษาไทย" required />
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>

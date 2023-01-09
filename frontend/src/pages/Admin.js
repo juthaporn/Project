@@ -7,7 +7,8 @@ class Admin extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            name : '',
+            firstName : '',
+            lastName : '',
             phone: '',
             memberID: ''
         }
@@ -59,7 +60,7 @@ class Admin extends React.Component{
                                 {
                                     this.state.data?.map(item => (
                                         <tr>
-                                            <td>{item.name}</td>
+                                            <td>{item.firstName}&nbsp;&nbsp;{item.lastName}</td>
                                             <td>{item.phone}</td>
                                             <td width="20%"><Link to={"/ShopByOwner/"+item.memberID} class="button button-contactForm btn_4 boxed-btn-data">ข้อมูลเพิ่มเติม</Link></td>
                                         </tr>

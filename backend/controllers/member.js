@@ -15,8 +15,8 @@ exports.getAllMember = (req, res, next) => {
 
 exports.createMember = (req, res, next) => {
     console.log(req.body)
-    const {username, password, name, phone, roleID} = req.body
-    const member = new Member (null, username, password, name, phone, roleID)
+    const {username, password, firstName, lastName, phone, roleID} = req.body
+    const member = new Member (null, username, password, firstName, lastName, phone, roleID)
     member.save().then(() => {
         res.status(200).json({
             "message": "success",
@@ -45,8 +45,8 @@ exports.getOneMember = (req, res, next) => {
 
 exports.editMember = (req, res, next) => {
     console.log(req.body)
-    const {memberID ,username, password, name, phone, roleID} = req.body
-    const member = new Member (memberID, username, password, name, phone, roleID)
+    const {memberID ,username, password, firstName, lastName, phone, roleID} = req.body
+    const member = new Member (memberID, username, password, firstName, lastName, phone, roleID)
     
     member.save().then(() => {
         res.status(200).json({

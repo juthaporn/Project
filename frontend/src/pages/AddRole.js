@@ -114,7 +114,7 @@ class AddRole extends React.Component{
                                 {
                                     this.state.data?.map(item => (
                                         <tr>
-                                            <td>{item.name}</td>
+                                            <td>{item.firstName}&nbsp;&nbsp;{item.lastName}</td>
                                             <td>{item.phone}</td>
                                             <td width="20%">
                                                 

@@ -26,7 +26,8 @@ class ShopByOwner extends React.Component{
             console.log(res.data.data[0])
           this.setState({data: res.data.data[0]});
           this.setState({memberID: this.state.data[0].memberID})
-          this.setState({name: this.state.data[0].name})
+          this.setState({firstName: this.state.data[0].firstName})
+          this.setState({lastName: this.state.data[0].lastName})
           this.setState({phone: this.state.data[0].phone})
             console.log(this.state.name)
         }).catch((error) => {
@@ -64,7 +65,7 @@ class ShopByOwner extends React.Component{
                     <table class="table table-borderless">
                         <td width="30%">
                             <br />
-                            <h5>ผู้ประกอบการ : {this.state.name}</h5>
+                            <h5>ผู้ประกอบการ : {this.state.firstName}&nbsp;&nbsp;{this.state.lastName}</h5>
                         </td>
                         <td>
                             <br />

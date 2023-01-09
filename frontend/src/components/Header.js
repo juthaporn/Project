@@ -10,6 +10,7 @@ const showMenu = (roleID) => {
         // window.location.reload();
         return(
             <>
+                <li className="nav-item"><Link to="/Admin" className="nav-link">หน้าหลัก</Link></li>
                 <li className="nav-item"><Link to="/AddOwner" className="nav-link">เพิ่มผู้ประกอบการ</Link></li>
                 <li className="nav-item"><Link to="/ShopType" className="nav-link">ประเภทร้านค้า</Link></li>
                 <li className="nav-item"><Link to="/TypeFood" className="nav-link">ประเภทอาหาร</Link></li>
@@ -21,6 +22,7 @@ const showMenu = (roleID) => {
         // window.location.reload();
         return(
             <>
+                <li className="nav-item"><Link to="/" className="nav-link">หน้าหลัก</Link></li>
                 <li className="nav-item"><Link to="/Shop" className="nav-link">ร้านค้า2</Link></li>
                 <li className="nav-item"><Link to="/Menu" className="nav-link">เมนู2</Link></li>
                 <li className="nav-item"><Link to="/logout" className="nav-link">ออกจากระบบ</Link></li>
@@ -30,9 +32,10 @@ const showMenu = (roleID) => {
         )
     } else if (roleID === "3"){
         return (
-            <>
-                <li className="nav-item"><Link to="/Shop" className="nav-link">ร้านค้า3</Link></li>
-                <li className="nav-item"><Link to="/Menu" className="nav-link">เมนู3</Link></li>
+            <>  
+                <li className="nav-item"><Link to="/SelectShopByOwner" className="nav-link">หน้าหลัก</Link></li>
+                {/* <li className="nav-item"><Link to="/Shop" className="nav-link">ร้านค้า3</Link></li>
+                <li className="nav-item"><Link to="/Menu" className="nav-link">เมนู3</Link></li> */}
                 <li className="nav-item"><Link to="/logout" className="nav-link">ออกจากระบบ</Link></li>
             </>
         )
@@ -40,6 +43,7 @@ const showMenu = (roleID) => {
     else{
         return (
             <>
+                <li className="nav-item"><Link to="/" className="nav-link">หน้าหลัก</Link></li>
                 <li className="nav-item"><Link to="/Register" class="nav-link">ลงทะเบียน</Link></li>
                 <li className="nav-item"><Link to="/login" class="nav-link">เข้าสู่ระบบ</Link></li>
             </>
@@ -92,7 +96,7 @@ class Header extends React.Component{
 
                 <div className="collapse navbar-collapse" id="ftco-nav">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active"><a href="/" className="nav-link">หน้าหลัก</a></li>
+                        {/* <li className="nav-item active"><a href="/" className="nav-link">หน้าหลัก</a></li> */}
                         {/* {
                             (this.state.roleID == 1)? <Admin /> : (this.state.roleID == 2)? <Member /> : (this.state.roleID == 3)? <Owner /> :<></>
                         } */}

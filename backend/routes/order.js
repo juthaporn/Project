@@ -19,4 +19,6 @@ router.post('/editOrder', orderController.editOrder);
 
 router.get('/deleteOrder/:orderID', orderController.deleteOrder);
 
+router.get('/getsumTotal/:shopID',orderController.getsumTotal);
+
 module.exports = router;

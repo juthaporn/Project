@@ -85,6 +85,13 @@ class Order{
         )
     }
 
+    static getsumTotal(shopID){
+        return db.execute(
+            'SELECT SUM(subtotal) total FROM `order`WHERE shopID = ?',
+            [shopID]
+        )
+    }
+
 }
 
 module.exports = Order

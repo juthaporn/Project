@@ -127,3 +127,19 @@ exports.getOrderByID = (req, res, next) => {
         });
     });
 }
+
+exports.getsumTotal = (req, res, next) => {
+    console.log(req.params)
+    const {shopID} = req.params;
+    Order.delById(shopID).then(() => {
+        res.status(200).json({
+            "message": "success",
+            "result": true
+        });
+    }).catch((error) => {
+        res.status(500).json({
+            "message": error,
+            "result": false
+        });
+    });
+}

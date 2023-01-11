@@ -8,24 +8,20 @@ class ShopOwner extends React.Component{
             datetime: Date()
         }
 }
-        //     componentDidMount(){
-        //         this.getData()
-        //         console.log("shopID",this.props.match.params.id)
-        //     }
+    // componentDidMount(){
+    // this.getData()
+    // console.log("shopID",this.props.match.params.id)
+    // }
 
-        //     getData = () => {
-        //         var x = this;
-        //         axios.get("http://localhost:3000/order/getOrder"+this.props.match.params.id).then((res) => {  
-        //             console.log(res.data.data[0])
-        //           this.setState({data: res.data.data[0]});
-        //         //   this.setState({productID: this.state.data[0].productID})
-        //         //   this.setState({productName: this.state.data[0].productName})
-        //     }).catch((error) => {
-        //         console.log(error);
-        //     });
-        // }
-    
-
+    // getData = () => {
+    //     var x = this;
+    //     axios.get("http://localhost:3000/order/getsumTotal/"+this.props.match.params.id).then((res) => {
+    //         this.setState({data: res.data.data});
+    //         console.log(this.state.data)
+    //     }).catch((error) => {
+    //       console.log(error);
+    //     });
+    // }
 
     render(){
         return( 
@@ -44,7 +40,7 @@ class ShopOwner extends React.Component{
                                                 {/* <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas> */}
                                             </div>
                                         </li>
-                                        <h5><li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">1,525 บาท</span></li></h5>
+                                        <h5><li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">660 บาท</span></li></h5>
                                     </ul>
                                 </div>
                             </div>
@@ -55,7 +51,7 @@ class ShopOwner extends React.Component{
                                         <li>
                                             <div id="sparklinedash2"></div>
                                         </li>
-                                        <h5><li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple " >41 รายการ</span></li></h5>
+                                        <h5><li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple " >10 รายการ</span></li></h5>
                                     </ul>
                                 </div>
                             </div>
@@ -89,15 +85,15 @@ class ShopOwner extends React.Component{
                                         <tbody>
                                         <tr>                       
                                         <td><img src="../img/post/post_10.png" alt=""/></td>
-                                        <td> <h3 class="box-title">ข้าวกะเพรา</h3></td>
+                                        <td> <h3 class="box-title">ก๋วยเตี๋ยวต้มยำ</h3></td>
                                         </tr>
                                         <tr>
                                         <td><img src="../img/post/post_7.png" alt=""/></td>
-                                        <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td>
+                                        <td> <h3 class="box-title">ก๋วยเตี๋ยวต้มยำทะเล</h3></td>
                                         </tr>
                                         <tr>
                                         <td><img src="../img/post/post_5.png" alt=""/></td>
-                                        <td> <h3 class="box-title">ก๋วยเตี๊ยว</h3></td></tr>
+                                        <td> <h3 class="box-title">บะหมี่เกี๊ยวหมูแดง</h3></td></tr>
                                         </tbody>
                                     </table>
                                     </div>

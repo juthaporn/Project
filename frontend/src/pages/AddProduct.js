@@ -40,7 +40,7 @@ class AddProduct extends React.Component {
               <div className="row">
                 <div class="col-lg-6">
                   <br />
-                  <img class="card-img" src="img/video/big.png" alt="" />
+                  <img class="card-img" src="/img/video/big.png" alt="" />
                 </div>
                 <div class="col-lg-6">
                   <h2 class="contact-title">เพิ่มรายการอาหาร</h2>

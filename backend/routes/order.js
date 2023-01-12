@@ -9,6 +9,8 @@ router.get('/getOrderByShopID/:shopID', orderController.getOrderByShopID);
 
 router.get('/getOrderBymemberID/:memberID', orderController.getOrderBymemberID);
 
+router.get('/getsumTotal/:shopID',orderController.getsumTotal);
+
 router.get('/updateOrderStatus/:orderID/:orderStatus', orderController.updateOrderStatus);
 
 router.get('/getOrderByID/:shopID', orderController.getOrderByID);

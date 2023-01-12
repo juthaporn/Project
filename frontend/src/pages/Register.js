@@ -99,13 +99,13 @@ class Register extends React.Component{
                                     <label>รหัสผ่าน</label>
                                     <input class="form-control" name="password" placeholder = 'รหัสผ่าน' onChange={this.handleChange} required />
                                 </div>
-                                {/* <div class="form-group">
+                                <div class="form-group">
                                     <label>บทบาท</label>
                                         <Select 
                                         options={this.state.role}
                                         onChange={this.handleChangeShopType}
                                     />
-                                </div> */}
+                                </div>
                                 <div class="form-group text-center">
                                     <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>
                                     &nbsp;&nbsp;มีบัญชีผู้ใช้อยู่แล้วใช่หรือไม่&nbsp;&nbsp; 

@@ -91,6 +91,7 @@ class Order{
             [memberID]
         )
     }
+    
 
     static getsumTotal(shopID){
         return db.execute(

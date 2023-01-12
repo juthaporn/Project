@@ -122,6 +122,7 @@ class OrderOwner extends React.Component {
                           <option value="กำลังปรุง">กำลังปรุง</option>
                           <option value="ปรุงเสร็จ">ปรุงเสร็จ</option>
                           <option value="รอรับ">รอรับ</option>
+                          <option value="รอรับ">รับอาหารแล้ว</option>
                         </select></td>
 
                         <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>ยกเลิก</a></td>

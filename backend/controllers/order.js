@@ -127,6 +127,22 @@ exports.getOrderByID = (req, res, next) => {
         });
     });
 }
+exports.getOrderBymemberID = (req, res, next) => {
+    // const productID = req.query.product_id;
+    console.log(req.params)
+    const {mmemID} = req.params;
+    Order.delById(orderID).then(() => {
+        res.status(200).json({
+            "message": "success",
+            "result": true
+        });
+    }).catch((error) => {
+        res.status(500).json({
+            "message": error,
+            "result": false
+        });
+    });
+}
 
 exports.getsumTotal = (req, res, next) => {
     console.log(req.params)

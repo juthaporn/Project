@@ -7,6 +7,8 @@ router.get('/getOrder', orderController.getOrder);
 
 router.get('/getOrderByShopID/:shopID', orderController.getOrderByShopID);
 
+router.get('/getOrderBymemberID/:memberID', orderController.getOrderBymemberID);
+
 router.get('/updateOrderStatus/:orderID/:orderStatus', orderController.updateOrderStatus);
 
 router.get('/getOrderByID/:shopID', orderController.getOrderByID);

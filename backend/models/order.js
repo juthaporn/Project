@@ -84,6 +84,13 @@ class Order{
             [shopID]
         )
     }
+    static getOrderBymemberID(memberID){
+        return db.execute(
+            "SELECT * FROM `order` WHERE memberID"
+            // 'select orderID, orderStatus,orderTime,subtotal FROM order'
+            [memberID]
+        )
+    }
 
     static getsumTotal(shopID){
         return db.execute(

@@ -144,18 +144,18 @@ exports.getOrderBymemberID = (req, res, next) => {
     });
 }
 
-exports.getsumTotal = (req, res, next) => {
-    console.log(req.params)
+exports.getTopProduct = (req, res, next) => {
+    // console.log(req.params)
     const {shopID} = req.params;
-    Order.delById(shopID).then(() => {
+    Order.findProduct(shopID).then(order => {
         res.status(200).json({
-            "message": "success",
-            "result": true
+            // data: order[0],
+            "message": "success"
+            
         });
-    }).catch((error) => {
+    }).catch(error => {
         res.status(500).json({
-            "message": error,
-            "result": false
+            "message": error
         });
     });
 }

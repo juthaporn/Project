@@ -22,7 +22,7 @@ class AddShop extends React.Component {
       var x = this;
       axios.get("http://localhost:3000/member/getOneMember/"+this.props.match.params.id).then((res) => {
         this.setState({data: res.data.data[0]});
-        console.log(this.state.data.name)
+        console.log(this.state.data)
       }).catch((error) => {
         console.log(error);
       });
@@ -122,7 +122,7 @@ class AddShop extends React.Component {
                     </div>
                     <div class="form-group">
                       <label>ชื่อผู้ประกอบการ</label>
-                      <input class="form-control" name="name" onChange={this.handleChange} value={this.state.data.name} required />
+                      <input class="form-control" name="name" onChange={this.handleChange} value={`${this.state.data.firstName} ${this.state.data.lastName}`} required />
                     </div>
                     <div class="form-group text-center">
                       <button type="submit" class="button button-contactForm btn_4 boxed-btn">บันทึก</button>

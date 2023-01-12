@@ -84,6 +84,7 @@ class Order{
             [shopID]
         )
     }
+<<<<<<< HEAD
     static getOrderBymemberID(memberID){
         return db.execute(
             'SELECT * FROM `order`o join orderdetail od on o.orderID=od.orderID join product p on p.productID=od.productID where memberID =?',
@@ -91,10 +92,13 @@ class Order{
         )
     }
     
+=======
+>>>>>>> 09086e1424c5a3dab391a1598b3756b733a2d42c
 
-    static getsumTotal(shopID){
+    static getTopProduct(shopID){
         return db.execute(
-            'SELECT SUM(subtotal) total FROM `order`WHERE shopID = ?',
+            // 'SELECT SUM(subtotal) total FROM `order`WHERE shopID = ?',
+            'WITH top3_counts AS ( SELECT o.shopID, od.productID, count(od.productID) as count FROM orderdetail od INNER JOIN `order` o ON od.orderID = o.orderID GROUP BY o.shopID, od.productID ORDER BY o.shopID, count DESC ) SELECT shopID, productID, count FROM top3_counts GROUP BY shopID, productID ORDER BY shopID, count DESC LIMIT 3',
             [shopID]
         )
     }

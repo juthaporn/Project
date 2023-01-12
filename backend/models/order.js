@@ -84,19 +84,12 @@ class Order{
             [shopID]
         )
     }
-    static getOrderBymemberID(memberID){
-        return db.execute(
-            "SELECT * FROM `order` WHERE memberID"
-            // 'select orderID, orderStatus,orderTime,subtotal FROM order'
-            [memberID]
-        )
-    }
-    
 
-    static getsumTotal(shopID){
+    static getTopProduct(){
         return db.execute(
-            'SELECT SUM(subtotal) total FROM `order`WHERE shopID = ?',
-            [shopID]
+            // 'SELECT SUM(subtotal) total FROM `order`WHERE shopID = ?',
+            // [shopID]
+            'WITH top3_counts AS ( SELECT o.shopID, od.productID, count(od.productID) as count FROM orderdetail od INNER JOIN `order` o ON od.orderID = o.orderID GROUP BY o.shopID, od.productID ORDER BY o.shopID, count DESC ) SELECT shopID, productID, count FROM top3_counts GROUP BY shopID, productID ORDER BY shopID, count DESC LIMIT 3'
         )
     }
 

@@ -8,20 +8,20 @@ class ShopOwner extends React.Component{
             datetime: Date()
         }
 }
-    // componentDidMount(){
-    // this.getData()
+    componentDidMount(){
+    this.getData()
     // console.log("shopID",this.props.match.params.id)
-    // }
+    }
 
-    // getData = () => {
-    //     var x = this;
-    //     axios.get("http://localhost:3000/order/getsumTotal/"+this.props.match.params.id).then((res) => {
-    //         this.setState({data: res.data.data});
-    //         console.log(this.state.data)
-    //     }).catch((error) => {
-    //       console.log(error);
-    //     });
-    // }
+    getData = () => {
+        var x = this;
+        axios.get("http://localhost:3000/order/getTopProduct").then((res) => {
+            this.setState({data: res.data.data[0]});
+            console.log(this.state.data)
+        }).catch((error) => {
+          console.log(error);
+        });
+    }
 
     render(){
         return( 
@@ -83,17 +83,14 @@ class ShopOwner extends React.Component{
                                    <h3 class="box-title">เมนูขายดี</h3>
                                         <table class="table ">
                                         <tbody>
-                                        <tr>                       
-                                        <td><img src="../img/post/post_10.png" alt=""/></td>
-                                        <td> <h3 class="box-title">ก๋วยเตี๋ยวต้มยำ</h3></td>
-                                        </tr>
-                                        <tr>
-                                        <td><img src="../img/post/post_7.png" alt=""/></td>
-                                        <td> <h3 class="box-title">ก๋วยเตี๋ยวต้มยำทะเล</h3></td>
-                                        </tr>
-                                        <tr>
-                                        <td><img src="../img/post/post_5.png" alt=""/></td>
-                                        <td> <h3 class="box-title">บะหมี่เกี๊ยวหมูแดง</h3></td></tr>
+                                        {
+                                            this.state.data?.map(item => (   
+                                                <tr>                       
+                                                <td><img src="../img/post/post_10.png" alt=""/></td>
+                                                <td> <h3 class="box-title">{item.productName}</h3></td>
+                                                </tr>
+                                            ))
+                                        }
                                         </tbody>
                                     </table>
                                     </div>

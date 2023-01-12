@@ -146,10 +146,10 @@ exports.getOrderBymemberID = (req, res, next) => {
 
 exports.getTopProduct = (req, res, next) => {
     // console.log(req.params)
-    // const {shopID} = req.params;
-    Order.findAll().then(order => {
+    const {shopID} = req.params;
+    Order.findProduct(shopID).then(order => {
         res.status(200).json({
-            data: order[0],
+            // data: order[0],
             "message": "success"
             
         });

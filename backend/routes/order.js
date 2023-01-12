@@ -9,7 +9,7 @@ router.get('/getOrderByShopID/:shopID', orderController.getOrderByShopID);
 
 router.get('/getOrderBymemberID/:memberID', orderController.getOrderBymemberID);
 
-router.get('/getsumTotal/:shopID',orderController.getsumTotal);
+// router.get('/getsumTotal/:shopID',orderController.getsumTotal);
 
 router.get('/updateOrderStatus/:orderID/:orderStatus', orderController.updateOrderStatus);
 
@@ -23,6 +23,6 @@ router.post('/editOrder', orderController.editOrder);
 
 router.get('/deleteOrder/:orderID', orderController.deleteOrder);
 
-router.get('/getTopProduct',orderController.getTopProduct);
+router.get('/getTopProduct/:shopID',orderController.getTopProduct);
 
 module.exports = router;

@@ -130,7 +130,7 @@ exports.getOrderByID = (req, res, next) => {
 exports.getOrderBymemberID = (req, res, next) => {
     // const productID = req.query.product_id;
     console.log(req.params)
-    const {mmemID} = req.params;
+    const {memberID} = req.params;
     Order.delById(memberID).then(() => {
         res.status(200).json({
             "message": "success",

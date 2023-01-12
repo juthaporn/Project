@@ -19,21 +19,22 @@ componentDidMount(){
 
 }
 getData = () => {
-	axios.get("http://localhost:3000/order/getOrderBymemberID/" + this.state.memberID).then((res) => {
-		console.log(res.data.data)
-		this.setState({ data: res.data.data[0] });
+	var x =this;
+	axios.get("http://localhost:3000/order/getOrderBymemberID/"+this.state.memberID).then((res) => {
+		console.log(res.data.data[0])
+		this.setState({ data: res.data.data [0]});
+		this.setState({memberID: this.state.data[0].memberID})
+        this.setState({productName: this.state.data[0].productName})
+        this.setState({productPrice: this.state.data[0].productPrice})
+		this.setState({subtotal: this.state.data[0].subtotal})
+		this.setState({quantity: this.state.data[0].quantity})
+		console.log(this.state.name)
 	  }).catch((error) => {
-		//   console.log(error);
+		  console.log(error);
 	  });
 	}
   
-
-// handleChange = (e) => {
-// 	console.log(e.target.value)
-// 	this.setState({number: e.target.value})
-
-// }
-
+	
     render(){
         return(   
          
@@ -71,7 +72,7 @@ getData = () => {
 										</div>
 									</div>
 									</td>
-									<h5><td>{item.number}</td></h5>
+									<h5><td>{item.productPrice}</td></h5>
 									<td></td>
 								</tr>
 								
@@ -81,7 +82,7 @@ getData = () => {
 									<td><h5><a>จำนวนรายการทั้งหมด</a></h5></td>
 									<td></td>
 									<td></td>
-									<h5><td >{item.number} รายการ</td></h5>
+									<h5><td >{item.quantity} รายการ</td></h5>
 								</tr>
 								<tr class="fw-bold">
 								

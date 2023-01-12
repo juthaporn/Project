@@ -86,8 +86,7 @@ class Order{
     }
     static getOrderBymemberID(memberID){
         return db.execute(
-            "SELECT * FROM `order` WHERE memberID"
-            // 'select orderID, orderStatus,orderTime,subtotal FROM order'
+            'SELECT * FROM `order`o join orderdetail od on o.orderID=od.orderID join product p on p.productID=od.productID where memberID =?',
             [memberID]
         )
     }
@@ -100,6 +99,21 @@ class Order{
         )
     }
 
+}
+exports.deleteOrder = (req, res, next) => {
+    console.log(req.params)
+    const {orderID} = req.params;
+    ShopType.delById(orderID).then(() => {
+        res.status(200).json({
+            "message": "success",
+            "result": true
+        });
+    }).catch((error) => {
+        res.status(500).json({
+            "message": error,
+            "result": false
+        });
+    });
 }
 
 module.exports = Order

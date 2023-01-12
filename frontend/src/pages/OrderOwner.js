@@ -6,7 +6,8 @@ class OrderOwner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      orderID:''
     }
   }
 
@@ -33,6 +34,20 @@ class OrderOwner extends React.Component {
       //   console.log(error);
     });
   }
+  handleDelete = async(orderID) => {
+    // console.log(typeID)
+    axios.get('http://localhost:3000/order/deleteOrder/' + orderID)
+    .then(res => {
+      console.log(res.data.message)
+      if(res.data.message=='success'){
+        alert('ลบข้อมูลสำเร็จ') 
+          this.getData()
+      }
+
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 
   render() {
     return (
@@ -40,7 +55,7 @@ class OrderOwner extends React.Component {
       <div class="container"><br />
         <h5 class="text-left ">หน้าออร์เดอร์</h5>
         <h5 class="text-right ">วันที่ 10/5/2565</h5>
-        <div class="row">
+        {/* <div class="row">
           <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box analytics-info">
               <h3 class="box-title">จำนวนออร์เดอร์ที่รอคิว</h3>
@@ -86,7 +101,7 @@ class OrderOwner extends React.Component {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
         <br />
         <div class="row">
           <div class="col-lg-12 col-sm-6 col-xs-12">
@@ -101,7 +116,6 @@ class OrderOwner extends React.Component {
                       <th></th>
                       <th><h3 class="box-title">เวลา</h3></th>
                       <th><h3 class="box-title">ราคา</h3></th>
-                      <th><h3 class="box-title">จำนวน</h3></th>
                       <th><h3 class="box-title">สถานะ</h3></th>
                       <th><h3 class="box-title">ยกเลิก</h3></th>
                     </tr>
@@ -122,10 +136,10 @@ class OrderOwner extends React.Component {
                           <option value="กำลังปรุง">กำลังปรุง</option>
                           <option value="ปรุงเสร็จ">ปรุงเสร็จ</option>
                           <option value="รอรับ">รอรับ</option>
-                          <option value="รอรับ">รับอาหารแล้ว</option>
+                          <option value="รับอาหารแล้ว">รับอาหารแล้ว</option>
                         </select></td>
 
-                        <td><a href="/OrderOwnerEdit" className="nav-link" class='badge badge-danger'>ยกเลิก</a></td>
+                        <button class="button button-contactForm btn_4 boxed-btn-del" onClick={() =>{if (window.confirm('ต้องการจะลบข้อมูลใช่หรือไม่ ?')) this.handleDelete(item.orderID)}}>ยกเลิก</button>
                       </tr>
                     ))}
 
